@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/CustomerManager.exe" internal="true" />
+  </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
@@ -7,6 +14,70 @@
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
       <placeholder />
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="CustomerManager.loginWindow" design-size="450 228">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">loginWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar1">
+            <property name="MemberName" />
+            <node name="__gtksharp_108_Stetic_Editor_ActionMenuBar" type="Menubar">
+              <node type="Menu" action="DateiAction">
+                <node type="Menuitem" action="cancelAction" />
+              </node>
+              <node type="Menu" action="HilfeAction" />
+            </node>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Fixed" id="fixed3">
+            <property name="MemberName" />
+            <property name="HeightRequest">170</property>
+            <property name="HasWindow">False</property>
+            <child>
+              <widget class="Gtk.Label" id="welcomeLabel">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">LOGIN</property>
+              </widget>
+              <packing>
+                <property name="X">18</property>
+                <property name="Y">16</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="loginButton">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Login</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="X">53</property>
+                <property name="Y">100</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
     </child>
   </widget>
 </stetic-interface>
