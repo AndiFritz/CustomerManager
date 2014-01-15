@@ -8,6 +8,7 @@ namespace CustomerManager
 				base(Gtk.WindowType.Toplevel)
 		{
 			this.Build ();
+
 		}
 	}
 }
