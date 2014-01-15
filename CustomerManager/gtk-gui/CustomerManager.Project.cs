@@ -8,14 +8,16 @@ namespace CustomerManager
 		{
 			global::Stetic.Gui.Initialize (this);
 			// Widget CustomerManager.Project
+			this.WidthRequest = 600;
+			this.HeightRequest = 500;
 			this.Name = "CustomerManager.Project";
 			this.Title = global::Mono.Unix.Catalog.GetString ("Project");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 400;
-			this.DefaultHeight = 300;
+			this.DefaultWidth = 600;
+			this.DefaultHeight = 500;
 			this.Show ();
 		}
 	}

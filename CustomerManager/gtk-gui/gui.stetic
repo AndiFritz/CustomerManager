@@ -234,11 +234,7 @@
         <child>
           <widget class="Gtk.MenuBar" id="menubar1">
             <property name="MemberName" />
-<<<<<<< HEAD
-            <node name="__gtksharp_108_Stetic_Editor_ActionMenuBar" type="Menubar">
-=======
             <node name="menubar1" type="Menubar">
->>>>>>> 565effeeb810863a9324a052dbb1247189149e46
               <node type="Menu">
                 <node type="Menuitem" />
               </node>
@@ -276,8 +272,8 @@
                 <property name="UseUnderline">True</property>
               </widget>
               <packing>
-                <property name="X">20</property>
-                <property name="Y">112</property>
+                <property name="X">53</property>
+                <property name="Y">100</property>
               </packing>
             </child>
           </widget>
