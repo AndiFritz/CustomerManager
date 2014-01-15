@@ -17,6 +17,7 @@
     </child>
   </widget>
   <widget class="Gtk.Window" id="CustomerManager.loginWindow" design-size="450 228">
+    <action-group name="Default" />
     <property name="MemberName" />
     <property name="Title" translatable="yes">loginWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -28,10 +29,10 @@
           <widget class="Gtk.MenuBar" id="menubar1">
             <property name="MemberName" />
             <node name="__gtksharp_108_Stetic_Editor_ActionMenuBar" type="Menubar">
-              <node type="Menu" action="DateiAction">
-                <node type="Menuitem" action="cancelAction" />
+              <node type="Menu">
+                <node type="Menuitem" />
               </node>
-              <node type="Menu" action="HilfeAction" />
+              <node type="Menu" />
             </node>
           </widget>
           <packing>
@@ -65,8 +66,8 @@
                 <property name="UseUnderline">True</property>
               </widget>
               <packing>
-                <property name="X">53</property>
-                <property name="Y">100</property>
+                <property name="X">20</property>
+                <property name="Y">112</property>
               </packing>
             </child>
           </widget>
