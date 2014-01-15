@@ -10,7 +10,7 @@ namespace CustomerManager
 		private global::Gtk.Fixed fixed3;
 		private global::Gtk.Label welcomeLabel;
 		private global::Gtk.Button loginButton;
-
+		
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -27,7 +27,7 @@ namespace CustomerManager
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString ("<ui><menubar name=\'menubar1\'><menu><menuitem/></menu><menu/></menubar></ui>");
+			this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu><menuitem/></menu><menu/></menubar></ui>");
 			this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 			this.menubar1.Name = "menubar1";
 			this.vbox1.Add (this.menubar1);
@@ -56,8 +56,8 @@ namespace CustomerManager
 			this.loginButton.Label = global::Mono.Unix.Catalog.GetString ("Login");
 			this.fixed3.Add (this.loginButton);
 			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed3 [this.loginButton]));
-			w4.X = 53;
-			w4.Y = 100;
+			w4.X = 14;
+			w4.Y = 121;
 			this.vbox1.Add (this.fixed3);
 			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.fixed3]));
 			w5.Position = 1;

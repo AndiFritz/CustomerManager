@@ -30,7 +30,7 @@ public partial class MainWindow
 	private global::Gtk.Fixed fixed2;
 	private global::Gtk.ScrolledWindow GtkScrolledWindow;
 	private global::Gtk.TextView textview1;
-
+	
 	protected virtual void Build ()
 	{
 		global::Stetic.Gui.Initialize (this);
@@ -101,7 +101,7 @@ public partial class MainWindow
 		this.vbox3.Name = "vbox3";
 		this.vbox3.Spacing = 6;
 		// Container child vbox3.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString (@"<ui><menubar name='menubar1'><menu name='DateiAction2' action='DateiAction2'><menuitem name='openAction1' action='openAction1'/><menuitem name='saveAction' action='saveAction'/></menu><menu name='KundenAction' action='KundenAction'><menuitem name='addAction' action='addAction'/><menuitem name='justifyCenterAction' action='justifyCenterAction'/></menu><menu name='LiferantenAction' action='LiferantenAction'><menuitem name='AnlegenAction' action='AnlegenAction'/><menuitem name='justifyCenterAction1' action='justifyCenterAction1'/></menu><menu name='EinstellungenAction' action='EinstellungenAction'/><menu name='HilfeAction' action='HilfeAction'/></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='DateiAction2' action='DateiAction2'><menuitem name='openAction1' action='openAction1'/><menuitem name='saveAction' action='saveAction'/></menu><menu name='KundenAction' action='KundenAction'><menuitem name='addAction' action='addAction'/><menuitem name='justifyCenterAction' action='justifyCenterAction'/></menu><menu name='LiferantenAction' action='LiferantenAction'><menuitem name='AnlegenAction' action='AnlegenAction'/><menuitem name='justifyCenterAction1' action='justifyCenterAction1'/></menu><menu name='EinstellungenAction' action='EinstellungenAction'/><menu name='HilfeAction' action='HilfeAction'/></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox3.Add (this.menubar1);
@@ -114,9 +114,7 @@ public partial class MainWindow
 		this.hbox1.Name = "hbox1";
 		this.hbox1.Spacing = 6;
 		// Container child hbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><toolbar name=\'toolbar1\'><toolitem name=\'addAction1\' action=\'addAction1\'/><to" +
-		"olitem name=\'openAction\' action=\'openAction\'/><toolitem name=\'NeuerLieferantActi" +
-		"on\' action=\'NeuerLieferantAction\'/></toolbar></ui>");
+		this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'><toolitem name='addAction1' action='addAction1'/><toolitem name='openAction' action='openAction'/><toolitem name='NeuerLieferantAction' action='NeuerLieferantAction'/></toolbar></ui>");
 		this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar1")));
 		this.toolbar1.Name = "toolbar1";
 		this.toolbar1.ShowArrow = false;
@@ -132,7 +130,6 @@ public partial class MainWindow
 		w4.Position = 1;
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.fixed2 = new global::Gtk.Fixed ();
-		this.fixed2.Name = "fixed2";
 		this.fixed2.HasWindow = false;
 		this.hbox1.Add (this.fixed2);
 		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.fixed2]));

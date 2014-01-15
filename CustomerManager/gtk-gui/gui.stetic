@@ -226,7 +226,7 @@
     <action-group name="Default" />
     <property name="MemberName" />
     <property name="Title" translatable="yes">loginWindow</property>
-    <property name="WindowPosition">CenterOnParent</property>
+    <property name="WindowPosition">Center</property>
     <child>
       <widget class="Gtk.VBox" id="vbox1">
         <property name="MemberName" />
@@ -272,8 +272,8 @@
                 <property name="UseUnderline">True</property>
               </widget>
               <packing>
-                <property name="X">53</property>
-                <property name="Y">100</property>
+                <property name="X">14</property>
+                <property name="Y">121</property>
               </packing>
             </child>
           </widget>
