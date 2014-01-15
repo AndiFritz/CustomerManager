@@ -1,0 +1,13 @@
+Physisches Modell
+
+tbl_projects(id, name, fk_customers, fk_suppliers_projects, fk_time, startdate, enddate)
+
+tbl_customers(id, vname, nname, email, telnumber, mobilenumber, country, registrationdate)
+
+tbl_users(id, vname, nname, username, password, email, telnumber, mobilenumber, country, registrationdate) 
+
+tbl_suppliers(id, name, typ, email, telnumber, mobilenumber, country, registrationsdate)
+
+tbl_time(fk_users, fk_projects, starttime, enddtime)
+
+tbl_suppliers_projects(fk_suppliers, fk_projects)
