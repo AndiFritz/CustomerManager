@@ -7,13 +7,219 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Debug/CustomerManager.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
+  <icon-factory>
+    <icon-set id="Lieferant">
+      <source>
+        <property name="Image">stock:gtk-edit Menu</property>
+      </source>
+    </icon-set>
+  </icon-factory>
+  <widget class="Gtk.Window" id="MainWindow" design-size="585 344">
+    <action-group name="Default">
+      <action id="DateiAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Datei</property>
+        <property name="ShortLabel" translatable="yes">Datei</property>
+      </action>
+      <action id="dialogErrorAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Einfügen</property>
+        <property name="ShortLabel" translatable="yes">Einfügen</property>
+        <property name="StockId">gtk-dialog-error</property>
+      </action>
+      <action id="DateiAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Datei</property>
+        <property name="ShortLabel" translatable="yes">Datei</property>
+      </action>
+      <action id="noAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Nein</property>
+        <property name="ShortLabel" translatable="yes">_Nein</property>
+        <property name="StockId">gtk-no</property>
+      </action>
+      <action id="DateiAction2">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Datei</property>
+        <property name="ShortLabel" translatable="yes">Datei</property>
+      </action>
+      <action id="KundenAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Kunden</property>
+        <property name="ShortLabel" translatable="yes">Kunden</property>
+      </action>
+      <action id="EinstellungenAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Einstellungen</property>
+        <property name="ShortLabel" translatable="yes">Einstellungen</property>
+      </action>
+      <action id="HilfeAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Hilfe</property>
+        <property name="ShortLabel" translatable="yes">Hilfe</property>
+      </action>
+      <action id="addAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Neu</property>
+        <property name="ShortLabel" translatable="yes">Neu</property>
+        <property name="StockId">gtk-add</property>
+      </action>
+      <action id="justifyCenterAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Anzeigen</property>
+        <property name="ShortLabel" translatable="yes">Anzeigen</property>
+        <property name="StockId">gtk-justify-center</property>
+      </action>
+      <action id="addAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Hinzufügen</property>
+        <property name="ShortLabel" translatable="yes">Hinzufügen</property>
+        <property name="StockId">gtk-add</property>
+        <signal name="Activated" handler="OnAddAction1Activated" />
+      </action>
+      <action id="openAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Projekt öffnen</property>
+        <property name="ShortLabel" translatable="yes">Projekt öffnen</property>
+        <property name="StockId">gtk-open</property>
+      </action>
+      <action id="NeuerLieferantAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Neuer Lieferant</property>
+        <property name="ShortLabel" translatable="yes">Neuer Lieferant</property>
+        <property name="StockId">Lieferant</property>
+      </action>
+      <action id="LiferantenAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Liferanten</property>
+        <property name="ShortLabel" translatable="yes">Liferanten</property>
+      </action>
+      <action id="AnlegenAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Anlegen</property>
+        <property name="ShortLabel" translatable="yes">Anlegen</property>
+        <property name="StockId">Lieferant</property>
+      </action>
+      <action id="justifyCenterAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Zentrieren</property>
+        <property name="ShortLabel" translatable="yes">_Zentrieren</property>
+        <property name="StockId">gtk-justify-center</property>
+      </action>
+      <action id="openAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Ö_ffnen</property>
+        <property name="ShortLabel" translatable="yes">Ö_ffnen</property>
+        <property name="StockId">gtk-open</property>
+      </action>
+      <action id="saveAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Speichern</property>
+        <property name="ShortLabel" translatable="yes">_Speichern</property>
+        <property name="StockId">gtk-save</property>
+      </action>
+    </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
-      <placeholder />
+      <widget class="Gtk.VBox" id="vbox3">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar1">
+            <property name="MemberName" />
+            <node name="menubar1" type="Menubar">
+              <node type="Menu" action="DateiAction2">
+                <node type="Menuitem" action="openAction1" />
+                <node type="Menuitem" action="saveAction" />
+              </node>
+              <node type="Menu" action="KundenAction">
+                <node type="Menuitem" action="addAction" />
+                <node type="Menuitem" action="justifyCenterAction" />
+              </node>
+              <node type="Menu" action="LiferantenAction">
+                <node type="Menuitem" action="AnlegenAction" />
+                <node type="Menuitem" action="justifyCenterAction1" />
+              </node>
+              <node type="Menu" action="EinstellungenAction" />
+              <node type="Menu" action="HilfeAction" />
+            </node>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HBox" id="hbox1">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Toolbar" id="toolbar1">
+                <property name="MemberName" />
+                <property name="ShowArrow">False</property>
+                <node name="toolbar1" type="Toolbar">
+                  <node type="Toolitem" action="addAction1" />
+                  <node type="Toolitem" action="openAction" />
+                  <node type="Toolitem" action="NeuerLieferantAction" />
+                </node>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Fixed" id="fixed1">
+                <property name="MemberName" />
+                <property name="HasWindow">False</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Fixed" id="fixed2">
+                <property name="MemberName" />
+                <property name="HasWindow">False</property>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TextView" id="textview1">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="Text" translatable="yes" />
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+      </widget>
     </child>
   </widget>
   <widget class="Gtk.Window" id="CustomerManager.loginWindow" design-size="450 228">
@@ -28,7 +234,11 @@
         <child>
           <widget class="Gtk.MenuBar" id="menubar1">
             <property name="MemberName" />
+<<<<<<< HEAD
             <node name="__gtksharp_108_Stetic_Editor_ActionMenuBar" type="Menubar">
+=======
+            <node name="menubar1" type="Menubar">
+>>>>>>> 565effeeb810863a9324a052dbb1247189149e46
               <node type="Menu">
                 <node type="Menuitem" />
               </node>
@@ -79,6 +289,24 @@
           </packing>
         </child>
       </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="CustomerManager.Project" design-size="600 500">
+    <property name="MemberName" />
+    <property name="WidthRequest">600</property>
+    <property name="HeightRequest">500</property>
+    <property name="Title" translatable="yes">Project</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <placeholder />
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="CustomerManager.CustomerWindow" design-size="400 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">CustomerWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <placeholder />
     </child>
   </widget>
 </stetic-interface>
