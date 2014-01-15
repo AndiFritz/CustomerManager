@@ -8,7 +8,7 @@ namespace CustomerManager
 		public static void Main (string[] args)
 		{
 			Application.Init ();
-			MainWindow win = new MainWindow ();
+			loginWindow win = new loginWindow ();
 			win.Show ();
 			Application.Run ();
 		}
