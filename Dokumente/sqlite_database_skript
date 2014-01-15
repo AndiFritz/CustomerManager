@@ -1,6 +1,6 @@
 sqlite3 customerManager.sqlite3;
 create table tbl_projects(id integer PRIMARY KEY autoincrement, name varchar(20), fk_customers integer, fk_suppliers_projects integer, fk_time, startdate DATE, enddate DATE);
-create table tbl_customers(id integer PRIMARY KEY autoincrement, vname varchar(20), nname varchar(20), email varchar(30), telnumber varchar(20), mobilenumber varchar(20), country varchar(20), registrationsdate DATE);
+create table tbl_customers(id integer PRIMARY KEY autoincrement, vname varchar(20), nname varchar(20), typ varchar(20), email varchar(30), telnumber varchar(20), mobilenumber varchar(20), plz integer, country varchar(20), hnr varchar(20), street varchar(20), registrationsdate DATE);
 create table tbl_users(id integer PRIMARY KEY autoincrement, vname varchar(20), nname varchar(20), username varchar(20), password varchar(60), email varchar(30), telnumber varchar(20), mobilenumber varchar(20), country varchar(20), registrationdate varchar(20));
 create table tbl_suppliers(id integer PRIMARY KEY autoincrement, name varchar(20), typ varchar(20), email varchar(20), telnumber varchar(20), mobilenumber varchar(20), country varchar(20), registrationdate varchar(20));
 create table tbl_time(fk_users integer, fk_projects integer, date DATE, starttime TIME, endtime TIME, PRIMARY KEY(fk_users, fk_projects));
