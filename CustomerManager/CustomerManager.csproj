@@ -51,6 +51,8 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Mono.Posix" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -71,6 +73,7 @@
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerWindow.cs" />
     <Compile Include="gtk-gui\CustomerManager.CustomerWindow.cs" />
+    <Compile Include="gtk-gui\CustomerManager.test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

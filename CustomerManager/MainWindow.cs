@@ -14,14 +14,15 @@ public partial class MainWindow: Gtk.Window
 	{
 		Application.Quit ();
 		a.RetVal = true;
-	}
+	}
+
 	protected void OnAddAction1Activated (object sender, EventArgs e)
 	{
 //		MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "neuer Benutzer hinzufügen!");
 //		md.Run();
 //		md.Destroy();
-
 		Project projectWindow = new Project();
 		projectWindow.Show();
-	}
+	}
+
 }

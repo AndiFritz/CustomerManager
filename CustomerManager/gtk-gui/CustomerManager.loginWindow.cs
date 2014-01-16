@@ -4,7 +4,6 @@ namespace CustomerManager
 {
 	public partial class loginWindow
 	{
-		private global::Gtk.UIManager UIManager;
 		private global::Gtk.HBox hbox3;
 		private global::Gtk.VBox vbox8;
 		private global::Gtk.Fixed fixed7;
@@ -23,10 +22,6 @@ namespace CustomerManager
 		{
 			global::Stetic.Gui.Initialize (this);
 			// Widget CustomerManager.loginWindow
-			this.UIManager = new global::Gtk.UIManager ();
-			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
-			this.UIManager.InsertActionGroup (w1, 0);
-			this.AddAccelGroup (this.UIManager.AccelGroup);
 			this.Name = "CustomerManager.loginWindow";
 			this.Title = global::Mono.Unix.Catalog.GetString ("Login");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(1));
@@ -53,14 +48,14 @@ namespace CustomerManager
 			this.welcomeLabel.Xalign = 0F;
 			this.welcomeLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Herzlich Willkommen zu Customer Manager!");
 			this.fixed7.Add (this.welcomeLabel);
-			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed7 [this.welcomeLabel]));
-			w2.X = 8;
-			w2.Y = 3;
+			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed7 [this.welcomeLabel]));
+			w1.X = 8;
+			w1.Y = 3;
 			this.vbox8.Add (this.fixed7);
-			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox8 [this.fixed7]));
-			w3.Position = 0;
-			w3.Expand = false;
-			w3.Fill = false;
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox8 [this.fixed7]));
+			w2.Position = 0;
+			w2.Expand = false;
+			w2.Fill = false;
 			// Container child vbox8.Gtk.Box+BoxChild
 			this.fixed8 = new global::Gtk.Fixed ();
 			this.fixed8.Name = "fixed8";
@@ -70,37 +65,37 @@ namespace CustomerManager
 			this.unameLabel.Name = "unameLabel";
 			this.unameLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Benutzername:");
 			this.fixed8.Add (this.unameLabel);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.unameLabel]));
-			w4.X = 19;
-			w4.Y = 20;
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.unameLabel]));
+			w3.X = 19;
+			w3.Y = 20;
 			// Container child fixed8.Gtk.Fixed+FixedChild
 			this.pwdLabel = new global::Gtk.Label ();
 			this.pwdLabel.Name = "pwdLabel";
 			this.pwdLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Passwort: ");
 			this.fixed8.Add (this.pwdLabel);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.pwdLabel]));
-			w5.X = 19;
-			w5.Y = 55;
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.pwdLabel]));
+			w4.X = 19;
+			w4.Y = 55;
 			// Container child fixed8.Gtk.Fixed+FixedChild
 			this.unameTextBox = new global::Gtk.Entry ();
 			this.unameTextBox.CanFocus = true;
 			this.unameTextBox.Name = "unameTextBox";
 			this.unameTextBox.IsEditable = true;
-			this.unameTextBox.InvisibleChar = '●';
 			this.fixed8.Add (this.unameTextBox);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.unameTextBox]));
-			w6.X = 123;
-			w6.Y = 16;
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.unameTextBox]));
+			w5.X = 123;
+			w5.Y = 16;
 			// Container child fixed8.Gtk.Fixed+FixedChild
 			this.pwdTextBox = new global::Gtk.Entry ();
 			this.pwdTextBox.CanFocus = true;
 			this.pwdTextBox.Name = "pwdTextBox";
 			this.pwdTextBox.IsEditable = true;
-			this.pwdTextBox.InvisibleChar = '●';
+			this.pwdTextBox.MaxLength = 20;
+			this.pwdTextBox.Visibility = false;
 			this.fixed8.Add (this.pwdTextBox);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.pwdTextBox]));
-			w7.X = 123;
-			w7.Y = 50;
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.pwdTextBox]));
+			w6.X = 123;
+			w6.Y = 50;
 			// Container child fixed8.Gtk.Fixed+FixedChild
 			this.loginButton = new global::Gtk.Button ();
 			this.loginButton.WidthRequest = 170;
@@ -109,9 +104,9 @@ namespace CustomerManager
 			this.loginButton.UseUnderline = true;
 			this.loginButton.Label = global::Mono.Unix.Catalog.GetString ("login");
 			this.fixed8.Add (this.loginButton);
-			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.loginButton]));
-			w8.X = 12;
-			w8.Y = 93;
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.loginButton]));
+			w7.X = 12;
+			w7.Y = 93;
 			// Container child fixed8.Gtk.Fixed+FixedChild
 			this.exitButton = new global::Gtk.Button ();
 			this.exitButton.WidthRequest = 80;
@@ -120,17 +115,17 @@ namespace CustomerManager
 			this.exitButton.UseUnderline = true;
 			this.exitButton.Label = global::Mono.Unix.Catalog.GetString ("abbrechen");
 			this.fixed8.Add (this.exitButton);
-			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.exitButton]));
-			w9.X = 202;
-			w9.Y = 93;
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.exitButton]));
+			w8.X = 202;
+			w8.Y = 93;
 			this.vbox8.Add (this.fixed8);
-			global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.vbox8 [this.fixed8]));
-			w10.Position = 1;
+			global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vbox8 [this.fixed8]));
+			w9.Position = 1;
 			this.hbox3.Add (this.vbox8);
-			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.vbox8]));
-			w11.Position = 0;
-			w11.Expand = false;
-			w11.Fill = false;
+			global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.vbox8]));
+			w10.Position = 0;
+			w10.Expand = false;
+			w10.Fill = false;
 			// Container child hbox3.Gtk.Box+BoxChild
 			this.vbox7 = new global::Gtk.VBox ();
 			this.vbox7.Name = "vbox7";
@@ -141,21 +136,23 @@ namespace CustomerManager
 			this.image3.HeightRequest = 141;
 			this.image3.Name = "image3";
 			this.vbox7.Add (this.image3);
-			global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.vbox7 [this.image3]));
-			w12.Position = 0;
-			w12.Fill = false;
+			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox7 [this.image3]));
+			w11.Position = 0;
+			w11.Fill = false;
 			this.hbox3.Add (this.vbox7);
-			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.vbox7]));
-			w13.Position = 1;
-			w13.Expand = false;
-			w13.Fill = false;
+			global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.vbox7]));
+			w12.Position = 1;
+			w12.Expand = false;
+			w12.Fill = false;
 			this.Add (this.hbox3);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 444;
+			this.DefaultWidth = 447;
 			this.DefaultHeight = 204;
 			this.Show ();
+			this.loginButton.Clicked += new global::System.EventHandler (this.OnLoginButtonClicked);
+			this.exitButton.Clicked += new global::System.EventHandler (this.OnExitButtonClicked);
 		}
 	}
 }

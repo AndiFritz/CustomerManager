@@ -130,6 +130,7 @@ public partial class MainWindow
 		w4.Position = 1;
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.fixed2 = new global::Gtk.Fixed ();
+		this.fixed2.Name = "fixed2";
 		this.fixed2.HasWindow = false;
 		this.hbox1.Add (this.fixed2);
 		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.fixed2]));

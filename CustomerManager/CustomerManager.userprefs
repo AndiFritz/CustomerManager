@@ -1,14 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="gtk-gui/CustomerManager.test.cs">
     <Files>
-      <File FileName="loginWindow.cs" Line="1" Column="1" />
+      <File FileName="loginWindow.cs" Line="32" Column="23" />
       <File FileName="MainWindow.cs" Line="1" Column="1" />
       <File FileName="CustomerWindow.cs" Line="1" Column="1" />
       <File FileName="Customer.cs" Line="1" Column="1" />
-      <File FileName="Connection.cs" Line="1" Column="1" />
+      <File FileName="Connection.cs" Line="20" Column="40" />
       <File FileName="Program.cs" Line="1" Column="1" />
-      <File FileName="Project.cs" Line="1" Column="1" />
+      <File FileName="Project.cs" Line="16" Column="1" />
+      <File FileName="gtk-gui/CustomerManager.test.cs" Line="9" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
