@@ -4,13 +4,60 @@ namespace CustomerManager
 {
 	public partial class CustomerWindow
 	{
+		private global::Gtk.UIManager UIManager;
+		private global::Gtk.Action clearTextBoxes;
+		private global::Gtk.Action dialogHelp;
+		private global::Gtk.VBox vbox1;
+		private global::Gtk.Fixed fixed1;
+		private global::Gtk.VBox vbox3;
+		private global::Gtk.Toolbar toolbar1;
+		
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
 			// Widget CustomerManager.CustomerWindow
+			this.UIManager = new global::Gtk.UIManager ();
+			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
+			this.clearTextBoxes = new global::Gtk.Action ("clearTextBoxes", global::Mono.Unix.Catalog.GetString ("leeren"), global::Mono.Unix.Catalog.GetString ("alle Felder leeren"), "gtk-clear");
+			this.clearTextBoxes.ShortLabel = global::Mono.Unix.Catalog.GetString ("leeren");
+			w1.Add (this.clearTextBoxes, null);
+			this.dialogHelp = new global::Gtk.Action ("dialogHelp", null, global::Mono.Unix.Catalog.GetString ("Hilfe"), "gtk-dialog-question");
+			w1.Add (this.dialogHelp, null);
+			this.UIManager.InsertActionGroup (w1, 0);
+			this.AddAccelGroup (this.UIManager.AccelGroup);
 			this.Name = "CustomerManager.CustomerWindow";
 			this.Title = global::Mono.Unix.Catalog.GetString ("CustomerWindow");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+			// Container child CustomerManager.CustomerWindow.Gtk.Container+ContainerChild
+			this.vbox1 = new global::Gtk.VBox ();
+			this.vbox1.Name = "vbox1";
+			this.vbox1.Spacing = 6;
+			// Container child vbox1.Gtk.Box+BoxChild
+			this.fixed1 = new global::Gtk.Fixed ();
+			this.fixed1.Name = "fixed1";
+			this.fixed1.HasWindow = false;
+			this.vbox1.Add (this.fixed1);
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.fixed1]));
+			w2.Position = 0;
+			w2.Expand = false;
+			// Container child vbox1.Gtk.Box+BoxChild
+			this.vbox3 = new global::Gtk.VBox ();
+			this.vbox3.Name = "vbox3";
+			this.vbox3.Spacing = 6;
+			// Container child vbox3.Gtk.Box+BoxChild
+			this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'><toolitem name='clearTextBoxes' action='clearTextBoxes'/><toolitem name='dialogHelp' action='dialogHelp'/></toolbar></ui>");
+			this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar1")));
+			this.toolbar1.Name = "toolbar1";
+			this.toolbar1.ShowArrow = false;
+			this.vbox3.Add (this.toolbar1);
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.toolbar1]));
+			w3.Position = 0;
+			w3.Expand = false;
+			w3.Fill = false;
+			this.vbox1.Add (this.vbox3);
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.vbox3]));
+			w4.Position = 1;
+			this.Add (this.vbox1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}

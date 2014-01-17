@@ -22,6 +22,20 @@ namespace CustomerManager
 		{
 			try 
 			{			
+
+				bool userExist = this.checkAmountUser();
+
+				if (userExist == false)
+				{
+					MessageDialog md = new MessageDialog(null, DialogFlags.DestroyWithParent, MessageType.Info, ButtonsType.YesNo, "Es sind noch keine Benutzer registriert! Möchten Sie jetzt einen neuen Benutzer hinzufügen?");
+					md.Run();
+					md.Destroy();
+
+					CustomerWindow cw = new CustomerWindow();
+					cw.ShowAll(); 
+				}
+
+
 				sqlite_cmd = sqlite_conn.CreateCommand ();
 				
 				sqlite_cmd.CommandText = "SELECT * FROM tbl_users WHERE id=1";
@@ -69,6 +83,9 @@ namespace CustomerManager
 			}
 			catch
 			{
+				MessageDialog md = new MessageDialog(null, DialogFlags.DestroyWithParent, MessageType.Error, ButtonsType.Ok, "Es ist ein Fehler bei der Benutzerauslesung geschehen!");
+				md.Run();
+				md.Destroy(); 
 				return false; 
 			}
 		}

@@ -291,6 +291,7 @@
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="IsEditable">True</property>
+                    <property name="InvisibleChar">●</property>
                   </widget>
                   <packing>
                     <property name="X">123</property>
@@ -304,6 +305,7 @@
                     <property name="IsEditable">True</property>
                     <property name="MaxLength">20</property>
                     <property name="Visibility">False</property>
+                    <property name="InvisibleChar">●</property>
                   </widget>
                   <packing>
                     <property name="X">123</property>
@@ -392,11 +394,80 @@
     </child>
   </widget>
   <widget class="Gtk.Window" id="CustomerManager.CustomerWindow" design-size="400 300">
+    <action-group name="Default">
+      <action id="clearTextBoxes">
+        <property name="Type">Action</property>
+        <property name="HideIfEmpty">False</property>
+        <property name="Label" translatable="yes">leeren</property>
+        <property name="ShortLabel" translatable="yes">leeren</property>
+        <property name="StockId">gtk-clear</property>
+        <property name="Tooltip" translatable="yes">alle Felder leeren</property>
+      </action>
+      <action id="dialogHelp">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes" />
+        <property name="StockId">gtk-dialog-question</property>
+        <property name="Tooltip" translatable="yes">Hilfe</property>
+      </action>
+    </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">CustomerWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
     <child>
-      <placeholder />
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.Fixed" id="fixed1">
+            <property name="MemberName" />
+            <property name="HasWindow">False</property>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">False</property>
+            <property name="Expand">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.VBox" id="vbox3">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Toolbar" id="toolbar1">
+                <property name="MemberName" />
+                <property name="ShowArrow">False</property>
+                <node name="__gtksharp_66_Stetic_Editor_ActionToolbar" type="Toolbar">
+                  <node type="Toolitem" action="clearTextBoxes" />
+                  <node type="Toolitem" action="dialogHelp" />
+                </node>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Fixed" id="fixed3">
+                <property name="MemberName" />
+                <property name="HasWindow">False</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">False</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder />
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+      </widget>
     </child>
   </widget>
   <widget class="Gtk.Window" id="CustomerManager.test" design-size="400 300">
