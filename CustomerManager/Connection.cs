@@ -8,50 +8,28 @@ namespace CustomerManager
 {
 	public class Connection
 	{
+		SqliteConnection sqlite_conn;
+		SqliteCommand sqlite_cmd;
+		SqliteDataReader datareader;
+
 		public Connection ()
 		{
+			sqlite_conn = new SqliteConnection ("Data Source="+System.Environment.CurrentDirectory.ToString()+"/customerManager.sqlite3");
 
 		}
 	
 		public bool login (string uname, string pwd)
 		{
 			try 
-			{
-				SqliteConnection sqlite_conn;
-				SqliteCommand sqlite_cmd;
-				SqliteDataReader datareader;
-				
-				sqlite_conn = new SqliteConnection ("Data Source="+System.Environment.CurrentDirectory.ToString()+"/customerManager.sqlite3");
-
-#region Benutzername vorhanden - Prüfung
-				sqlite_cmd = sqlite_conn.CreateCommand ();
-				
-				sqlite_cmd.CommandText = "SELECT * FROM tbl_users WHERE username='"+uname+"'";
-				
-				// Now the SQLiteCommand object can give us a DataReader-Object:
-				datareader = sqlite_cmd.ExecuteReader ();
-
-
-				
-				while (datareader.Read())
-				{
-					datareader.Read (datareader[0]);
-				}
-
-#endregion
-
-
-				// open the connection:
-				sqlite_conn.Open ();
-				
+			{			
 				sqlite_cmd = sqlite_conn.CreateCommand ();
 				
 				sqlite_cmd.CommandText = "SELECT * FROM tbl_users WHERE id=1";
 				
 				// Now the SQLiteCommand object can give us a DataReader-Object:
-				sqlite_datareader = sqlite_cmd.ExecuteReader ();
+				datareader = sqlite_cmd.ExecuteReader ();
 				
-				while (sqlite_datareader.Read())
+				while (datareader.Read())
 				{
 				}
 				sqlite_conn.Close ();
@@ -63,6 +41,36 @@ namespace CustomerManager
 				md.Destroy();
 			}
 			return true; 
+		}
+
+		private bool checkAmountUser()
+		{
+			try
+			{
+				#region Benutzername vorhanden - Prüfung
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				
+				sqlite_cmd.CommandText = "SELECT count(*) FROM tbl_users";
+				
+				sqlite_conn.Open();
+				
+				// Now the SQLiteCommand object can give us a DataReader-Object:
+				int amountUser = Convert.ToInt32(sqlite_cmd.ExecuteScalar());
+				
+				if(amountUser == 0)
+				{
+					return false; 
+				}
+				else
+				{
+					return true;
+				}
+				#endregion
+			}
+			catch
+			{
+				return false; 
+			}
 		}
 	}
 }
