@@ -27,12 +27,12 @@ namespace CustomerManager
 
 				if (userExist == false)
 				{
-					MessageDialog md = new MessageDialog(null, DialogFlags.DestroyWithParent, MessageType.Info, ButtonsType.YesNo, "Es sind noch keine Benutzer registriert! Möchten Sie jetzt einen neuen Benutzer hinzufügen?");
+					MessageDialog md = new MessageDialog(null, DialogFlags.DestroyWithParent, MessageType.Info, ButtonsType.Ok, "Herzlich Willkommen zu CustomerManager! Sie müssen nur noch einen Benutzer anlegen und schon kann es losgehen!");
 					md.Run();
 					md.Destroy();
 
 					CustomerWindow cw = new CustomerWindow();
-					cw.ShowAll(); 
+					cw.addUser();
 				}
 
 

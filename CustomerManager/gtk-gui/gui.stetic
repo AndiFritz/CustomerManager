@@ -427,6 +427,7 @@
         <property name="Label" translatable="yes">bestätigen</property>
         <property name="ShortLabel" translatable="yes">bestätigen</property>
         <property name="StockId">gtk-apply</property>
+        <signal name="Activated" handler="OnApplyAddTBActivated" />
       </action>
       <action id="closeTB">
         <property name="Type">Action</property>
@@ -442,12 +443,14 @@
         <property name="ShortLabel" translatable="yes">leeren</property>
         <property name="StockId">gtk-clear</property>
         <property name="Tooltip" translatable="yes">alle Eintragungen löschen</property>
+        <signal name="Activated" handler="OnClearTBActivated" />
       </action>
       <action id="dialogQuestionTB">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Hilfe</property>
         <property name="ShortLabel" translatable="yes">Hilfe</property>
         <property name="StockId">gtk-dialog-question</property>
+        <signal name="Activated" handler="OnDialogQuestionTBActivated" />
       </action>
     </action-group>
     <action-group name="Default" />
@@ -1072,6 +1075,7 @@ Unternehmen</property>
         <child>
           <widget class="Gtk.HSeparator" id="hseparator2">
             <property name="MemberName" />
+            <property name="Visible">False</property>
           </widget>
           <packing>
             <property name="Position">3</property>
@@ -1082,12 +1086,13 @@ Unternehmen</property>
           <widget class="Gtk.Table" id="newUserTable">
             <property name="MemberName" />
             <property name="NRows">2</property>
-            <property name="NColumns">2</property>
+            <property name="NColumns">3</property>
             <property name="RowSpacing">6</property>
             <property name="ColumnSpacing">6</property>
             <child>
               <widget class="Gtk.Entry" id="pwCTextBox">
                 <property name="MemberName" />
+                <property name="Visible">False</property>
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
                 <property name="Visibility">False</property>
@@ -1110,8 +1115,9 @@ Unternehmen</property>
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Label" id="pwdCLaebel">
+              <widget class="Gtk.Label" id="pwdCLabel">
                 <property name="MemberName" />
+                <property name="Visible">False</property>
                 <property name="Xalign">0</property>
                 <property name="LabelProp" translatable="yes">Passwort bestätigen:</property>
               </widget>
@@ -1130,8 +1136,30 @@ Unternehmen</property>
               </packing>
             </child>
             <child>
+              <widget class="Gtk.Image" id="pwdCPictureBox">
+                <property name="MemberName" />
+                <property name="Visible">False</property>
+              </widget>
+              <packing>
+                <property name="TopAttach">1</property>
+                <property name="BottomAttach">2</property>
+                <property name="LeftAttach">2</property>
+                <property name="RightAttach">3</property>
+                <property name="AutoSize">True</property>
+                <property name="XOptions">Fill</property>
+                <property name="YOptions">Fill</property>
+                <property name="XExpand">False</property>
+                <property name="XFill">True</property>
+                <property name="XShrink">False</property>
+                <property name="YExpand">False</property>
+                <property name="YFill">True</property>
+                <property name="YShrink">False</property>
+              </packing>
+            </child>
+            <child>
               <widget class="Gtk.Label" id="pwdLabel">
                 <property name="MemberName" />
+                <property name="Visible">False</property>
                 <property name="Xalign">0</property>
                 <property name="LabelProp" translatable="yes">Passwort: </property>
               </widget>
@@ -1148,8 +1176,29 @@ Unternehmen</property>
               </packing>
             </child>
             <child>
+              <widget class="Gtk.Image" id="pwPictureBox">
+                <property name="MemberName" />
+                <property name="Visible">False</property>
+                <property name="Pixbuf">stock:gtk-yes Menu</property>
+              </widget>
+              <packing>
+                <property name="LeftAttach">2</property>
+                <property name="RightAttach">3</property>
+                <property name="AutoSize">True</property>
+                <property name="XOptions">Fill</property>
+                <property name="YOptions">Fill</property>
+                <property name="XExpand">False</property>
+                <property name="XFill">True</property>
+                <property name="XShrink">False</property>
+                <property name="YExpand">False</property>
+                <property name="YFill">True</property>
+                <property name="YShrink">False</property>
+              </packing>
+            </child>
+            <child>
               <widget class="Gtk.Entry" id="pwTextBox">
                 <property name="MemberName" />
+                <property name="Visible">False</property>
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
                 <property name="Visibility">False</property>

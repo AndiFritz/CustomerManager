@@ -46,8 +46,10 @@ namespace CustomerManager
 		private global::Gtk.HSeparator hseparator2;
 		private global::Gtk.Table newUserTable;
 		private global::Gtk.Entry pwCTextBox;
-		private global::Gtk.Label pwdCLaebel;
+		private global::Gtk.Label pwdCLabel;
+		private global::Gtk.Image pwdCPictureBox;
 		private global::Gtk.Label pwdLabel;
+		private global::Gtk.Image pwPictureBox;
 		private global::Gtk.Entry pwTextBox;
 		
 		protected virtual void Build ()
@@ -56,32 +58,32 @@ namespace CustomerManager
 			// Widget CustomerManager.CustomerWindow
 			this.UIManager = new global::Gtk.UIManager ();
 			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
-			this.UIManager.InsertActionGroup (w1, 0);
-			global::Gtk.ActionGroup w2 = new global::Gtk.ActionGroup ("Default");
 			this.applyAction = new global::Gtk.Action ("applyAction", global::Mono.Unix.Catalog.GetString ("bestätigen"), null, "gtk-apply");
 			this.applyAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("bestätigen");
-			w2.Add (this.applyAction, null);
+			w1.Add (this.applyAction, null);
 			this.closeAction = new global::Gtk.Action ("closeAction", global::Mono.Unix.Catalog.GetString ("abbrechen"), global::Mono.Unix.Catalog.GetString ("Fenster wird geschlossen"), "gtk-close");
 			this.closeAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("abbrechen");
-			w2.Add (this.closeAction, null);
+			w1.Add (this.closeAction, null);
 			this.clearAction = new global::Gtk.Action ("clearAction", global::Mono.Unix.Catalog.GetString ("leeren"), global::Mono.Unix.Catalog.GetString ("alle Eintragungen werden gelöscht"), "gtk-clear");
 			this.clearAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("leeren");
-			w2.Add (this.clearAction, null);
+			w1.Add (this.clearAction, null);
 			this.dialogQuestionAction = new global::Gtk.Action ("dialogQuestionAction", global::Mono.Unix.Catalog.GetString ("Hilfe"), global::Mono.Unix.Catalog.GetString ("Hilfe anzeigen"), "gtk-dialog-question");
 			this.dialogQuestionAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hilfe");
-			w2.Add (this.dialogQuestionAction, null);
+			w1.Add (this.dialogQuestionAction, null);
 			this.applyAddTB = new global::Gtk.Action ("applyAddTB", global::Mono.Unix.Catalog.GetString ("bestätigen"), null, "gtk-apply");
 			this.applyAddTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("bestätigen");
-			w2.Add (this.applyAddTB, null);
+			w1.Add (this.applyAddTB, null);
 			this.closeTB = new global::Gtk.Action ("closeTB", global::Mono.Unix.Catalog.GetString ("abbrechen"), global::Mono.Unix.Catalog.GetString ("alles abbrechen und Fenster schließen"), "gtk-close");
 			this.closeTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("abbrechen");
-			w2.Add (this.closeTB, null);
+			w1.Add (this.closeTB, null);
 			this.clearTB = new global::Gtk.Action ("clearTB", global::Mono.Unix.Catalog.GetString ("leeren"), global::Mono.Unix.Catalog.GetString ("alle Eintragungen löschen"), "gtk-clear");
 			this.clearTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("leeren");
-			w2.Add (this.clearTB, null);
+			w1.Add (this.clearTB, null);
 			this.dialogQuestionTB = new global::Gtk.Action ("dialogQuestionTB", global::Mono.Unix.Catalog.GetString ("Hilfe"), null, "gtk-dialog-question");
 			this.dialogQuestionTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hilfe");
-			w2.Add (this.dialogQuestionTB, null);
+			w1.Add (this.dialogQuestionTB, null);
+			this.UIManager.InsertActionGroup (w1, 0);
+			global::Gtk.ActionGroup w2 = new global::Gtk.ActionGroup ("Default");
 			this.UIManager.InsertActionGroup (w2, 1);
 			this.AddAccelGroup (this.UIManager.AccelGroup);
 			this.Name = "CustomerManager.CustomerWindow";
@@ -442,7 +444,7 @@ namespace CustomerManager
 			global::Gtk.Box.BoxChild w32 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hseparator2]));
 			w32.Position = 3;
 			// Container child vbox1.Gtk.Box+BoxChild
-			this.newUserTable = new global::Gtk.Table (((uint)(2)), ((uint)(2)), false);
+			this.newUserTable = new global::Gtk.Table (((uint)(2)), ((uint)(3)), false);
 			this.newUserTable.Name = "newUserTable";
 			this.newUserTable.RowSpacing = ((uint)(6));
 			this.newUserTable.ColumnSpacing = ((uint)(6));
@@ -461,25 +463,46 @@ namespace CustomerManager
 			w33.RightAttach = ((uint)(2));
 			w33.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child newUserTable.Gtk.Table+TableChild
-			this.pwdCLaebel = new global::Gtk.Label ();
-			this.pwdCLaebel.Name = "pwdCLaebel";
-			this.pwdCLaebel.Xalign = 0F;
-			this.pwdCLaebel.LabelProp = global::Mono.Unix.Catalog.GetString ("Passwort bestätigen:");
-			this.newUserTable.Add (this.pwdCLaebel);
-			global::Gtk.Table.TableChild w34 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwdCLaebel]));
+			this.pwdCLabel = new global::Gtk.Label ();
+			this.pwdCLabel.Name = "pwdCLabel";
+			this.pwdCLabel.Xalign = 0F;
+			this.pwdCLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Passwort bestätigen:");
+			this.newUserTable.Add (this.pwdCLabel);
+			global::Gtk.Table.TableChild w34 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwdCLabel]));
 			w34.TopAttach = ((uint)(1));
 			w34.BottomAttach = ((uint)(2));
 			w34.XOptions = ((global::Gtk.AttachOptions)(4));
 			w34.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child newUserTable.Gtk.Table+TableChild
+			this.pwdCPictureBox = new global::Gtk.Image ();
+			this.pwdCPictureBox.Name = "pwdCPictureBox";
+			this.newUserTable.Add (this.pwdCPictureBox);
+			global::Gtk.Table.TableChild w35 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwdCPictureBox]));
+			w35.TopAttach = ((uint)(1));
+			w35.BottomAttach = ((uint)(2));
+			w35.LeftAttach = ((uint)(2));
+			w35.RightAttach = ((uint)(3));
+			w35.XOptions = ((global::Gtk.AttachOptions)(4));
+			w35.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child newUserTable.Gtk.Table+TableChild
 			this.pwdLabel = new global::Gtk.Label ();
 			this.pwdLabel.Name = "pwdLabel";
 			this.pwdLabel.Xalign = 0F;
 			this.pwdLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Passwort: ");
 			this.newUserTable.Add (this.pwdLabel);
-			global::Gtk.Table.TableChild w35 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwdLabel]));
-			w35.XOptions = ((global::Gtk.AttachOptions)(4));
-			w35.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w36 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwdLabel]));
+			w36.XOptions = ((global::Gtk.AttachOptions)(4));
+			w36.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child newUserTable.Gtk.Table+TableChild
+			this.pwPictureBox = new global::Gtk.Image ();
+			this.pwPictureBox.Name = "pwPictureBox";
+			this.pwPictureBox.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-yes", global::Gtk.IconSize.Menu);
+			this.newUserTable.Add (this.pwPictureBox);
+			global::Gtk.Table.TableChild w37 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwPictureBox]));
+			w37.LeftAttach = ((uint)(2));
+			w37.RightAttach = ((uint)(3));
+			w37.XOptions = ((global::Gtk.AttachOptions)(4));
+			w37.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child newUserTable.Gtk.Table+TableChild
 			this.pwTextBox = new global::Gtk.Entry ();
 			this.pwTextBox.CanFocus = true;
@@ -488,23 +511,33 @@ namespace CustomerManager
 			this.pwTextBox.Visibility = false;
 			this.pwTextBox.InvisibleChar = '●';
 			this.newUserTable.Add (this.pwTextBox);
-			global::Gtk.Table.TableChild w36 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwTextBox]));
-			w36.LeftAttach = ((uint)(1));
-			w36.RightAttach = ((uint)(2));
-			w36.YOptions = ((global::Gtk.AttachOptions)(4));
+			global::Gtk.Table.TableChild w38 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwTextBox]));
+			w38.LeftAttach = ((uint)(1));
+			w38.RightAttach = ((uint)(2));
+			w38.YOptions = ((global::Gtk.AttachOptions)(4));
 			this.vbox1.Add (this.newUserTable);
-			global::Gtk.Box.BoxChild w37 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.newUserTable]));
-			w37.Position = 4;
-			w37.Expand = false;
-			w37.Fill = false;
+			global::Gtk.Box.BoxChild w39 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.newUserTable]));
+			w39.Position = 4;
+			w39.Expand = false;
+			w39.Fill = false;
 			this.Add (this.vbox1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 680;
 			this.DefaultHeight = 696;
+			this.hseparator2.Hide ();
+			this.pwCTextBox.Hide ();
+			this.pwdCLabel.Hide ();
+			this.pwdCPictureBox.Hide ();
+			this.pwdLabel.Hide ();
+			this.pwPictureBox.Hide ();
+			this.pwTextBox.Hide ();
 			this.Show ();
+			this.applyAddTB.Activated += new global::System.EventHandler (this.OnApplyAddTBActivated);
 			this.closeTB.Activated += new global::System.EventHandler (this.OnCloseTBActivated);
+			this.clearTB.Activated += new global::System.EventHandler (this.OnClearTBActivated);
+			this.dialogQuestionTB.Activated += new global::System.EventHandler (this.OnDialogQuestionTBActivated);
 			this.pwCTextBox.Changed += new global::System.EventHandler (this.OnPwCTextBoxChanged);
 		}
 	}
