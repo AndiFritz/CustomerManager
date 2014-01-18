@@ -2,13 +2,10 @@ using System;
 
 namespace CustomerManager
 {
-	public partial class Project : Gtk.Window
+	public class Project
 	{
-		public Project () : 
-			base (Gtk.WindowType.Toplevel)
+		public Project ()
 		{
-			this.Build ();
-			this.Title = "Neues Projekt";
 		}
 	}
 }

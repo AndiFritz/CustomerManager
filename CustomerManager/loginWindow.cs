@@ -23,8 +23,14 @@ namespace CustomerManager
 			string username = unameTextBox.Text; 
 			string password = pwdTextBox.Text; 
 
-			Connection con = new Connection();
-			con.login (username, password);
+			Connection con = new Connection ();
+			bool loginAccept = con.login (username, password);
+
+			if (loginAccept == true) {
+				MainWindow mw = new MainWindow(); 
+				this.Destroy ();
+				mw.ShowAll ();
+			}
 		}
 
 		protected void OnExitButtonClicked (object sender, EventArgs e)

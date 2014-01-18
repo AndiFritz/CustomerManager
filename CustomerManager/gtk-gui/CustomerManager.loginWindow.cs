@@ -81,6 +81,7 @@ namespace CustomerManager
 			this.unameTextBox.CanFocus = true;
 			this.unameTextBox.Name = "unameTextBox";
 			this.unameTextBox.IsEditable = true;
+			this.unameTextBox.InvisibleChar = '●';
 			this.fixed8.Add (this.unameTextBox);
 			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.unameTextBox]));
 			w5.X = 123;
@@ -92,6 +93,7 @@ namespace CustomerManager
 			this.pwdTextBox.IsEditable = true;
 			this.pwdTextBox.MaxLength = 20;
 			this.pwdTextBox.Visibility = false;
+			this.pwdTextBox.InvisibleChar = '●';
 			this.fixed8.Add (this.pwdTextBox);
 			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.pwdTextBox]));
 			w6.X = 123;
