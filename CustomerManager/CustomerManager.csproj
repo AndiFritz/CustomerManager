@@ -70,13 +70,17 @@
     <Compile Include="loginWindow.cs" />
     <Compile Include="gtk-gui\CustomerManager.loginWindow.cs" />
     <Compile Include="Connection.cs" />
-    <Compile Include="gtk-gui\CustomerManager.Project.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerWindow.cs" />
     <Compile Include="gtk-gui\CustomerManager.CustomerWindow.cs" />
     <Compile Include="gtk-gui\CustomerManager.test.cs" />
+    <Compile Include="Supplier.cs" />
+    <Compile Include="SupplierWindow.cs" />
+    <Compile Include="gtk-gui\CustomerManager.SupplierWindow.cs" />
+    <Compile Include="Projects.cs" />
+    <Compile Include="gtk-gui\CustomerManager.Project.cs" />
     <Compile Include="ProjectWindow.cs" />
-    <Compile Include="Project.cs" />
+    <Compile Include="gtk-gui\CustomerManager.ProjectWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

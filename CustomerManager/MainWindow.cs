@@ -21,8 +21,8 @@ public partial class MainWindow: Gtk.Window
 //		MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "neuer Benutzer hinzufügen!");
 //		md.Run();
 //		md.Destroy();
-		Project projectWindow = new Project();
-		projectWindow.Show();
+//		ProjectWindow projectWindow = new ProjectWindow();
+//		projectWindow.Show();
 	}
 
 }

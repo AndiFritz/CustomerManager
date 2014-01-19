@@ -2,9 +2,9 @@ using System;
 
 namespace CustomerManager
 {
-	public partial class ProjectWindow : Gtk.Window
+	public partial class SupplierWindow : Gtk.Window
 	{
-		public ProjectWindow () : 
+		public SupplierWindow () : 
 				base(Gtk.WindowType.Toplevel)
 		{
 			this.Build ();

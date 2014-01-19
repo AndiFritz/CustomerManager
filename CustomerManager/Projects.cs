@@ -2,9 +2,9 @@ using System;
 
 namespace CustomerManager
 {
-	public class Project
+	public class Projects
 	{
-		public Project ()
+		public Projects ()
 		{
 		}
 	}
