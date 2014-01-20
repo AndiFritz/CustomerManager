@@ -15,7 +15,7 @@ namespace CustomerManager
 		protected void OnPwCTextBoxChanged (object sender, EventArgs e)
 		{
 		}
-
+		#region Login 
 		public void addUser()
 		{
 			this.headerLabel.Text = "Neuer Benutzer ersellen:";
@@ -43,7 +43,7 @@ namespace CustomerManager
 			this.headerLabel.Text = "Neuer Kunde ersellen:";
 			this.Show ();
 		}
-
+		#endregion
 		protected void OnApplyAddTBActivated (object sender, EventArgs e)
 		{
 			throw new System.NotImplementedException ();

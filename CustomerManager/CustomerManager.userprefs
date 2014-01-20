@@ -1,6 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CustomerWindow.cs">
     <Files>
       <File FileName="loginWindow.cs" Line="23" Column="34" />
       <File FileName="Connection.cs" Line="7" Column="26" />
