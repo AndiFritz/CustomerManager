@@ -6,10 +6,12 @@ namespace CustomerManager
 	{
 		public Customer ()
 		{
+			sqlite_conn = new SqliteConnection ("Data Source="+System.Environment.CurrentDirectory.ToString()+"/customerManager.sqlite3");
 		}
 
 		public bool addCustomer() // Kunde hinzufügen 
-		{
+		{	
+
 		}
 		 
 		public bool dropCustomer() // Kunde löschen
