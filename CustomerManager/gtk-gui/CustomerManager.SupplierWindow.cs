@@ -4,13 +4,116 @@ namespace CustomerManager
 {
 	public partial class SupplierWindow
 	{
+		private global::Gtk.UIManager UIManager;
+		private global::Gtk.Action applyAction;
+		private global::Gtk.Action closeAction;
+		private global::Gtk.Action clearAction;
+		private global::Gtk.Action dialogQuestionAction;
+		private global::Gtk.VBox vbox2;
+		private global::Gtk.Toolbar toolbar1;
+		private global::Gtk.Table table4;
+		private global::Gtk.Entry entry2;
+		private global::Gtk.Entry entry3;
+		private global::Gtk.Label label2;
+		private global::Gtk.Label label3;
+		private global::Gtk.Label label4;
+		
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
 			// Widget CustomerManager.SupplierWindow
+			this.UIManager = new global::Gtk.UIManager ();
+			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
+			this.applyAction = new global::Gtk.Action ("applyAction", null, null, "gtk-apply");
+			w1.Add (this.applyAction, null);
+			this.closeAction = new global::Gtk.Action ("closeAction", null, null, "gtk-close");
+			w1.Add (this.closeAction, null);
+			this.clearAction = new global::Gtk.Action ("clearAction", null, null, "gtk-clear");
+			w1.Add (this.clearAction, null);
+			this.dialogQuestionAction = new global::Gtk.Action ("dialogQuestionAction", null, null, "gtk-dialog-question");
+			w1.Add (this.dialogQuestionAction, null);
+			this.UIManager.InsertActionGroup (w1, 0);
+			this.AddAccelGroup (this.UIManager.AccelGroup);
 			this.Name = "CustomerManager.SupplierWindow";
 			this.Title = global::Mono.Unix.Catalog.GetString ("SupplierWindow");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+			// Container child CustomerManager.SupplierWindow.Gtk.Container+ContainerChild
+			this.vbox2 = new global::Gtk.VBox ();
+			this.vbox2.Name = "vbox2";
+			this.vbox2.Spacing = 6;
+			// Container child vbox2.Gtk.Box+BoxChild
+			this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'><toolitem name='applyAction' action='applyAction'/><toolitem name='closeAction' action='closeAction'/><separator/><toolitem name='clearAction' action='clearAction'/><toolitem name='dialogQuestionAction' action='dialogQuestionAction'/></toolbar></ui>");
+			this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar1")));
+			this.toolbar1.Name = "toolbar1";
+			this.toolbar1.ShowArrow = false;
+			this.vbox2.Add (this.toolbar1);
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.toolbar1]));
+			w2.Position = 0;
+			w2.Expand = false;
+			w2.Fill = false;
+			// Container child vbox2.Gtk.Box+BoxChild
+			this.table4 = new global::Gtk.Table (((uint)(3)), ((uint)(3)), false);
+			this.table4.Name = "table4";
+			this.table4.RowSpacing = ((uint)(6));
+			this.table4.ColumnSpacing = ((uint)(6));
+			// Container child table4.Gtk.Table+TableChild
+			this.entry2 = new global::Gtk.Entry ();
+			this.entry2.CanFocus = true;
+			this.entry2.Name = "entry2";
+			this.entry2.IsEditable = true;
+			this.entry2.InvisibleChar = '●';
+			this.table4.Add (this.entry2);
+			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.table4 [this.entry2]));
+			w3.LeftAttach = ((uint)(1));
+			w3.RightAttach = ((uint)(2));
+			w3.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child table4.Gtk.Table+TableChild
+			this.entry3 = new global::Gtk.Entry ();
+			this.entry3.CanFocus = true;
+			this.entry3.Name = "entry3";
+			this.entry3.IsEditable = true;
+			this.entry3.InvisibleChar = '●';
+			this.table4.Add (this.entry3);
+			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.table4 [this.entry3]));
+			w4.TopAttach = ((uint)(1));
+			w4.BottomAttach = ((uint)(2));
+			w4.LeftAttach = ((uint)(1));
+			w4.RightAttach = ((uint)(2));
+			w4.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child table4.Gtk.Table+TableChild
+			this.label2 = new global::Gtk.Label ();
+			this.label2.Name = "label2";
+			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("label2");
+			this.table4.Add (this.label2);
+			global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.table4 [this.label2]));
+			w5.XOptions = ((global::Gtk.AttachOptions)(4));
+			w5.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child table4.Gtk.Table+TableChild
+			this.label3 = new global::Gtk.Label ();
+			this.label3.Name = "label3";
+			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("label3");
+			this.table4.Add (this.label3);
+			global::Gtk.Table.TableChild w6 = ((global::Gtk.Table.TableChild)(this.table4 [this.label3]));
+			w6.TopAttach = ((uint)(1));
+			w6.BottomAttach = ((uint)(2));
+			w6.XOptions = ((global::Gtk.AttachOptions)(4));
+			w6.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child table4.Gtk.Table+TableChild
+			this.label4 = new global::Gtk.Label ();
+			this.label4.Name = "label4";
+			this.label4.LabelProp = global::Mono.Unix.Catalog.GetString ("label4");
+			this.table4.Add (this.label4);
+			global::Gtk.Table.TableChild w7 = ((global::Gtk.Table.TableChild)(this.table4 [this.label4]));
+			w7.TopAttach = ((uint)(2));
+			w7.BottomAttach = ((uint)(3));
+			w7.XOptions = ((global::Gtk.AttachOptions)(4));
+			w7.YOptions = ((global::Gtk.AttachOptions)(4));
+			this.vbox2.Add (this.table4);
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.table4]));
+			w8.Position = 1;
+			w8.Expand = false;
+			w8.Fill = false;
+			this.Add (this.vbox2);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}

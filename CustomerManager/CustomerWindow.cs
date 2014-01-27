@@ -1,6 +1,7 @@
 using System;
 using System.Drawing; 
 using System.Drawing.Design;
+using HollyLibrary;
 
 namespace CustomerManager
 {
@@ -12,12 +13,10 @@ namespace CustomerManager
 			this.Build ();
 		}
 
-		protected void OnPwCTextBoxChanged (object sender, EventArgs e)
-		{
-		}
 		#region Login 
 		public void addUser()
 		{
+
 			this.headerLabel.Text = "Neuer Benutzer ersellen:";
 
 			#region Passwortbereich einschalten
@@ -30,7 +29,7 @@ namespace CustomerManager
 			
 			pwdCLabel.Visible = true; 
 			pwdCLabel.Sensitive = true; 
-			
+
 			pwCTextBox.Visible = true; 
 			pwCTextBox.Sensitive = true; 
 			#endregion
@@ -46,7 +45,12 @@ namespace CustomerManager
 		#endregion
 		protected void OnApplyAddTBActivated (object sender, EventArgs e)
 		{
-			throw new System.NotImplementedException ();
+			Connection con = new Connection ();
+
+			if (pwCTextBox.Visibility == true) {
+				con.addUser(vnameTextBox.Text, nnameTextBox.Text, uname
+			}
+
 		}
 
 		protected void OnCloseTBActivated (object sender, EventArgs e)

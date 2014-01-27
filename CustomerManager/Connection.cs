@@ -15,9 +15,10 @@ namespace CustomerManager
 		public Connection ()
 		{
 			sqlite_conn = new SqliteConnection ("Data Source="+System.Environment.CurrentDirectory.ToString()+"/customerManager.sqlite3");
-
 		}
-	
+
+
+		#region Login
 		public bool login (string uname, string pwd)
 		{
 			try 
@@ -155,6 +156,44 @@ namespace CustomerManager
 				return false; 
 			}
 		}
+		#endregion
+
+		#region Userkonfigurationen
+		public bool addUser(string vname, string nname, string uname, string password, string email, string telnumber, string mobilenumber, string country, string regidate) //Benutzer im System hinzufügen
+		{
+			try {
+
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				
+				sqlite_cmd.CommandText = "INSERT into tbl_users(vname, nname, username, password, email, telnumber, mobilenumber, country, registrationdate) VALUES ('"+vname+"', '"+nname+"', '"+uname+"','"+password+"','"+email+"','"+telnumber+"','"+mobilenumber+"','"+country+"','"+regidate+"')";
+				
+				sqlite_conn.Open();
+
+				sqlite_cmd.ExecuteNonQuery();
+
+				return true; 
+
+			} catch (Exception ex) {
+				return false; 
+			}
+		}
+
+		public bool dropUser() // Benutzer im System löschen
+		{
+
+		}
+
+		public bool viewUser() // Benutzer anzeigen
+		{
+
+		}
+
+		public bool viewUsers () // Alle Benutzer im System anzeigen
+		{
+
+		}
+		#endregion
+
 	}
 }
 
