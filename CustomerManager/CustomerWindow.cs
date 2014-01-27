@@ -48,7 +48,7 @@ namespace CustomerManager
 			Connection con = new Connection ();
 
 			if (pwCTextBox.Visibility == true) {
-				con.addUser(vnameTextBox.Text, nnameTextBox.Text, uname
+				con.addUser(vnameTextBox.Text, nnameTextBox.Text, usernameTextBox.Text , pwTextBox.Text, emailTextBox.Text, phoneTextBox.Text, mobileTextBox.Text, plzTextBox.Text, villageTextBox.Text, streetTextBox.Text, hnrTextBox.Text, regidate); 
 			}
 
 		}
