@@ -1,4 +1,5 @@
 using System;
+using Mono.Data;
 
 namespace CustomerManager
 {
@@ -6,16 +7,17 @@ namespace CustomerManager
 	{
 		public Customer ()
 		{
-			//sqlite_conn = new SqliteConnection ("Data Source="+System.Environment.CurrentDirectory.ToString()+"/customerManager.sqlite3");
+			sqlite_conn = new SqliteConnection ("Data Source="+System.Environment.CurrentDirectory.ToString()+"/customerManager.sqlite3");
 		}
 
-		public bool addCustomer() // Kunde hinzufügen 
+		public bool addCustomer(string gender, string nname, string vname,string typ, string email, string telnumber, string mobilenumber, int plz, string country, string street, string hnr) // Kunde hinzufügen 
 		{	
+
 			try
 			{
-			sqlite_cmd = sqlite_conn.CreateCommand ();
+				sqlite_cmd = sqlite_conn.CreateCommand (); 
 
-				sqlite_cmd.CommandText = "INSERT into tbl_customers()";
+				sqlite_cmd.CommandText = "INSERT into tbl_customers(vname,nname,typ,email,telnumber,mobilenumber,plz,country,hnr,street,registrationdate,gender) VALUE (')";
 			}
 
 			catch
@@ -23,17 +25,6 @@ namespace CustomerManager
 
 			}
 
-			try
-			{
-			sqlite_cmd = sqlite_conn.CreateCommand ();
-
-				sqlite_cmd.CommandText = "INSERT into tbl_customers(id,vname,nname,typ,email,telnumber,mobilenumber,plz,country,hnr,street,registrationdate,gender)";
-			}
-
-			catch
-			{
-
-			}
 
 		}
 		 

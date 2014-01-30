@@ -4,3 +4,4 @@ C:\Users\Andreas\Documents\GitHub\CustomerManager\CustomerManager\bin\Debug\Cust
 C:\Users\Andreas\Documents\GitHub\CustomerManager\CustomerManager\bin\Debug\CustomerManager.exe
 C:\Users\Andreas\Documents\GitHub\CustomerManager\CustomerManager\obj\x86\Debug\CustomerManager.exe
 C:\Users\Andreas\Documents\GitHub\CustomerManager\CustomerManager\obj\x86\Debug\CustomerManager.exe.mdb
+C:\Users\Andreas\Documents\GitHub\CustomerManager\CustomerManager\bin\Debug\HollyLibrary.dll
