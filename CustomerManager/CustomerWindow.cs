@@ -1,4 +1,5 @@
 using System;
+using Gtk;
 using System.Drawing; 
 using System.Drawing.Design;
 using HollyLibrary;
@@ -53,8 +54,19 @@ namespace CustomerManager
 		{
 			Connection con = new Connection ();
 
-			if (pwCTextBox.Visibility == true) {
-				//con.addUser(vnameTextBox.Text, nnameTextBox.Text, usernameTextBox.Text , pwTextBox.Text, emailTextBox.Text, phoneTextBox.Text, mobileTextBox.Text, plzTextBox.Text, villageTextBox.Text, streetTextBox.Text, hnrTextBox.Text, regidate); 
+			if (pwTextBox.Visible == true && pwdCLabel.Visible == true) { // Wenn Passwort - TextBoxen angezeigt werden, dann wird ein neuer Bentzer erstellt
+
+				DateTime regidate = DateTimeKind.Local;
+
+				bool ok = checkTextBoxValue ("user"); //prüft den Inhalt der TextBoxen 
+
+				if (ok == true) {
+					con.addUser (vnameTextBox.Text, nnameTextBox.Text, usernameTextBox.Text, pwTextBox.Text, emailTextBox.Text, phoneTextBox.Text, mobileTextBox.Text, plzTextBox.Text, villageTextBox.Text, streetTextBox.Text, hnrTextBox.Text, regidate); 
+				}
+				else
+				{
+					MessageDialog md = new MessageDialog(this, 
+				}
 			}
 
 		}
@@ -82,6 +94,35 @@ namespace CustomerManager
 		protected void OnDialogQuestionTBActivated (object sender, EventArgs e)
 		{
 			throw new System.NotImplementedException ();
+		}
+
+		private bool checkTextBoxValue (string typ)
+		{
+			if (typ == "user") {
+				if (genderCB.ActiveText != "" && nnameTextBox.Text != "" && vnameTextBox.Text != "" && typCB.ActiveText != "" && companyCBE.ActiveText != "" && emailTextBox.Text != "" && phoneTextBox.Text != "" && mobileTextBox.Text != "" && plzTextBox.Text != "" && villageTextBox.Text != "" && streetTextBox.Text != "" && hnrTextBox.Text != "" && usernameTextBox.Text != "" && pwTextBox.Text != "" && pwCTextBox.Text != "") 
+				{
+					return true; 
+				}
+				else
+				{
+					return false; 
+				}
+			} 
+			else 
+			{
+				if (genderCB.ActiveText != "" && nnameTextBox.Text != "" && vnameTextBox.Text != "" && typCB.ActiveText != "" && companyCBE.ActiveText != "" && emailTextBox.Text != "" && phoneTextBox.Text != "" && mobileTextBox.Text != "" && plzTextBox.Text != "" && villageTextBox.Text != "" && streetTextBox.Text != "" && hnrTextBox.Text != "") 
+				{
+					return true; 
+				}
+				else
+				{
+					return false; 
+				}
+			}
+
+
+
+
 		}
 
 	}

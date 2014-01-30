@@ -83,7 +83,6 @@
     <Compile Include="Projects.cs" />
     <Compile Include="gtk-gui\CustomerManager.Project.cs" />
     <Compile Include="gtk-gui\CustomerManager.ProjectWindow.cs" />
-    <Compile Include="ProjectWindow.cs" />
     <Compile Include="ProjectsWindow.cs" />
     <Compile Include="gtk-gui\CustomerManager.ProjectsWindow.cs" />
   </ItemGroup>
