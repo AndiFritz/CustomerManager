@@ -87,10 +87,10 @@ namespace CustomerManager
 			w4.Fill = false;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.valueTable = new global::Gtk.Table (((uint)(6)), ((uint)(3)), false);
-			this.valueTable.Name = "valueTabel";
+			this.valueTable.Name = "valueTable";
 			this.valueTable.RowSpacing = ((uint)(6));
 			this.valueTable.ColumnSpacing = ((uint)(6));
-			// Container child valueTabel.Gtk.Table+TableChild
+			// Container child valueTable.Gtk.Table+TableChild
 			this.customerCB = global::Gtk.ComboBox.NewText ();
 			this.customerCB.Name = "customerCB";
 			this.valueTable.Add (this.customerCB);
@@ -101,7 +101,7 @@ namespace CustomerManager
 			w5.RightAttach = ((uint)(2));
 			w5.XOptions = ((global::Gtk.AttachOptions)(4));
 			w5.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child valueTabel.Gtk.Table+TableChild
+			// Container child valueTable.Gtk.Table+TableChild
 			this.customerLabel = new global::Gtk.Label ();
 			this.customerLabel.Name = "customerLabel";
 			this.customerLabel.Xalign = 0F;
@@ -112,7 +112,7 @@ namespace CustomerManager
 			w6.BottomAttach = ((uint)(4));
 			w6.XOptions = ((global::Gtk.AttachOptions)(4));
 			w6.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child valueTabel.Gtk.Table+TableChild
+			// Container child valueTable.Gtk.Table+TableChild
 			this.endDateLabel = new global::Gtk.Label ();
 			this.endDateLabel.Name = "endDateLabel";
 			this.endDateLabel.Xalign = 0F;
@@ -123,7 +123,7 @@ namespace CustomerManager
 			w7.BottomAttach = ((uint)(3));
 			w7.XOptions = ((global::Gtk.AttachOptions)(4));
 			w7.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child valueTabel.Gtk.Table+TableChild
+			// Container child valueTable.Gtk.Table+TableChild
 			this.nameLabel = new global::Gtk.Label ();
 			this.nameLabel.Name = "nameLabel";
 			this.nameLabel.Xalign = 0F;
@@ -132,7 +132,7 @@ namespace CustomerManager
 			global::Gtk.Table.TableChild w8 = ((global::Gtk.Table.TableChild)(this.valueTable [this.nameLabel]));
 			w8.XOptions = ((global::Gtk.AttachOptions)(4));
 			w8.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child valueTabel.Gtk.Table+TableChild
+			// Container child valueTable.Gtk.Table+TableChild
 			this.newCustomerButton = new global::Gtk.Button ();
 			this.newCustomerButton.CanFocus = true;
 			this.newCustomerButton.Name = "newCustomerButton";
@@ -146,7 +146,7 @@ namespace CustomerManager
 			w9.RightAttach = ((uint)(3));
 			w9.XOptions = ((global::Gtk.AttachOptions)(4));
 			w9.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child valueTabel.Gtk.Table+TableChild
+			// Container child valueTable.Gtk.Table+TableChild
 			this.newSupplierButton = new global::Gtk.Button ();
 			this.newSupplierButton.CanFocus = true;
 			this.newSupplierButton.Name = "newSupplierButton";
@@ -160,7 +160,7 @@ namespace CustomerManager
 			w10.RightAttach = ((uint)(3));
 			w10.XOptions = ((global::Gtk.AttachOptions)(4));
 			w10.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child valueTabel.Gtk.Table+TableChild
+			// Container child valueTable.Gtk.Table+TableChild
 			this.projectNameTextBox = new global::Gtk.Entry ();
 			this.projectNameTextBox.CanFocus = true;
 			this.projectNameTextBox.Name = "projectNameTextBox";
@@ -172,7 +172,7 @@ namespace CustomerManager
 			w11.RightAttach = ((uint)(2));
 			w11.XOptions = ((global::Gtk.AttachOptions)(4));
 			w11.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child valueTabel.Gtk.Table+TableChild
+			// Container child valueTable.Gtk.Table+TableChild
 			this.startdateLabel = new global::Gtk.Label ();
 			this.startdateLabel.Name = "startdateLabel";
 			this.startdateLabel.Xalign = 0F;
@@ -183,7 +183,7 @@ namespace CustomerManager
 			w12.BottomAttach = ((uint)(2));
 			w12.XOptions = ((global::Gtk.AttachOptions)(4));
 			w12.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child valueTabel.Gtk.Table+TableChild
+			// Container child valueTable.Gtk.Table+TableChild
 			this.supplierCB = global::Gtk.ComboBox.NewText ();
 			this.supplierCB.Name = "supplierCB";
 			this.valueTable.Add (this.supplierCB);
@@ -194,7 +194,7 @@ namespace CustomerManager
 			w13.RightAttach = ((uint)(2));
 			w13.XOptions = ((global::Gtk.AttachOptions)(4));
 			w13.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child valueTabel.Gtk.Table+TableChild
+			// Container child valueTable.Gtk.Table+TableChild
 			this.supplierLabel = new global::Gtk.Label ();
 			this.supplierLabel.Name = "supplierLabel";
 			this.supplierLabel.Xalign = 0F;
@@ -205,7 +205,7 @@ namespace CustomerManager
 			w14.BottomAttach = ((uint)(5));
 			w14.XOptions = ((global::Gtk.AttachOptions)(4));
 			w14.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child valueTabel.Gtk.Table+TableChild
+			// Container child valueTable.Gtk.Table+TableChild
 			this.userCBE = global::Gtk.ComboBoxEntry.NewText ();
 			this.userCBE.Name = "userCBE";
 			this.valueTable.Add (this.userCBE);
@@ -216,7 +216,7 @@ namespace CustomerManager
 			w15.RightAttach = ((uint)(2));
 			w15.XOptions = ((global::Gtk.AttachOptions)(4));
 			w15.YOptions = ((global::Gtk.AttachOptions)(4));
-			// Container child valueTabel.Gtk.Table+TableChild
+			// Container child valueTable.Gtk.Table+TableChild
 			this.userLabel = new global::Gtk.Label ();
 			this.userLabel.Name = "userLabel";
 			this.userLabel.Xalign = 0F;
