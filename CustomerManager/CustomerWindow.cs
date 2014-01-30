@@ -56,7 +56,7 @@ namespace CustomerManager
 
 			if (pwTextBox.Visible == true && pwdCLabel.Visible == true) { // Wenn Passwort - TextBoxen angezeigt werden, dann wird ein neuer Bentzer erstellt
 
-				DateTime regidate = new DateTime(DateTime.Now); 
+				DateTime regidate = new DateTime();
 
 
 				bool ok = checkTextBoxValue ("user"); //prüft den Inhalt der TextBoxen 
