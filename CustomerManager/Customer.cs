@@ -11,7 +11,17 @@ namespace CustomerManager
 
 		public bool addCustomer() // Kunde hinzufügen 
 		{	
+			try
+			{
+			sqlite_cmd = sqlite_conn.CreateCommand ();
 
+				sqlite_cmd.CommandText = "INSERT into tbl_customers()";
+			}
+
+			catch
+			{
+
+			}
 		}
 		 
 		public bool dropCustomer() // Kunde löschen
