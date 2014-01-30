@@ -11,6 +11,7 @@ namespace CustomerManager
 
 		public bool addCustomer() // Kunde hinzufügen 
 		{	
+
 //			try
 //			{
 //			sqlite_cmd = sqlite_conn.CreateCommand ();
@@ -22,6 +23,7 @@ namespace CustomerManager
 //			{
 //
 //			}
+
 
 		}
 		 
