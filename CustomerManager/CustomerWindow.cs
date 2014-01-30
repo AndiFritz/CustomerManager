@@ -65,7 +65,7 @@ namespace CustomerManager
 				}
 				else
 				{
-					MessageDialog md = new MessageDialog(this, 
+					MessageDialog md = new MessageDialog(this, DialogFlags.Modal, 
 				}
 			}
 
