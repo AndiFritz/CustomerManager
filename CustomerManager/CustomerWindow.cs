@@ -65,7 +65,7 @@ namespace CustomerManager
 				}
 				else
 				{
-					MessageDialog md = new MessageDialog(this, DialogFlags.Modal, 
+					MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Bitte füllen sie alle Felder aus!");
 				}
 			}
 
