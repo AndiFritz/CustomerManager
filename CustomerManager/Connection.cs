@@ -162,7 +162,6 @@ namespace CustomerManager
 		public bool addUser(string vname, string nname, string uname, string password, string email, string telnumber, string mobilenumber, string country, string regidate) //Benutzer im System hinzufügen
 		{
 			try {
-
 				sqlite_cmd = sqlite_conn.CreateCommand ();
 				
 				sqlite_cmd.CommandText = "INSERT into tbl_users(vname, nname, username, password, email, telnumber, mobilenumber, country, registrationdate) VALUES ('"+vname+"', '"+nname+"', '"+uname+"','"+password+"','"+email+"','"+telnumber+"','"+mobilenumber+"','"+country+"','"+regidate+"')";
@@ -180,17 +179,17 @@ namespace CustomerManager
 
 		public bool dropUser() // Benutzer im System löschen
 		{
-
+			return true; 
 		}
 
 		public bool viewUser() // Benutzer anzeigen
 		{
-
+			return true; 
 		}
 
 		public bool viewUsers () // Alle Benutzer im System anzeigen
 		{
-
+			return true; 
 		}
 		#endregion
 

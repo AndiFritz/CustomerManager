@@ -384,7 +384,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="CustomerManager.CustomerWindow" design-size="680 741">
+  <widget class="Gtk.Window" id="CustomerManager.CustomerWindow" design-size="680 757">
     <action-group name="Default" />
     <action-group name="Default">
       <action id="applyAction">
@@ -476,13 +476,13 @@
         <child>
           <widget class="Gtk.Fixed" id="headerFixed">
             <property name="MemberName" />
-            <property name="HeightRequest">44</property>
+            <property name="HeightRequest">30</property>
             <property name="HasWindow">False</property>
             <child>
               <widget class="Gtk.Label" id="headerLabel">
                 <property name="MemberName" />
                 <property name="Xalign">0</property>
-                <property name="LabelProp" translatable="yes">Neuer Kunde erstellen: </property>
+                <property name="LabelProp" translatable="yes">Neuer Kunde erstellen</property>
                 <property name="UseMarkup">True</property>
                 <property name="UseUnderline">True</property>
               </widget>
@@ -497,6 +497,15 @@
             <property name="AutoSize">False</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HSeparator" id="hseparator1">
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">False</property>
           </packing>
         </child>
         <child>
@@ -1057,7 +1066,7 @@ Unternehmen</property>
             </child>
           </widget>
           <packing>
-            <property name="Position">2</property>
+            <property name="Position">3</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -1070,18 +1079,19 @@ Unternehmen</property>
             <property name="HasWindow">False</property>
           </widget>
           <packing>
-            <property name="Position">3</property>
+            <property name="Position">4</property>
             <property name="AutoSize">False</property>
           </packing>
         </child>
         <child>
           <widget class="Gtk.Label" id="userdataLabel">
             <property name="MemberName" />
+            <property name="Visible">False</property>
             <property name="Xalign">0</property>
             <property name="LabelProp" translatable="yes">Benutzerdaten</property>
           </widget>
           <packing>
-            <property name="Position">4</property>
+            <property name="Position">5</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -1093,7 +1103,7 @@ Unternehmen</property>
             <property name="Visible">False</property>
           </widget>
           <packing>
-            <property name="Position">5</property>
+            <property name="Position">6</property>
             <property name="AutoSize">False</property>
           </packing>
         </child>
@@ -1122,8 +1132,9 @@ Unternehmen</property>
                 <property name="LeftAttach">1</property>
                 <property name="RightAttach">2</property>
                 <property name="AutoSize">True</property>
+                <property name="XOptions">Fill</property>
                 <property name="YOptions">Fill</property>
-                <property name="XExpand">True</property>
+                <property name="XExpand">False</property>
                 <property name="XFill">True</property>
                 <property name="XShrink">False</property>
                 <property name="YExpand">False</property>
@@ -1183,13 +1194,12 @@ Unternehmen</property>
               <packing>
                 <property name="TopAttach">1</property>
                 <property name="BottomAttach">2</property>
-                <property name="AutoSize">True</property>
+                <property name="AutoSize">False</property>
                 <property name="XOptions">Fill</property>
-                <property name="YOptions">Fill</property>
                 <property name="XExpand">False</property>
                 <property name="XFill">True</property>
                 <property name="XShrink">False</property>
-                <property name="YExpand">False</property>
+                <property name="YExpand">True</property>
                 <property name="YFill">True</property>
                 <property name="YShrink">False</property>
               </packing>
@@ -1230,12 +1240,11 @@ Unternehmen</property>
                 <property name="BottomAttach">2</property>
                 <property name="LeftAttach">1</property>
                 <property name="RightAttach">2</property>
-                <property name="AutoSize">True</property>
-                <property name="YOptions">Fill</property>
+                <property name="AutoSize">False</property>
                 <property name="XExpand">True</property>
                 <property name="XFill">True</property>
                 <property name="XShrink">False</property>
-                <property name="YExpand">False</property>
+                <property name="YExpand">True</property>
                 <property name="YFill">True</property>
                 <property name="YShrink">False</property>
               </packing>
@@ -1243,17 +1252,17 @@ Unternehmen</property>
             <child>
               <widget class="Gtk.Label" id="unameLabel">
                 <property name="MemberName" />
+                <property name="Visible">False</property>
                 <property name="Xalign">0</property>
                 <property name="LabelProp" translatable="yes">Benutzername :</property>
               </widget>
               <packing>
-                <property name="AutoSize">True</property>
+                <property name="AutoSize">False</property>
                 <property name="XOptions">Fill</property>
-                <property name="YOptions">Fill</property>
                 <property name="XExpand">False</property>
                 <property name="XFill">True</property>
                 <property name="XShrink">False</property>
-                <property name="YExpand">False</property>
+                <property name="YExpand">True</property>
                 <property name="YFill">True</property>
                 <property name="YShrink">False</property>
               </packing>
@@ -1269,8 +1278,9 @@ Unternehmen</property>
                 <property name="LeftAttach">1</property>
                 <property name="RightAttach">2</property>
                 <property name="AutoSize">True</property>
+                <property name="XOptions">Fill</property>
                 <property name="YOptions">Fill</property>
-                <property name="XExpand">True</property>
+                <property name="XExpand">False</property>
                 <property name="XFill">True</property>
                 <property name="XShrink">False</property>
                 <property name="YExpand">False</property>
@@ -1280,7 +1290,7 @@ Unternehmen</property>
             </child>
           </widget>
           <packing>
-            <property name="Position">6</property>
+            <property name="Position">7</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -1361,7 +1371,7 @@ Unternehmen</property>
           <widget class="Gtk.Toolbar" id="toolbar2">
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
-            <node name="__gtksharp_95_Stetic_Editor_ActionToolbar" type="Toolbar">
+            <node name="toolbar2" type="Toolbar">
               <node type="Toolitem" action="applyAction" />
               <node type="Toolitem" action="closeAction" />
               <node type="Separator" />
@@ -1453,7 +1463,6 @@ Unternehmen</property>
     </child>
   </widget>
   <widget class="Gtk.Window" id="CustomerManager.ProjectWindow" design-size="702 619">
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 22f12a2aa54ba9b8ad288e322d8cb694d2dbbb8b
     <action-group name="Default">
       <action id="applyAction">
         <property name="Type">Action</property>
