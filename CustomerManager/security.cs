@@ -1,5 +1,6 @@
 using System;
 using System.Security.Cryptography;
+using System.Text;
 
 
 namespace CustomerManager
@@ -8,9 +9,10 @@ namespace CustomerManager
 	{
 		public security ()
 		{
+
 		}
 
-		static string GetMd5Hash(MD5 md5Hash, string input)
+		public string GetMd5Hash(MD5 md5Hash, string input)
 		{
 			byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
 			StringBuilder sBuilder = new StringBuilder();
