@@ -56,39 +56,39 @@ namespace CustomerManager
 		private global::Gtk.Entry pwTextBox;
 		private global::Gtk.Label unameLabel;
 		private global::Gtk.Entry usernameTextBox;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
 			// Widget CustomerManager.CustomerWindow
 			this.UIManager = new global::Gtk.UIManager ();
 			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
-			this.applyAction = new global::Gtk.Action ("applyAction", global::Mono.Unix.Catalog.GetString ("bestätigen"), null, "gtk-apply");
-			this.applyAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("bestätigen");
-			w1.Add (this.applyAction, null);
-			this.closeAction = new global::Gtk.Action ("closeAction", global::Mono.Unix.Catalog.GetString ("abbrechen"), global::Mono.Unix.Catalog.GetString ("Fenster wird geschlossen"), "gtk-close");
-			this.closeAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("abbrechen");
-			w1.Add (this.closeAction, null);
-			this.clearAction = new global::Gtk.Action ("clearAction", global::Mono.Unix.Catalog.GetString ("leeren"), global::Mono.Unix.Catalog.GetString ("alle Eintragungen werden gelöscht"), "gtk-clear");
-			this.clearAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("leeren");
-			w1.Add (this.clearAction, null);
-			this.dialogQuestionAction = new global::Gtk.Action ("dialogQuestionAction", global::Mono.Unix.Catalog.GetString ("Hilfe"), global::Mono.Unix.Catalog.GetString ("Hilfe anzeigen"), "gtk-dialog-question");
-			this.dialogQuestionAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hilfe");
-			w1.Add (this.dialogQuestionAction, null);
-			this.applyAddTB = new global::Gtk.Action ("applyAddTB", global::Mono.Unix.Catalog.GetString ("bestätigen"), null, "gtk-apply");
-			this.applyAddTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("bestätigen");
-			w1.Add (this.applyAddTB, null);
-			this.closeTB = new global::Gtk.Action ("closeTB", global::Mono.Unix.Catalog.GetString ("abbrechen"), global::Mono.Unix.Catalog.GetString ("alles abbrechen und Fenster schließen"), "gtk-close");
-			this.closeTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("abbrechen");
-			w1.Add (this.closeTB, null);
-			this.clearTB = new global::Gtk.Action ("clearTB", global::Mono.Unix.Catalog.GetString ("leeren"), global::Mono.Unix.Catalog.GetString ("alle Eintragungen löschen"), "gtk-clear");
-			this.clearTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("leeren");
-			w1.Add (this.clearTB, null);
-			this.dialogQuestionTB = new global::Gtk.Action ("dialogQuestionTB", global::Mono.Unix.Catalog.GetString ("Hilfe"), null, "gtk-dialog-question");
-			this.dialogQuestionTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hilfe");
-			w1.Add (this.dialogQuestionTB, null);
 			this.UIManager.InsertActionGroup (w1, 0);
 			global::Gtk.ActionGroup w2 = new global::Gtk.ActionGroup ("Default");
+			this.applyAction = new global::Gtk.Action ("applyAction", global::Mono.Unix.Catalog.GetString ("bestätigen"), null, "gtk-apply");
+			this.applyAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("bestätigen");
+			w2.Add (this.applyAction, null);
+			this.closeAction = new global::Gtk.Action ("closeAction", global::Mono.Unix.Catalog.GetString ("abbrechen"), global::Mono.Unix.Catalog.GetString ("Fenster wird geschlossen"), "gtk-close");
+			this.closeAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("abbrechen");
+			w2.Add (this.closeAction, null);
+			this.clearAction = new global::Gtk.Action ("clearAction", global::Mono.Unix.Catalog.GetString ("leeren"), global::Mono.Unix.Catalog.GetString ("alle Eintragungen werden gelöscht"), "gtk-clear");
+			this.clearAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("leeren");
+			w2.Add (this.clearAction, null);
+			this.dialogQuestionAction = new global::Gtk.Action ("dialogQuestionAction", global::Mono.Unix.Catalog.GetString ("Hilfe"), global::Mono.Unix.Catalog.GetString ("Hilfe anzeigen"), "gtk-dialog-question");
+			this.dialogQuestionAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hilfe");
+			w2.Add (this.dialogQuestionAction, null);
+			this.applyAddTB = new global::Gtk.Action ("applyAddTB", global::Mono.Unix.Catalog.GetString ("bestätigen"), null, "gtk-apply");
+			this.applyAddTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("bestätigen");
+			w2.Add (this.applyAddTB, null);
+			this.closeTB = new global::Gtk.Action ("closeTB", global::Mono.Unix.Catalog.GetString ("abbrechen"), global::Mono.Unix.Catalog.GetString ("alles abbrechen und Fenster schließen"), "gtk-close");
+			this.closeTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("abbrechen");
+			w2.Add (this.closeTB, null);
+			this.clearTB = new global::Gtk.Action ("clearTB", global::Mono.Unix.Catalog.GetString ("leeren"), global::Mono.Unix.Catalog.GetString ("alle Eintragungen löschen"), "gtk-clear");
+			this.clearTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("leeren");
+			w2.Add (this.clearTB, null);
+			this.dialogQuestionTB = new global::Gtk.Action ("dialogQuestionTB", global::Mono.Unix.Catalog.GetString ("Hilfe"), null, "gtk-dialog-question");
+			this.dialogQuestionTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hilfe");
+			w2.Add (this.dialogQuestionTB, null);
 			this.UIManager.InsertActionGroup (w2, 1);
 			this.AddAccelGroup (this.UIManager.AccelGroup);
 			this.Name = "CustomerManager.CustomerWindow";
@@ -101,7 +101,10 @@ namespace CustomerManager
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar2'><toolitem name='applyAddTB' action='applyAddTB'/><toolitem name='closeTB' action='closeTB'/><separator/><toolitem name='clearTB' action='clearTB'/><toolitem name='dialogQuestionTB' action='dialogQuestionTB'/></toolbar></ui>");
+			this.UIManager.AddUiFromString ("<ui><toolbar name=\'toolbar2\'><toolitem name=\'applyAddTB\' action=\'applyAddTB\'/><to" +
+			"olitem name=\'closeTB\' action=\'closeTB\'/><separator/><toolitem name=\'clearTB\' act" +
+			"ion=\'clearTB\'/><toolitem name=\'dialogQuestionTB\' action=\'dialogQuestionTB\'/></to" +
+			"olbar></ui>");
 			this.toolbar2 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar2")));
 			this.toolbar2.Name = "toolbar2";
 			this.toolbar2.ShowArrow = false;
@@ -169,7 +172,7 @@ namespace CustomerManager
 			w8.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.genderCB = global::Gtk.ComboBox.NewText ();
-			this.genderCB.AppendText (global::Mono.Unix.Catalog.GetString ("Herr"));
+			this.genderCB.AppendText (global::Mono.Unix.Catalog.GetString ("Herr\r"));
 			this.genderCB.AppendText (global::Mono.Unix.Catalog.GetString ("Frau"));
 			this.genderCB.Name = "genderCB";
 			this.genderCB.Active = 0;
@@ -370,8 +373,8 @@ namespace CustomerManager
 			w25.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.typCB = global::Gtk.ComboBox.NewText ();
-			this.typCB.AppendText (global::Mono.Unix.Catalog.GetString ("Privat"));
-			this.typCB.AppendText (global::Mono.Unix.Catalog.GetString ("Firma"));
+			this.typCB.AppendText (global::Mono.Unix.Catalog.GetString ("Privat\r"));
+			this.typCB.AppendText (global::Mono.Unix.Catalog.GetString ("Firma\r"));
 			this.typCB.AppendText (global::Mono.Unix.Catalog.GetString ("Unternehmen"));
 			this.typCB.Name = "typCB";
 			this.table1.Add (this.typCB);

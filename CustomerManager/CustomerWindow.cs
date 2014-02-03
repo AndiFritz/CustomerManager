@@ -61,8 +61,35 @@ namespace CustomerManager
 				DateTime regidate = new DateTime();
 
 				#region md5 - Verlschuesserlung
+<<<<<<< HEAD
 
 
+=======
+//
+//				string s1;
+//				s1 = Console.ReadLine();
+//				
+//				using (MD5 md5Hash = MD5.Create())
+//				{
+//					string hash = GetMd5Hash(md5Hash, s1);
+//					
+//					
+//					//MD5-Verschlüsselter Code muss an den ersten 2 Zeichen aus -2a- und an den letzten beiden Zeichen aus -b3- bestehen
+//					
+//					string myhash;
+//					myhash = hash.Substring(0, 30) + "b3";
+//					myhash = "2a" + myhash.Substring(2, 30);
+//					
+//					Console.WriteLine();
+//					Console.WriteLine("MD5");
+//					Console.WriteLine(hash);
+//					
+//					Console.WriteLine();
+//					Console.WriteLine("my MD5");
+//					Console.WriteLine(myhash);
+//					Console.ReadLine();
+//				}
+>>>>>>> e62c9eb0045699cf7cf5b2c366cd9f4aa4d8ac18
 
 
 
