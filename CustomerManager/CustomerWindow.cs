@@ -62,10 +62,7 @@ namespace CustomerManager
 
 				#region md5 - Verlschuesserlung
 
-				string s1;
-				s1 = Console.ReadLine();
-				
-				
+
 
 
 

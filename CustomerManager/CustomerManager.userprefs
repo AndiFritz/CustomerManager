@@ -2,10 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="security.cs">
     <Files>
-      <File FileName="Connection.cs" Line="6" Column="1" />
-      <File FileName="CustomerWindow.cs" Line="6" Column="1" />
+      <File FileName="CustomerWindow.cs" Line="65" Column="5" />
       <File FileName="loginWindow.cs" Line="2" Column="11" />
-      <File FileName="security.cs" Line="15" Column="45" />
+      <File FileName="security.cs" Line="19" Column="54" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

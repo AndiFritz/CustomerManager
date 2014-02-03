@@ -12,17 +12,18 @@ namespace CustomerManager
 
 		}
 
-		public string GetMd5Hash(MD5 md5Hash, string input)
+		public static string hashSHA512(string password)
 		{
-			byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
-			StringBuilder sBuilder = new StringBuilder();
+			SHA512 shaM = new SHA512Managed();
+			byte[] hash =
+				shaM.ComputeHash(Encoding.ASCII.GetBytes(password));
 			
-			for (int i = 0; i < data.Length; i++)
+			StringBuilder stringBuilder = new StringBuilder();
+			foreach (byte b in hash)
 			{
-				sBuilder.Append(data[i].ToString("x2"));
+				stringBuilder.AppendFormat("{0:x2}", b);
 			}
-			
-			return sBuilder.ToString();
+			return stringBuilder.ToString();
 		}
 	}
 }
