@@ -100,13 +100,14 @@ namespace CustomerManager
 				}
 				#endregion
 			}
-			catch
+			catch(Exception exce)
 			{
 				sqlite_conn.Close ();
-				MessageDialog md = new MessageDialog(null, DialogFlags.DestroyWithParent, MessageType.Error, ButtonsType.Ok, "Es ist ein Fehler bei der Benutzerauslesung geschehen!");
+
+				MessageDialog md = new MessageDialog(null, DialogFlags.DestroyWithParent, MessageType.Error, ButtonsType.Ok, Convert.ToString(exce));
 				md.Run();
 				md.Destroy(); 
-				return false; 
+				return true;
 			}
 		}
 
