@@ -159,7 +159,7 @@ namespace CustomerManager
 		#endregion
 
 		#region Userkonfigurationen
-		public bool addUser(string gender, string vname, string nname, string uname, string password, string email, string telnumber, string mobilenumber, string country, string regidate) //Benutzer im System hinzufügen
+		public bool addUser(string gender, string vname, string nname, string uname, string password, string email, string telnumber, string mobilenumber, string country, string streetnumber, string hnr, DateTime regidate) //Benutzer im System hinzufügen
 		{
 			try {
 				sqlite_cmd = sqlite_conn.CreateCommand ();

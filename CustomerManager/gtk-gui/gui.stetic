@@ -119,6 +119,12 @@
         <property name="ShortLabel" translatable="yes">_Speichern</property>
         <property name="StockId">gtk-save</property>
       </action>
+      <action id="removeAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">löschen</property>
+        <property name="ShortLabel" translatable="yes">löschen</property>
+        <property name="StockId">gtk-remove</property>
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
@@ -138,6 +144,7 @@
               </node>
               <node type="Menu" action="KundenAction">
                 <node type="Menuitem" action="addAction" />
+                <node type="Menuitem" action="removeAction" />
                 <node type="Menuitem" action="justifyCenterAction" />
               </node>
               <node type="Menu" action="LiferantenAction">

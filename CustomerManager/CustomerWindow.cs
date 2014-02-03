@@ -58,11 +58,11 @@ namespace CustomerManager
 
 				DateTime regidate = new DateTime();
 
-
 				bool ok = checkTextBoxValue ("user"); //prüft den Inhalt der TextBoxen 
 
 				if (ok == true) {
 					con.addUser (vnameTextBox.Text, nnameTextBox.Text, usernameTextBox.Text, pwTextBox.Text, emailTextBox.Text, phoneTextBox.Text, mobileTextBox.Text, plzTextBox.Text, villageTextBox.Text, streetTextBox.Text, hnrTextBox.Text, regidate); 
+
 				}
 				else
 				{

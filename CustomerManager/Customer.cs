@@ -1,10 +1,16 @@
 using System;
 using Mono.Data;
+using Mono.Data.Sqlite;
 
 namespace CustomerManager
 {
 	public class Customer
 	{
+
+		SqliteConnection sqlite_conn;
+		SqliteCommand sqlite_cmd;
+		SqliteDataReader datareader;
+
 		public Customer ()
 		{
 			sqlite_conn = new SqliteConnection ("Data Source="+System.Environment.CurrentDirectory.ToString()+"/customerManager.sqlite3");
@@ -15,21 +21,35 @@ namespace CustomerManager
 
 			try
 			{
-				sqlite_cmd = sqlite_conn.CreateCommand (); 
 
-				sqlite_cmd.CommandText = "INSERT into tbl_customers(vname,nname,typ,email,telnumber,mobilenumber,plz,country,hnr,street,registrationdate,gender) VALUE (')";
+
+				sqlite_cmd = sqlite_conn.CreateCommand (); 
+				sqlite_cmd.CommandText = "INSERT into tbl_customers(vname,nname,typ,email,telnumber,mobilenumber,plz,country,hnr,street,registrationdate,gender) VALUE ('"+vname+"','"+nname+"','"+typ+"','"+email+"','"+telnumber+"','"+mobilenumber+"','"+plz+"','"+country+"','"+hnr+"','"+street+"','"+gender+"')";
+
+				return true;
 			}
 
-			catch
+			catch (Exception ex)
 			{
-
+				return false;
 			}
 
 
 		}
 		 
-		public bool dropCustomer() // Kunde löschen
+		public bool dropCustomer(string email) // Kunde löschen
 		{
+			try 
+			{
+				sqlite_cmd =sqlite_conn.CreateCommand();
+				sqlite_cmd.CommandText ="DELETE FROM customers WHERE email='"+email+"'";
+
+			} 
+
+			catch (Exception ex)
+			{
+	
+			}
 			return true; 
 		}
 

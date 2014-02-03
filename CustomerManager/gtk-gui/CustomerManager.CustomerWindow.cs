@@ -56,7 +56,7 @@ namespace CustomerManager
 		private global::Gtk.Entry pwTextBox;
 		private global::Gtk.Label unameLabel;
 		private global::Gtk.Entry usernameTextBox;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -101,7 +101,10 @@ namespace CustomerManager
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar2'><toolitem name='applyAddTB' action='applyAddTB'/><toolitem name='closeTB' action='closeTB'/><separator/><toolitem name='clearTB' action='clearTB'/><toolitem name='dialogQuestionTB' action='dialogQuestionTB'/></toolbar></ui>");
+			this.UIManager.AddUiFromString ("<ui><toolbar name=\'toolbar2\'><toolitem name=\'applyAddTB\' action=\'applyAddTB\'/><to" +
+			"olitem name=\'closeTB\' action=\'closeTB\'/><separator/><toolitem name=\'clearTB\' act" +
+			"ion=\'clearTB\'/><toolitem name=\'dialogQuestionTB\' action=\'dialogQuestionTB\'/></to" +
+			"olbar></ui>");
 			this.toolbar2 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar2")));
 			this.toolbar2.Name = "toolbar2";
 			this.toolbar2.ShowArrow = false;
