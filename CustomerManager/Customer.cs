@@ -16,15 +16,13 @@ namespace CustomerManager
 			sqlite_conn = new SqliteConnection ("Data Source="+System.Environment.CurrentDirectory.ToString()+"/customerManager.sqlite3");
 		}
 
-		public bool addCustomer(string gender, string nname, string vname,string typ, string email, string telnumber, string mobilenumber, int plz, string country, string street, string hnr) // Kunde hinzufügen 
+		public bool addCustomer(string gender, string nname, string vname,string typ, string email, string telnumber, string mobilenumber, int plz, string country, string street, string hnr, DateTime regidate) // Kunde hinzufügen 
 		{	
 
 			try
 			{
-
-
 				sqlite_cmd = sqlite_conn.CreateCommand (); 
-				sqlite_cmd.CommandText = "INSERT into tbl_customers(vname,nname,typ,email,telnumber,mobilenumber,plz,country,hnr,street,registrationdate,gender) VALUE ('"+vname+"','"+nname+"','"+typ+"','"+email+"','"+telnumber+"','"+mobilenumber+"','"+plz+"','"+country+"','"+hnr+"','"+street+"','"+gender+"')";
+				sqlite_cmd.CommandText = "INSERT into tbl_customers(vname,nname,typ,email,telnumber,mobilenumber,plz,country,hnr,street,registrationdate,gender) VALUE ('"+vname+"','"+nname+"','"+typ+"','"+email+"','"+telnumber+"','"+mobilenumber+"','"+plz+"','"+country+"','"+hnr+"','"+street+"','"+regidate+"','"+gender+"')";
 
 				return true;
 			}

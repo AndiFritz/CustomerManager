@@ -22,6 +22,7 @@ public partial class MainWindow
 	private global::Gtk.Action justifyCenterAction1;
 	private global::Gtk.Action openAction1;
 	private global::Gtk.Action saveAction;
+	private global::Gtk.Action removeAction;
 	private global::Gtk.VBox vbox3;
 	private global::Gtk.MenuBar menubar1;
 	private global::Gtk.HBox hbox1;
@@ -91,6 +92,9 @@ public partial class MainWindow
 		this.saveAction = new global::Gtk.Action ("saveAction", global::Mono.Unix.Catalog.GetString ("_Speichern"), null, "gtk-save");
 		this.saveAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Speichern");
 		w1.Add (this.saveAction, null);
+		this.removeAction = new global::Gtk.Action ("removeAction", global::Mono.Unix.Catalog.GetString ("löschen"), null, "gtk-remove");
+		this.removeAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("löschen");
+		w1.Add (this.removeAction, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -101,7 +105,7 @@ public partial class MainWindow
 		this.vbox3.Name = "vbox3";
 		this.vbox3.Spacing = 6;
 		// Container child vbox3.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='DateiAction2' action='DateiAction2'><menuitem name='openAction1' action='openAction1'/><menuitem name='saveAction' action='saveAction'/></menu><menu name='KundenAction' action='KundenAction'><menuitem name='addAction' action='addAction'/><menuitem name='justifyCenterAction' action='justifyCenterAction'/></menu><menu name='LiferantenAction' action='LiferantenAction'><menuitem name='AnlegenAction' action='AnlegenAction'/><menuitem name='justifyCenterAction1' action='justifyCenterAction1'/></menu><menu name='EinstellungenAction' action='EinstellungenAction'/><menu name='HilfeAction' action='HilfeAction'/></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='DateiAction2' action='DateiAction2'><menuitem name='openAction1' action='openAction1'/><menuitem name='saveAction' action='saveAction'/></menu><menu name='KundenAction' action='KundenAction'><menuitem name='addAction' action='addAction'/><menuitem name='removeAction' action='removeAction'/><menuitem name='justifyCenterAction' action='justifyCenterAction'/></menu><menu name='LiferantenAction' action='LiferantenAction'><menuitem name='AnlegenAction' action='AnlegenAction'/><menuitem name='justifyCenterAction1' action='justifyCenterAction1'/></menu><menu name='EinstellungenAction' action='EinstellungenAction'/><menu name='HilfeAction' action='HilfeAction'/></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox3.Add (this.menubar1);
