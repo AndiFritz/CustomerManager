@@ -42,18 +42,6 @@ namespace CustomerManager
 						
 					if(corrUname == true)
 					{
-//						sqlite_cmd = sqlite_conn.CreateCommand ();
-//						sqlite_cmd.CommandText = "SELECT password FROM tbl_users WHERE username='"+uname+"'";
-//						sqlite_conn.Open (); //Datenbankverbindung öffnen
-//						// Now the SQLiteCommand object can give us a DataReader-Object:
-//						datareader = sqlite_cmd.ExecuteReader ();
-//						string readPwd = ""; // ausgelesene Passwort für den Benutzernamen 
-//						while (datareader.Read())
-//						{
-//							readPwd = datareader.GetString(0);
-//						}
-//						sqlite_conn.Close ();
-//
 						bool loginOK = this.checkPassword(uname, pwd);
 
 						if(loginOK == true)
@@ -100,6 +88,7 @@ namespace CustomerManager
 				
 				// Now the SQLiteCommand object can give us a DataReader-Object:
 				int amountUser = Convert.ToInt32(sqlite_cmd.ExecuteScalar());
+				sqlite_conn.Close();
 				
 				if(amountUser == 0)
 				{
@@ -113,6 +102,7 @@ namespace CustomerManager
 			}
 			catch
 			{
+				sqlite_conn.Close ();
 				MessageDialog md = new MessageDialog(null, DialogFlags.DestroyWithParent, MessageType.Error, ButtonsType.Ok, "Es ist ein Fehler bei der Benutzerauslesung geschehen!");
 				md.Run();
 				md.Destroy(); 
@@ -133,6 +123,8 @@ namespace CustomerManager
 				
 				// Now the SQLiteCommand object can give us a DataReader-Object:
 				int exist = Convert.ToInt32(sqlite_cmd.ExecuteScalar());
+
+				sqlite_conn.Close(); 
 				
 				if(exist == 0)
 				{
@@ -146,6 +138,7 @@ namespace CustomerManager
 			}
 			catch
 			{
+				sqlite_conn.Close ();
 				MessageDialog md = new MessageDialog(null, DialogFlags.DestroyWithParent, MessageType.Error, ButtonsType.Ok, "Es ist ein Fehler bei der Benutzerauslesung geschehen!");
 				md.Run();
 				md.Destroy(); 
@@ -165,7 +158,10 @@ namespace CustomerManager
 
 				return true; 
 
-			} catch (Exception ex) {
+			} 
+
+			catch (Exception ex) 
+			{
 				return false; 
 			}
 		}
@@ -176,13 +172,18 @@ namespace CustomerManager
 			{
 				sqlite_cmd = sqlite_conn.CreateCommand ();
 				sqlite_cmd.CommandText = "UPDATE tbl_users SET status='0' WHERE username='"+username+"' AND email='"+email+"'";
+				sqlite_conn.Open();
+
 				sqlite_cmd.ExecuteNonQuery();
+
+				sqlite_conn.Close();
 
 				return true; 
 			}
 
 			catch (Exception ex) 
 			{
+				sqlite_conn.Close ();
 				return false;
 	
 			}
@@ -227,7 +228,10 @@ namespace CustomerManager
 					return false;
 				}
 			}
-			catch (Exception ex) {
+
+			catch (Exception ex)
+			{
+				sqlite_conn.Close ();
 				return false; 
 			}
 		}
