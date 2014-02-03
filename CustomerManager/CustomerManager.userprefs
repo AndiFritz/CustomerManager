@@ -1,13 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CustomerWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Connection.cs">
     <Files>
-      <File FileName="Connection.cs" Line="154" Column="3" />
-      <File FileName="CustomerWindow.cs" Line="64" Column="5" />
+      <File FileName="Connection.cs" Line="144" Column="19" />
+      <File FileName="CustomerWindow.cs" Line="72" Column="6" />
+      <File FileName="loginWindow.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Andreas\Documents\GitHub\CustomerManager\CustomerManager\Connection.cs" line="154" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
