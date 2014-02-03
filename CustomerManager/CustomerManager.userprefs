@@ -1,10 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Customer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CustomerWindow.cs">
     <Files>
-      <File FileName="Customer.cs" Line="18" Column="5" />
-      <File FileName="CustomerWindow.cs" Line="1" Column="1" />
+      <File FileName="CustomerWindow.cs" Line="64" Column="191" />
       <File FileName="MainWindow.cs" Line="1" Column="1" />
+      <File FileName="Connection.cs" Line="178" Column="4" />
+      <File FileName="loginWindow.cs" Line="1" Column="1" />
+      <File FileName="Customer.cs" Line="24" Column="5" />
+      <File FileName="..\..\..\..\..\..\Program Files (x86)\Mono-3.2.3\lib\mono\4.0\Microsoft.Common.targets" Line="13" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -21,8 +21,6 @@ namespace CustomerManager
 
 			try
 			{
-
-
 				sqlite_cmd = sqlite_conn.CreateCommand (); 
 				sqlite_cmd.CommandText = "INSERT into tbl_customers(vname,nname,typ,email,telnumber,mobilenumber,plz,country,hnr,street,registrationdate,gender) VALUE ('"+vname+"','"+nname+"','"+typ+"','"+email+"','"+telnumber+"','"+mobilenumber+"','"+plz+"','"+country+"','"+hnr+"','"+street+"','"+gender+"')";
 
