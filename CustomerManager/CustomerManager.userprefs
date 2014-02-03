@@ -1,13 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CustomerWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="security.cs">
     <Files>
-      <File FileName="Connection.cs" Line="154" Column="3" />
-      <File FileName="CustomerWindow.cs" Line="64" Column="5" />
+      <File FileName="Connection.cs" Line="6" Column="1" />
+      <File FileName="CustomerWindow.cs" Line="6" Column="1" />
+      <File FileName="loginWindow.cs" Line="2" Column="11" />
+      <File FileName="security.cs" Line="15" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/home/bischof/Dropbox/Project/CustomerManager/CustomerManager/Connection.cs" line="17" />
+      <Breakpoint file="/home/bischof/Dropbox/Project/CustomerManager/CustomerManager/Connection.cs" line="154" />
+      <Breakpoint file="/home/bischof/Dropbox/Project/CustomerManager/CustomerManager/Connection.cs" line="45" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
