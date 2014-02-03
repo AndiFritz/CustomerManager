@@ -58,15 +58,23 @@ namespace CustomerManager
 
 				DateTime regidate = new DateTime();
 
+				#region md5 - Verlschuesserlung
+				
+
+				#endregion
+
+
 				bool ok = checkTextBoxValue ("user"); //prüft den Inhalt der TextBoxen 
 
 				if (ok == true) {
 					con.addUser (genderCB.ActiveText, vnameTextBox.Text, nnameTextBox.Text, usernameTextBox.Text, pwTextBox.Text, emailTextBox.Text, phoneTextBox.Text, mobileTextBox.Text, plzTextBox.Text, villageTextBox.Text, streetTextBox.Text, hnrTextBox.Text, regidate); 
-
+					this.Destroy ();
 				}
 				else
 				{
 					MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Bitte füllen sie alle Felder aus!");
+					md.Run ();
+					md.Destroy ();
 				}
 			}
 
