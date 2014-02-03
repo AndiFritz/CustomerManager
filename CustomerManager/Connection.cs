@@ -42,25 +42,21 @@ namespace CustomerManager
 						
 					if(corrUname == true)
 					{
-						sqlite_cmd = sqlite_conn.CreateCommand ();
-						
-						sqlite_cmd.CommandText = "SELECT password FROM tbl_users WHERE username='"+uname+"'";
+//						sqlite_cmd = sqlite_conn.CreateCommand ();
+//						sqlite_cmd.CommandText = "SELECT password FROM tbl_users WHERE username='"+uname+"'";
+//						sqlite_conn.Open (); //Datenbankverbindung öffnen
+//						// Now the SQLiteCommand object can give us a DataReader-Object:
+//						datareader = sqlite_cmd.ExecuteReader ();
+//						string readPwd = ""; // ausgelesene Passwort für den Benutzernamen 
+//						while (datareader.Read())
+//						{
+//							readPwd = datareader.GetString(0);
+//						}
+//						sqlite_conn.Close ();
+//
+						bool loginOK = this.checkPassword(uname, pwd);
 
-						sqlite_conn.Open (); //Datenbankverbindung öffnen
-
-						// Now the SQLiteCommand object can give us a DataReader-Object:
-						datareader = sqlite_cmd.ExecuteReader ();
-
-						string readPwd = ""; // ausgelesene Passwort für den Benutzernamen 
-
-
-						while (datareader.Read())
-						{
-							readPwd = datareader.GetString(0);
-						}
-						sqlite_conn.Close ();
-
-						if(readPwd == pwd)
+						if(loginOK == true)
 						{
 							return true; 
 						}
@@ -159,15 +155,12 @@ namespace CustomerManager
 		#endregion
 
 		#region Userkonfigurationen
-		public bool addUser(string gender, string vname, string nname, string uname, string password, string email, string telnumber, string mobilenumber, string country, string streetnumber, string hnr, DateTime regidate) //Benutzer im System hinzufügen
+		public bool addUser(string gender, string vname, string nname, string uname, string password, string email, string telnumber, string mobilenumber, string plz, string country, string street, string hnr, DateTime regidate) //Benutzer im System hinzufügen
 		{
 			try {
 				sqlite_cmd = sqlite_conn.CreateCommand ();
-				
-				sqlite_cmd.CommandText = "INSERT into tbl_users(vname, nname, username, password, email, telnumber, mobilenumber, country, registrationdate) VALUES ('"+vname+"', '"+nname+"', '"+uname+"','"+password+"','"+email+"','"+telnumber+"','"+mobilenumber+"','"+country+"','"+regidate+"')";
-				
+				sqlite_cmd.CommandText = "INSERT into tbl_users(vname, nname, username, password, email, telnumber, mobilenumber, country, registrationdate, street, hnr, plz,status) VALUES ('"+vname+"', '"+nname+"', '"+uname+"','"+password+"','"+email+"','"+telnumber+"','"+mobilenumber+"','"+country+"','"+regidate+"','"+street+"','"+hnr+"','"+plz+"','1')";
 				sqlite_conn.Open();
-
 				sqlite_cmd.ExecuteNonQuery();
 
 				return true; 
@@ -177,9 +170,22 @@ namespace CustomerManager
 			}
 		}
 
-		public bool dropUser() // Benutzer im System löschen
+		public bool dropUser(string username, string email, string pwd) // Benutzer im System löschen
 		{
-			return true; 
+			try 
+			{
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				sqlite_cmd.CommandText = "UPDATE tbl_users SET status='0' WHERE username='"+username+"' AND email='"+email+"'";
+				sqlite_cmd.ExecuteNonQuery();
+
+				return true; 
+			}
+
+			catch (Exception ex) 
+			{
+				return false;
+	
+			}
 		}
 
 		public bool viewUser() // Benutzer anzeigen
@@ -192,6 +198,39 @@ namespace CustomerManager
 			return true; 
 		}
 		#endregion
+
+		public bool checkPassword(string uname, string pwd) // Passwort eines bestimmten Bentzers für den Status ändern prüfen
+		{
+			try 
+			{
+				sqlite_cmd = sqlite_conn.CreateCommand();
+				sqlite_cmd.CommandText = "Select password From tbl_users WHERE username='"+uname+"'";
+				sqlite_conn.Open (); //Datenbankverbindung öffnen
+
+				// Now the SQLiteCommand object can give us a DataReader-Object:
+				datareader = sqlite_cmd.ExecuteReader ();
+
+				string readPwd = ""; // ausgelesene Passwort für den Benutzernamen 
+
+				while (datareader.Read())
+				{
+					readPwd = datareader.GetString(0);
+				}
+				sqlite_conn.Close ();
+
+				if(readPwd == pwd)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+			catch (Exception ex) {
+				return false; 
+			}
+		}
 
 	}
 }

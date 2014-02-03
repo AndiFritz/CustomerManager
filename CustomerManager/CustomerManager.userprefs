@@ -1,19 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Customer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Connection.cs">
     <Files>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <File FileName="Customer.cs" Line="19" Column="203" />
-      <File FileName="CustomerWindow.cs" Line="1" Column="1" />
-=======
+      <File FileName="Connection.cs" Line="27" Column="5" />
       <File FileName="CustomerWindow.cs" Line="64" Column="191" />
->>>>>>> e065ac650619e8af69974f428e1b709086f4321b
-=======
-      <File FileName="Customer.cs" Line="18" Column="5" />
-      <File FileName="CustomerWindow.cs" Line="1" Column="1" />
->>>>>>> 96315f5bd70743763ee7253be2be2e00730b3464
-      <File FileName="MainWindow.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
