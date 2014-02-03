@@ -1,5 +1,0 @@
-D:\Respositori\CustomerManager\obj\x86\Debug\CustomerManager.csprojResolveAssemblyReference.cache
-D:\Respositori\CustomerManager\obj\x86\Debug\CustomerManager.pdb
-D:\Respositori\CustomerManager\bin\Debug\CustomerManager.exe
-D:\Respositori\CustomerManager\bin\Debug\CustomerManager.pdb
-D:\Respositori\CustomerManager\obj\x86\Debug\CustomerManager.exe
