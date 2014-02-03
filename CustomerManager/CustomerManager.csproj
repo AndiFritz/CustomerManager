@@ -58,6 +58,7 @@
     <Reference Include="HollyLibrary">
       <HintPath>HollyLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="System.Security" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -86,6 +87,7 @@
     <Compile Include="ProjectsWindow.cs" />
     <Compile Include="gtk-gui\CustomerManager.ProjectsWindow.cs" />
     <Compile Include="ProjectWindow.cs" />
+    <Compile Include="security.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
