@@ -172,7 +172,7 @@ namespace CustomerManager
 			w8.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.genderCB = global::Gtk.ComboBox.NewText ();
-			this.genderCB.AppendText (global::Mono.Unix.Catalog.GetString ("Herr\r"));
+			this.genderCB.AppendText (global::Mono.Unix.Catalog.GetString ("Herr"));
 			this.genderCB.AppendText (global::Mono.Unix.Catalog.GetString ("Frau"));
 			this.genderCB.Name = "genderCB";
 			this.genderCB.Active = 0;
@@ -373,8 +373,8 @@ namespace CustomerManager
 			w25.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.typCB = global::Gtk.ComboBox.NewText ();
-			this.typCB.AppendText (global::Mono.Unix.Catalog.GetString ("Privat\r"));
-			this.typCB.AppendText (global::Mono.Unix.Catalog.GetString ("Firma\r"));
+			this.typCB.AppendText (global::Mono.Unix.Catalog.GetString ("Privat"));
+			this.typCB.AppendText (global::Mono.Unix.Catalog.GetString ("Firma"));
 			this.typCB.AppendText (global::Mono.Unix.Catalog.GetString ("Unternehmen"));
 			this.typCB.Name = "typCB";
 			this.table1.Add (this.typCB);

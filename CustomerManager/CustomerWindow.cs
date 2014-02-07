@@ -61,10 +61,7 @@ namespace CustomerManager
 				DateTime regidate = new DateTime();
 
 				#region md5 - Verlschuesserlung
-<<<<<<< HEAD
 
-
-=======
 //
 //				string s1;
 //				s1 = Console.ReadLine();
@@ -89,7 +86,7 @@ namespace CustomerManager
 //					Console.WriteLine(myhash);
 //					Console.ReadLine();
 //				}
->>>>>>> e62c9eb0045699cf7cf5b2c366cd9f4aa4d8ac18
+
 
 
 
