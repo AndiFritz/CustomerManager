@@ -393,7 +393,6 @@
     </child>
   </widget>
   <widget class="Gtk.Window" id="CustomerManager.CustomerWindow" design-size="877 757">
-    <action-group name="Default" />
     <action-group name="Default">
       <action id="applyAction">
         <property name="Type">Action</property>
@@ -453,6 +452,7 @@
         <signal name="Activated" handler="OnDialogQuestionTBActivated" />
       </action>
     </action-group>
+    <action-group name="Default" />
     <property name="MemberName" />
     <property name="Title" translatable="yes">neuer Benutzer</property>
     <property name="Icon">stock:gtk-add Menu</property>
