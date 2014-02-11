@@ -23,7 +23,8 @@ namespace CustomerManager
 			string username = unameTextBox.Text; 
 			string password = pwdTextBox.Text; 
 
-			Connection con = new Connection ();
+			DBConnector con = MainClass.connection;
+
 			bool loginAccept = con.login (username, password);
 
 			if (loginAccept == true) {

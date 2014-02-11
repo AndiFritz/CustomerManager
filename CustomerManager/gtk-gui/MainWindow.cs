@@ -30,7 +30,7 @@ public partial class MainWindow
 	private global::Gtk.Fixed fixed1;
 	private global::Gtk.Fixed fixed2;
 	private global::Gtk.ScrolledWindow GtkScrolledWindow;
-	private global::Gtk.TextView textview1;
+	private global::Gtk.NodeView nodeview1;
 	
 	protected virtual void Build ()
 	{
@@ -99,7 +99,7 @@ public partial class MainWindow
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
-		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+		this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.vbox3 = new global::Gtk.VBox ();
 		this.vbox3.Name = "vbox3";
@@ -149,10 +149,10 @@ public partial class MainWindow
 		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-		this.textview1 = new global::Gtk.TextView ();
-		this.textview1.CanFocus = true;
-		this.textview1.Name = "textview1";
-		this.GtkScrolledWindow.Add (this.textview1);
+		this.nodeview1 = new global::Gtk.NodeView ();
+		this.nodeview1.CanFocus = true;
+		this.nodeview1.Name = "nodeview1";
+		this.GtkScrolledWindow.Add (this.nodeview1);
 		this.vbox3.Add (this.GtkScrolledWindow);
 		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.GtkScrolledWindow]));
 		w8.Position = 2;
@@ -164,6 +164,5 @@ public partial class MainWindow
 		this.DefaultHeight = 344;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
-		this.addAction1.Activated += new global::System.EventHandler (this.OnAddAction1Activated);
 	}
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Gtk;
 using System.Drawing; 
 using System.Drawing.Design;
@@ -52,65 +53,54 @@ namespace CustomerManager
 			this.Show ();
 		}
 		#endregion
+
 		protected void OnApplyAddTBActivated (object sender, EventArgs e)
 		{
-			Connection con = new Connection ();
-
 			if (pwTextBox.Visible == true && pwdCLabel.Visible == true) { // Wenn Passwort - TextBoxen angezeigt werden, dann wird ein neuer Bentzer erstellt
 
-				DateTime regidate = new DateTime();
 
-				#region md5 - Verlschuesserlung
-
-//
-//				string s1;
-//				s1 = Console.ReadLine();
-//				
-//				using (MD5 md5Hash = MD5.Create())
-//				{
-//					string hash = GetMd5Hash(md5Hash, s1);
-//					
-//					
-//					//MD5-Verschlüsselter Code muss an den ersten 2 Zeichen aus -2a- und an den letzten beiden Zeichen aus -b3- bestehen
-//					
-//					string myhash;
-//					myhash = hash.Substring(0, 30) + "b3";
-//					myhash = "2a" + myhash.Substring(2, 30);
-//					
-//					Console.WriteLine();
-//					Console.WriteLine("MD5");
-//					Console.WriteLine(hash);
-//					
-//					Console.WriteLine();
-//					Console.WriteLine("my MD5");
-//					Console.WriteLine(myhash);
-//					Console.ReadLine();
-//				}
+				DateTime regidate = DateTime.Now;
 
 
 
+				bool ok = checkTextBoxValue ("user"); //prüft, ob alle Textboxen gefuellt sind 
+				bool pwdOK = checkPasswordEntry(); // prüft, ob Passwoerter richtig eingegeben wurden
 
+				if (ok == true) //alle Felder gefuellt
+				{
+					if(pwdOK == true) // Passwoerter stimmen ueberein
+					{
+						bool addOK = MainClass.connection.addUser (genderCB.ActiveText, vnameTextBox.Text, nnameTextBox.Text, usernameTextBox.Text, pwTextBox.Text, emailTextBox.Text, phoneTextBox.Text, mobileTextBox.Text, Convert.ToInt32(plzTextBox.Text), villageTextBox.Text, streetTextBox.Text, hnrTextBox.Text, regidate, 1, companyCB.ActiveText, typCB.ActiveText); 
 
-				#endregion
-
-
-				bool ok = checkTextBoxValue ("user"); //prüft den Inhalt der TextBoxen 
-
-				if (ok == true) {
-					con.addUser (genderCB.ActiveText, vnameTextBox.Text, nnameTextBox.Text, usernameTextBox.Text, pwTextBox.Text, emailTextBox.Text, phoneTextBox.Text, mobileTextBox.Text, plzTextBox.Text, villageTextBox.Text, streetTextBox.Text, hnrTextBox.Text, regidate); 
-					this.Destroy ();
+						if(addOK == true) //kein Fehler bei der Datenbankconnection
+						{
+							this.Destroy (); //Fenster schließen
+							MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "User erfolgreich hinzugefügt!");
+							md.Run ();
+							md.Destroy ();
+						}
+						else // Fehler bei der Datenbankconnection
+						{
+							MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Beim Erstellen eines neuen Users ist ein Fehler aufgetreten!");
+							md.Run ();
+							md.Destroy ();
+						}
+					}
+					else
+					{
+						MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Passwörter stimmen nicht überein!");
+						md.Run ();
+						md.Destroy ();
+					}
 				}
 				else
 				{
-					MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Bitte füllen sie alle Felder aus!");
+					MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Bitte füllen Sie alle Felder aus!");
 					md.Run ();
 					md.Destroy ();
 				}
 			}
-
 		}
-
-
 
 		protected void OnCloseTBActivated (object sender, EventArgs e)
 		{
@@ -137,10 +127,10 @@ namespace CustomerManager
 			throw new System.NotImplementedException ();
 		}
 
-		private bool checkTextBoxValue (string typ)
+		private bool checkTextBoxValue (string typ) // TextBoxen alle gefuellt?
 		{
 			if (typ == "user") {
-				if (genderCB.ActiveText != "" && nnameTextBox.Text != "" && vnameTextBox.Text != "" && typCB.ActiveText != "" && companyCBE.ActiveText != "" && emailTextBox.Text != "" && phoneTextBox.Text != "" || mobileTextBox.Text != "" && plzTextBox.Text != "" && villageTextBox.Text != "" && streetTextBox.Text != "" && hnrTextBox.Text != "" && usernameTextBox.Text != "" && pwTextBox.Text != "" && pwCTextBox.Text != "") 
+				if (genderCB.ActiveText != "" && nnameTextBox.Text != "" && vnameTextBox.Text != "" && typCB.ActiveText != "" && emailTextBox.Text != "" && phoneTextBox.Text != "" || mobileTextBox.Text != "" && plzTextBox.Text != "" && villageTextBox.Text != "" && streetTextBox.Text != "" && hnrTextBox.Text != "" && usernameTextBox.Text != "" && pwTextBox.Text != "" && pwCTextBox.Text != "") 
 				{
 					return true; 
 				}
@@ -151,7 +141,7 @@ namespace CustomerManager
 			} 
 			else 
 			{
-				if (genderCB.ActiveText != "" && nnameTextBox.Text != "" && vnameTextBox.Text != "" && typCB.ActiveText != "" && companyCBE.ActiveText != "" && emailTextBox.Text != "" && phoneTextBox.Text != "" && mobileTextBox.Text != "" && plzTextBox.Text != "" && villageTextBox.Text != "" && streetTextBox.Text != "" && hnrTextBox.Text != "") 
+				if (genderCB.ActiveText != "" && nnameTextBox.Text != "" && vnameTextBox.Text != "" && typCB.ActiveText != "" && emailTextBox.Text != "" && phoneTextBox.Text != "" && mobileTextBox.Text != "" && plzTextBox.Text != "" && villageTextBox.Text != "" && streetTextBox.Text != "" && hnrTextBox.Text != "") 
 				{
 					return true; 
 				}
@@ -160,12 +150,42 @@ namespace CustomerManager
 					return false; 
 				}
 			}
-
-
-
-
 		}
 
+		private bool checkPasswordEntry () //Passwoerter richtig eingegeben?
+		{
+			if (pwTextBox.Text == pwCTextBox.Text) {
+				return true; 
+			} else {
+				return false; 
+			}
+		}
+
+		protected void OnTypCBChanged (object sender, EventArgs e) //Unternehmen - Eingabefeld Combobox ausschalten, wenn Typ = Privat
+		{
+			if (typCB.ActiveText == "Privat") {
+				companyCB.Sensitive = false; // Eingabefeld hinterlegen
+				newCompanyButton.Sensitive = false; // Button hinterlegen
+			} else {
+				companyCB.Sensitive = true;
+				newCompanyButton.Sensitive = true; 
+
+				string typ = typCB.ActiveText;
+
+				List<String> companies = MainClass.connection.readCompany(typ);
+				ListStore ls = new ListStore(typeof(string));
+				companyCB.Model = ls;
+
+				foreach(string s in companies)
+					ls.AppendValues(s);
+			}
+		}
+
+		protected void OnNewCompanyButtonClicked (object sender, EventArgs e) // neue Firma hinzufuegen Button
+		{
+			CompanyWindow cw = new CompanyWindow();
+			cw.ShowAll();
+		}
 	}
 }
 

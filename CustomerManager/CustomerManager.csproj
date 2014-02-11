@@ -59,6 +59,12 @@
       <HintPath>HollyLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System.Security" />
+    <Reference Include="Mono.TextEditor, Version=1.0.0.0, Culture=neutral">
+      <Package>monodevelop</Package>
+    </Reference>
+    <Reference Include="MonoDevelop.CSharpBinding, Version=2.6.0.0, Culture=neutral">
+      <Package>monodevelop-core-addins</Package>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -73,21 +79,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="loginWindow.cs" />
     <Compile Include="gtk-gui\CustomerManager.loginWindow.cs" />
-    <Compile Include="Connection.cs" />
-    <Compile Include="Customer.cs" />
     <Compile Include="CustomerWindow.cs" />
     <Compile Include="gtk-gui\CustomerManager.CustomerWindow.cs" />
-    <Compile Include="gtk-gui\CustomerManager.test.cs" />
-    <Compile Include="Supplier.cs" />
     <Compile Include="SupplierWindow.cs" />
     <Compile Include="gtk-gui\CustomerManager.SupplierWindow.cs" />
-    <Compile Include="Projects.cs" />
-    <Compile Include="gtk-gui\CustomerManager.Project.cs" />
     <Compile Include="gtk-gui\CustomerManager.ProjectWindow.cs" />
     <Compile Include="ProjectsWindow.cs" />
     <Compile Include="gtk-gui\CustomerManager.ProjectsWindow.cs" />
     <Compile Include="ProjectWindow.cs" />
     <Compile Include="security.cs" />
+    <Compile Include="DBConnector.cs" />
+    <Compile Include="SQLiteConnection.cs" />
+    <Compile Include="CompanyWindow.cs" />
+    <Compile Include="gtk-gui\CustomerManager.CompanyWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
