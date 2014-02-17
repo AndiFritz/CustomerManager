@@ -86,7 +86,6 @@
     <Compile Include="gtk-gui\CustomerManager.ProjectWindow.cs" />
     <Compile Include="ProjectsWindow.cs" />
     <Compile Include="gtk-gui\CustomerManager.ProjectsWindow.cs" />
-    <Compile Include="ProjectWindow.cs" />
     <Compile Include="security.cs" />
     <Compile Include="DBConnector.cs" />
     <Compile Include="SQLiteConnection.cs" />

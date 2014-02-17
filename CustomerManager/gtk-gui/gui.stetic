@@ -6,9 +6,9 @@
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../HollyLibrary.dll" />
-    <widget-library name="../bin/Debug/CustomerManager.exe" internal="true" />
     <widget-library name="Mono.TextEditor, Version=1.0.0.0, Culture=neutral" />
     <widget-library name="MonoDevelop.CSharpBinding, Version=2.6.0.0, Culture=neutral" />
+    <widget-library name="../bin/Debug/CustomerManager.exe" internal="true" />
   </import>
   <icon-factory>
     <icon-set id="Lieferant">
@@ -61,11 +61,12 @@
         <property name="Label" translatable="yes">Hilfe</property>
         <property name="ShortLabel" translatable="yes">Hilfe</property>
       </action>
-      <action id="addAction">
+      <action id="addCustomerMB">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Neu</property>
         <property name="ShortLabel" translatable="yes">Neu</property>
         <property name="StockId">gtk-add</property>
+        <signal name="Activated" handler="OnAddCustomerMBActivated" />
       </action>
       <action id="justifyCenterAction">
         <property name="Type">Action</property>
@@ -73,12 +74,12 @@
         <property name="ShortLabel" translatable="yes">Anzeigen</property>
         <property name="StockId">gtk-justify-center</property>
       </action>
-      <action id="addAction1">
+      <action id="addCustomerTB">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Hinzufügen</property>
         <property name="ShortLabel" translatable="yes">Hinzufügen</property>
         <property name="StockId">gtk-add</property>
-        <signal name="Activated" handler="OnAddAction1Activated" />
+        <signal name="Activated" handler="OnAddCustomerTBActivated" />
       </action>
       <action id="openAction">
         <property name="Type">Action</property>
@@ -145,7 +146,7 @@
                 <node type="Menuitem" action="saveAction" />
               </node>
               <node type="Menu" action="KundenAction">
-                <node type="Menuitem" action="addAction" />
+                <node type="Menuitem" action="addCustomerMB" />
                 <node type="Menuitem" action="removeAction" />
                 <node type="Menuitem" action="justifyCenterAction" />
               </node>
@@ -173,7 +174,7 @@
                 <property name="MemberName" />
                 <property name="ShowArrow">False</property>
                 <node name="toolbar1" type="Toolbar">
-                  <node type="Toolitem" action="addAction1" />
+                  <node type="Toolitem" action="addCustomerTB" />
                   <node type="Toolitem" action="openAction" />
                   <node type="Toolitem" action="NeuerLieferantAction" />
                 </node>
@@ -1469,14 +1470,6 @@ Unternehmen</property>
           <placeholder />
         </child>
       </widget>
-    </child>
-  </widget>
-  <widget class="Gtk.Window" id="CustomerManager.ProjectWindow" design-size="400 300">
-    <property name="MemberName" />
-    <property name="Title" translatable="yes">ProjectWindow</property>
-    <property name="WindowPosition">CenterOnParent</property>
-    <child>
-      <placeholder />
     </child>
   </widget>
   <widget class="Gtk.Window" id="CustomerManager.ProjectWindow" design-size="702 619">
