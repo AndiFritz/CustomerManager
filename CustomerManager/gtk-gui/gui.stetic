@@ -6,8 +6,11 @@
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../HollyLibrary.dll" />
+<<<<<<< HEAD
+=======
     <widget-library name="Mono.TextEditor, Version=1.0.0.0, Culture=neutral" />
     <widget-library name="MonoDevelop.CSharpBinding, Version=2.6.0.0, Culture=neutral" />
+>>>>>>> 948fad1fdb2effbebc496418479d61c959fd40cd
     <widget-library name="../bin/Debug/CustomerManager.exe" internal="true" />
   </import>
   <icon-factory>
@@ -17,7 +20,7 @@
       </source>
     </icon-set>
   </icon-factory>
-  <widget class="Gtk.Window" id="MainWindow" design-size="692 344">
+  <widget class="Gtk.Window" id="CustomerManager.MainWindow" design-size="692 344">
     <action-group name="Default">
       <action id="DateiAction">
         <property name="Type">Action</property>
@@ -66,7 +69,11 @@
         <property name="Label" translatable="yes">Neu</property>
         <property name="ShortLabel" translatable="yes">Neu</property>
         <property name="StockId">gtk-add</property>
+<<<<<<< HEAD
+        <signal name="Activated" handler="OnAddActionActivated" />
+=======
         <signal name="Activated" handler="OnAddCustomerMBActivated" />
+>>>>>>> 948fad1fdb2effbebc496418479d61c959fd40cd
       </action>
       <action id="justifyCenterAction">
         <property name="Type">Action</property>

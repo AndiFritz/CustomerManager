@@ -1,6 +1,11 @@
 using System;
+using System.Collections.Generic;
 using Gtk;
+using System.Drawing; 
+using System.Drawing.Design;
 using CustomerManager;
+
+
 
 public partial class MainWindow: Gtk.Window
 {
