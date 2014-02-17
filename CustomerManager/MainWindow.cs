@@ -1,7 +1,13 @@
 using System;
+using System.Collections.Generic;
 using Gtk;
+using System.Drawing; 
+using System.Drawing.Design;
 using CustomerManager;
 
+
+namespace CustomerManager
+{
 public partial class MainWindow: Gtk.Window
 {
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
@@ -14,5 +20,14 @@ public partial class MainWindow: Gtk.Window
 	{
 		Application.Quit ();
 		a.RetVal = true;
+	}
+	protected void OnAddActionActivated (object sender, EventArgs e)
+	{	
+			CustomerWindow cdw = new CustomerWindow();
+			cdw.ShowAll;
 	}
+
+
+
+}
 }

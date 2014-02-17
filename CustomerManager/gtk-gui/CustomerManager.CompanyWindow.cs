@@ -39,7 +39,7 @@ namespace CustomerManager
 		private global::Gtk.Label pnameLabel;
 		private global::Gtk.Entry pnameTextBox;
 		private global::Gtk.Label telnumberLabel;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -71,7 +71,7 @@ namespace CustomerManager
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'><toolitem name='applyAction' action='applyAction'/><toolitem name='closeAction' action='closeAction'/><separator/><toolitem name='clearAction' action='clearAction'/><toolitem name='dialogQuestionAction' action='dialogQuestionAction'/></toolbar></ui>");
+			this.UIManager.AddUiFromString (@"<ui><toolbar name='toolbar1'><toolitem name='applyAction' action='applyAction'/><toolitem name='closeAction' action='closeAction'/><separator/><toolitem name='clearAction' action='clearAction'/><toolitem name='dialogQuestionAction' action='dialogQuestionAction'/></toolbar></ui>");
 			this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar1")));
 			this.toolbar1.Name = "toolbar1";
 			this.toolbar1.ShowArrow = false;
@@ -230,7 +230,7 @@ namespace CustomerManager
 			w14.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.typComboBox = global::Gtk.ComboBox.NewText ();
-			this.typComboBox.AppendText (global::Mono.Unix.Catalog.GetString ("Unternehmen"));
+			this.typComboBox.AppendText (global::Mono.Unix.Catalog.GetString ("Unternehmen\r"));
 			this.typComboBox.AppendText (global::Mono.Unix.Catalog.GetString ("Firma"));
 			this.typComboBox.Name = "typComboBox";
 			this.typComboBox.Active = 0;
