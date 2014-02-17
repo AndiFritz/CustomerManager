@@ -10,8 +10,10 @@ namespace CustomerManager
 		public static void Main (string[] args)
 		{
 			Application.Init ();
-			connection = new SQLiteConnection(); // heir muss die Klasse geaendert werden, wenn man eine andere Datenbank verwenden will 
+
 			MainWindow win = new MainWindow ();
+			connection = new SQLiteConnection(); // heir muss die Klasse geaendert werden, wenn man eine andere Datenbank verwenden will 
+
 			win.Show ();
 			Application.Run ();
 		}
