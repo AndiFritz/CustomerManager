@@ -26,4 +26,9 @@ public partial class MainWindow: Gtk.Window
 		CustomerWindow cw = new CustomerWindow();
 		cw.Show ();
 	}
+	protected void OnRemoveCustomerMBActivated (object sender, EventArgs e)
+	{
+		CustomerWindow cw = new CustomerWindow();
+		cw.Show ();
+	}
 }
