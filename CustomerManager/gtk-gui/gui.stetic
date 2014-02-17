@@ -129,11 +129,12 @@
         <property name="ShortLabel" translatable="yes">_Speichern</property>
         <property name="StockId">gtk-save</property>
       </action>
-      <action id="removeAction">
+      <action id="removeCustomerMB">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">löschen</property>
         <property name="ShortLabel" translatable="yes">löschen</property>
         <property name="StockId">gtk-remove</property>
+        <signal name="Activated" handler="OnRemoveCustomerMBActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -154,7 +155,7 @@
               </node>
               <node type="Menu" action="KundenAction">
                 <node type="Menuitem" action="addCustomerMB" />
-                <node type="Menuitem" action="removeAction" />
+                <node type="Menuitem" action="removeCustomerMB" />
                 <node type="Menuitem" action="justifyCenterAction" />
               </node>
               <node type="Menu" action="LiferantenAction">
@@ -401,6 +402,7 @@
     </child>
   </widget>
   <widget class="Gtk.Window" id="CustomerManager.CustomerWindow" design-size="877 757">
+    <action-group name="Default" />
     <action-group name="Default">
       <action id="applyAction">
         <property name="Type">Action</property>
@@ -460,7 +462,6 @@
         <signal name="Activated" handler="OnDialogQuestionTBActivated" />
       </action>
     </action-group>
-    <action-group name="Default" />
     <property name="MemberName" />
     <property name="Title" translatable="yes">neuer Benutzer</property>
     <property name="Icon">stock:gtk-add Menu</property>
