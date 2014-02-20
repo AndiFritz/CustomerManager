@@ -1,5 +1,6 @@
 using System;
 using Gtk;
+using System.Drawing;
 
 namespace CustomerManager
 {
@@ -9,6 +10,8 @@ namespace CustomerManager
 				base(Gtk.WindowType.Toplevel)
 		{
 			this.Build ();
+
+			loginButton.ModifyBg(StateType.Normal, new Gdk.Color(100,100,20));
 
 		}
 

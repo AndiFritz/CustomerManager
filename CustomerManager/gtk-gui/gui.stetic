@@ -3580,7 +3580,7 @@ Firma</property>
         <child>
           <widget class="Gtk.MenuBar" id="menubar2">
             <property name="MemberName" />
-            <node name="__gtksharp_112_Stetic_Editor_ActionMenuBar" type="Menubar">
+            <node name="menubar2" type="Menubar">
               <node type="Menu" action="DateiAction" />
               <node type="Menu" action="ProjekAction">
                 <node type="Menuitem" action="dialogInfoAction1" />
@@ -3607,7 +3607,7 @@ Firma</property>
               <widget class="Gtk.Toolbar" id="toolbar1">
                 <property name="MemberName" />
                 <property name="ShowArrow">False</property>
-                <node name="__gtksharp_71_Stetic_Editor_ActionToolbar" type="Toolbar">
+                <node name="toolbar1" type="Toolbar">
                   <node type="Toolitem" action="dialogInfoAction1" />
                 </node>
               </widget>
@@ -3763,7 +3763,6 @@ Firma</property>
                                     <property name="MemberName" />
                                     <property name="WidthRequest">100</property>
                                     <property name="Xalign">0</property>
-                                    <property name="LabelProp" translatable="yes" />
                                   </widget>
                                   <packing>
                                     <property name="TopAttach">1</property>
@@ -3829,7 +3828,6 @@ Firma</property>
                                     <property name="MemberName" />
                                     <property name="WidthRequest">100</property>
                                     <property name="Xalign">0</property>
-                                    <property name="LabelProp" translatable="yes" />
                                   </widget>
                                   <packing>
                                     <property name="LeftAttach">2</property>
