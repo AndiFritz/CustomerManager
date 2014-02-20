@@ -6,10 +6,6 @@
 *.user
 *.sln.docstates
 
-#MonoDevelop
-*.pidb
-*.userprefs
-
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

@@ -58,24 +58,12 @@ namespace CustomerManager
 		{
 			if (pwTextBox.Visible == true && pwdCLabel.Visible == true) { // Wenn Passwort - TextBoxen angezeigt werden, dann wird ein neuer Bentzer erstellt
 
-<<<<<<< HEAD
 				DateTime now = new DateTime();
 				DateTime regidate = now.Date;
-=======
-
-				DateTime regidate = DateTime.Now;
->>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 
 				bool ok = checkTextBoxValue ("user"); //prüft, ob alle Textboxen gefuellt sind 
 				bool pwdOK = checkPasswordEntry(); // prüft, ob Passwoerter richtig eingegeben wurden
 
-<<<<<<< HEAD
-=======
-
-				bool ok = checkTextBoxValue ("user"); //prüft, ob alle Textboxen gefuellt sind 
-				bool pwdOK = checkPasswordEntry(); // prüft, ob Passwoerter richtig eingegeben wurden
-
->>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 				if (ok == true) //alle Felder gefuellt
 				{
 					if(pwdOK == true) // Passwoerter stimmen ueberein
@@ -161,7 +149,6 @@ namespace CustomerManager
 				}
 			}
 		}
-<<<<<<< HEAD
 
 		private bool checkPasswordEntry () //Passwoerter richtig eingegeben?
 		{
@@ -181,27 +168,6 @@ namespace CustomerManager
 				companyCB.Sensitive = true;
 				newCompanyButton.Sensitive = true; 
 
-=======
-
-		private bool checkPasswordEntry () //Passwoerter richtig eingegeben?
-		{
-			if (pwTextBox.Text == pwCTextBox.Text) {
-				return true; 
-			} else {
-				return false; 
-			}
-		}
-
-		protected void OnTypCBChanged (object sender, EventArgs e) //Unternehmen - Eingabefeld Combobox ausschalten, wenn Typ = Privat
-		{
-			if (typCB.ActiveText == "Privat") {
-				companyCB.Sensitive = false; // Eingabefeld hinterlegen
-				newCompanyButton.Sensitive = false; // Button hinterlegen
-			} else {
-				companyCB.Sensitive = true;
-				newCompanyButton.Sensitive = true; 
-
->>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 				string typ = typCB.ActiveText;
 
 				List<String> companies = MainClass.connection.readCompany(typ);

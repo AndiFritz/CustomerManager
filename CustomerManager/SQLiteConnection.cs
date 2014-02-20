@@ -94,11 +94,7 @@ namespace CustomerManager
 				sqlite_cmd = sqlite_conn.CreateCommand ();
 				
 				sqlite_cmd.CommandText = "SELECT count(*) FROM tbl_users";
-<<<<<<< HEAD:CustomerManager/SQLiteConnection.cs
 				
-=======
-
->>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7:CustomerManager/SQLiteConnection.cs
 				if(!connect())
 					throw new Exception();
 
@@ -134,10 +130,10 @@ namespace CustomerManager
 				#region Benutzername vorhanden - Prüfung
 				sqlite_cmd = sqlite_conn.CreateCommand ();
 				
-				sqlite_cmd.CommandText = "SELECT count(*) FROM tbl_users Where uname='"+uname+"'";
-
-				sqlite_conn.Open ();
-
+				sqlite_cmd.CommandText = "SELECT count(*) FROM tbl_users Where username='"+uname+"'";
+				
+				sqlite_conn.Open();
+				
 				// Now the SQLiteCommand object can give us a DataReader-Object:
 				int exist = Convert.ToInt32(sqlite_cmd.ExecuteScalar());
 
@@ -153,7 +149,7 @@ namespace CustomerManager
 				}
 				#endregion
 			}
-			catch(Exception ex)
+			catch
 			{
 				sqlite_conn.Close ();
 				MessageDialog md = new MessageDialog(null, DialogFlags.DestroyWithParent, MessageType.Error, ButtonsType.Ok, "Es ist ein Fehler bei der Benutzerauslesung geschehen!");
@@ -235,9 +231,8 @@ namespace CustomerManager
 			try 
 			{
 				sqlite_cmd = sqlite_conn.CreateCommand();
-				sqlite_cmd.CommandText = "Select password From tbl_users WHERE uname='"+uname+"'";
-
-				sqlite_conn.Open();
+				sqlite_cmd.CommandText = "Select password From tbl_users WHERE username='"+uname+"'";
+				sqlite_conn.Open (); //Datenbankverbindung öffnen
 
 				// Now the SQLiteCommand object can give us a DataReader-Object:
 				datareader = sqlite_cmd.ExecuteReader ();
@@ -267,11 +262,8 @@ namespace CustomerManager
 			}
 		}
 
-<<<<<<< HEAD:CustomerManager/SQLiteConnection.cs
 
 
-=======
->>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7:CustomerManager/SQLiteConnection.cs
 		#region Unternehmen 
 		public override bool addCompany (string name, Int16 plz, string country, string street, string hnr, string web, string pname, string email, string telnumber, string mobilenumber, DateTime regidate, string typ)
 		{
@@ -348,7 +340,6 @@ namespace CustomerManager
 			}
 		}
 
-<<<<<<< HEAD:CustomerManager/SQLiteConnection.cs
 		#endregion
 
 		public override System.Collections.Generic.List<string> readCompany (string typ)
@@ -357,14 +348,6 @@ namespace CustomerManager
 
 			try {
 
-=======
-		public override System.Collections.Generic.List<string> readCompany (string typ)
-		{
-			int fk_typcompany = getFKTypcompany (typ); //ID von CompanyTyp aus tbl_typcompany bekommen
-			
-			try {
-				
->>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7:CustomerManager/SQLiteConnection.cs
 				sqlite_cmd = sqlite_conn.CreateCommand ();
 				
 				sqlite_cmd.CommandText = "SELECT name FROM tbl_companies WHERE fk_typcompany ='"+fk_typcompany+"'";
@@ -390,13 +373,6 @@ namespace CustomerManager
 				return null; 
 			}
 		}
-<<<<<<< HEAD:CustomerManager/SQLiteConnection.cs
-=======
-
-		#endregion
-
-
->>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7:CustomerManager/SQLiteConnection.cs
 	}
 }
 
