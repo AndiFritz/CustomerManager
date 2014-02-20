@@ -205,6 +205,7 @@ namespace CustomerManager
 			this.newCompanyButton.CanFocus = true;
 			this.newCompanyButton.Name = "newCompanyButton";
 			this.newCompanyButton.UseUnderline = true;
+<<<<<<< HEAD
 			// Container child newCompanyButton.Gtk.Container+ContainerChild
 			global::Gtk.Alignment w12 = new global::Gtk.Alignment (0.5F, 0.5F, 0F, 0F);
 			// Container child GtkAlignment.Gtk.Container+ContainerChild
@@ -232,17 +233,42 @@ namespace CustomerManager
 			w21.RightAttach = ((uint)(3));
 			w21.XOptions = ((global::Gtk.AttachOptions)(4));
 			w21.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			this.newCompanyButton.Label = global::Mono.Unix.Catalog.GetString ("Firma hinzufügen");
+			global::Gtk.Image w12 = new global::Gtk.Image ();
+			w12.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "stock_new-bcard", global::Gtk.IconSize.Button);
+			this.newCompanyButton.Image = w12;
+			this.hbox1.Add (this.newCompanyButton);
+			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.newCompanyButton]));
+			w13.Position = 1;
+			this.table1.Add (this.hbox1);
+			global::Gtk.Table.TableChild w14 = ((global::Gtk.Table.TableChild)(this.table1 [this.hbox1]));
+			w14.TopAttach = ((uint)(3));
+			w14.BottomAttach = ((uint)(4));
+			w14.LeftAttach = ((uint)(2));
+			w14.RightAttach = ((uint)(3));
+			w14.XOptions = ((global::Gtk.AttachOptions)(4));
+			w14.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.hnrLabel = new global::Gtk.Label ();
 			this.hnrLabel.Name = "hnrLabel";
 			this.hnrLabel.Xalign = 0F;
 			this.hnrLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Hausnummer:");
 			this.table1.Add (this.hnrLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w22 = ((global::Gtk.Table.TableChild)(this.table1 [this.hnrLabel]));
 			w22.TopAttach = ((uint)(10));
 			w22.BottomAttach = ((uint)(11));
 			w22.XOptions = ((global::Gtk.AttachOptions)(4));
 			w22.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w15 = ((global::Gtk.Table.TableChild)(this.table1 [this.hnrLabel]));
+			w15.TopAttach = ((uint)(10));
+			w15.BottomAttach = ((uint)(11));
+			w15.XOptions = ((global::Gtk.AttachOptions)(4));
+			w15.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.hnrTextBox = new global::Gtk.Entry ();
 			this.hnrTextBox.CanFocus = true;
@@ -250,6 +276,7 @@ namespace CustomerManager
 			this.hnrTextBox.IsEditable = true;
 			this.hnrTextBox.InvisibleChar = '●';
 			this.table1.Add (this.hnrTextBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w23 = ((global::Gtk.Table.TableChild)(this.table1 [this.hnrTextBox]));
 			w23.TopAttach = ((uint)(10));
 			w23.BottomAttach = ((uint)(11));
@@ -257,17 +284,34 @@ namespace CustomerManager
 			w23.RightAttach = ((uint)(2));
 			w23.XOptions = ((global::Gtk.AttachOptions)(4));
 			w23.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w16 = ((global::Gtk.Table.TableChild)(this.table1 [this.hnrTextBox]));
+			w16.TopAttach = ((uint)(10));
+			w16.BottomAttach = ((uint)(11));
+			w16.LeftAttach = ((uint)(1));
+			w16.RightAttach = ((uint)(2));
+			w16.XOptions = ((global::Gtk.AttachOptions)(4));
+			w16.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.mobileLabel = new global::Gtk.Label ();
 			this.mobileLabel.Name = "mobileLabel";
 			this.mobileLabel.Xalign = 0F;
 			this.mobileLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Mobil: ");
 			this.table1.Add (this.mobileLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w24 = ((global::Gtk.Table.TableChild)(this.table1 [this.mobileLabel]));
 			w24.TopAttach = ((uint)(6));
 			w24.BottomAttach = ((uint)(7));
 			w24.XOptions = ((global::Gtk.AttachOptions)(4));
 			w24.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w17 = ((global::Gtk.Table.TableChild)(this.table1 [this.mobileLabel]));
+			w17.TopAttach = ((uint)(6));
+			w17.BottomAttach = ((uint)(7));
+			w17.XOptions = ((global::Gtk.AttachOptions)(4));
+			w17.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.mobileTextBox = new global::Gtk.Entry ();
 			this.mobileTextBox.CanFocus = true;
@@ -275,6 +319,7 @@ namespace CustomerManager
 			this.mobileTextBox.IsEditable = true;
 			this.mobileTextBox.InvisibleChar = '●';
 			this.table1.Add (this.mobileTextBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w25 = ((global::Gtk.Table.TableChild)(this.table1 [this.mobileTextBox]));
 			w25.TopAttach = ((uint)(6));
 			w25.BottomAttach = ((uint)(7));
@@ -282,17 +327,34 @@ namespace CustomerManager
 			w25.RightAttach = ((uint)(2));
 			w25.XOptions = ((global::Gtk.AttachOptions)(4));
 			w25.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w18 = ((global::Gtk.Table.TableChild)(this.table1 [this.mobileTextBox]));
+			w18.TopAttach = ((uint)(6));
+			w18.BottomAttach = ((uint)(7));
+			w18.LeftAttach = ((uint)(1));
+			w18.RightAttach = ((uint)(2));
+			w18.XOptions = ((global::Gtk.AttachOptions)(4));
+			w18.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.nnameLabel = new global::Gtk.Label ();
 			this.nnameLabel.Name = "nnameLabel";
 			this.nnameLabel.Xalign = 0F;
 			this.nnameLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Nachname: ");
 			this.table1.Add (this.nnameLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w26 = ((global::Gtk.Table.TableChild)(this.table1 [this.nnameLabel]));
 			w26.TopAttach = ((uint)(1));
 			w26.BottomAttach = ((uint)(2));
 			w26.XOptions = ((global::Gtk.AttachOptions)(4));
 			w26.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w19 = ((global::Gtk.Table.TableChild)(this.table1 [this.nnameLabel]));
+			w19.TopAttach = ((uint)(1));
+			w19.BottomAttach = ((uint)(2));
+			w19.XOptions = ((global::Gtk.AttachOptions)(4));
+			w19.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.nnameTextBox = new global::Gtk.Entry ();
 			this.nnameTextBox.CanFocus = true;
@@ -300,12 +362,21 @@ namespace CustomerManager
 			this.nnameTextBox.IsEditable = true;
 			this.nnameTextBox.InvisibleChar = '●';
 			this.table1.Add (this.nnameTextBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w27 = ((global::Gtk.Table.TableChild)(this.table1 [this.nnameTextBox]));
 			w27.TopAttach = ((uint)(1));
 			w27.BottomAttach = ((uint)(2));
 			w27.LeftAttach = ((uint)(1));
 			w27.RightAttach = ((uint)(2));
 			w27.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w20 = ((global::Gtk.Table.TableChild)(this.table1 [this.nnameTextBox]));
+			w20.TopAttach = ((uint)(1));
+			w20.BottomAttach = ((uint)(2));
+			w20.LeftAttach = ((uint)(1));
+			w20.RightAttach = ((uint)(2));
+			w20.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.phoneTextBox = new global::Gtk.Entry ();
 			this.phoneTextBox.CanFocus = true;
@@ -313,6 +384,7 @@ namespace CustomerManager
 			this.phoneTextBox.IsEditable = true;
 			this.phoneTextBox.InvisibleChar = '●';
 			this.table1.Add (this.phoneTextBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w28 = ((global::Gtk.Table.TableChild)(this.table1 [this.phoneTextBox]));
 			w28.TopAttach = ((uint)(5));
 			w28.BottomAttach = ((uint)(6));
@@ -320,17 +392,34 @@ namespace CustomerManager
 			w28.RightAttach = ((uint)(2));
 			w28.XOptions = ((global::Gtk.AttachOptions)(4));
 			w28.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w21 = ((global::Gtk.Table.TableChild)(this.table1 [this.phoneTextBox]));
+			w21.TopAttach = ((uint)(5));
+			w21.BottomAttach = ((uint)(6));
+			w21.LeftAttach = ((uint)(1));
+			w21.RightAttach = ((uint)(2));
+			w21.XOptions = ((global::Gtk.AttachOptions)(4));
+			w21.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.plzLabel = new global::Gtk.Label ();
 			this.plzLabel.Name = "plzLabel";
 			this.plzLabel.Xalign = 0F;
 			this.plzLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("PLZ:");
 			this.table1.Add (this.plzLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w29 = ((global::Gtk.Table.TableChild)(this.table1 [this.plzLabel]));
 			w29.TopAttach = ((uint)(7));
 			w29.BottomAttach = ((uint)(8));
 			w29.XOptions = ((global::Gtk.AttachOptions)(4));
 			w29.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w22 = ((global::Gtk.Table.TableChild)(this.table1 [this.plzLabel]));
+			w22.TopAttach = ((uint)(7));
+			w22.BottomAttach = ((uint)(8));
+			w22.XOptions = ((global::Gtk.AttachOptions)(4));
+			w22.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.plzTextBox = new global::Gtk.Entry ();
 			this.plzTextBox.CanFocus = true;
@@ -338,6 +427,7 @@ namespace CustomerManager
 			this.plzTextBox.IsEditable = true;
 			this.plzTextBox.InvisibleChar = '●';
 			this.table1.Add (this.plzTextBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w30 = ((global::Gtk.Table.TableChild)(this.table1 [this.plzTextBox]));
 			w30.TopAttach = ((uint)(7));
 			w30.BottomAttach = ((uint)(8));
@@ -345,17 +435,34 @@ namespace CustomerManager
 			w30.RightAttach = ((uint)(2));
 			w30.XOptions = ((global::Gtk.AttachOptions)(4));
 			w30.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w23 = ((global::Gtk.Table.TableChild)(this.table1 [this.plzTextBox]));
+			w23.TopAttach = ((uint)(7));
+			w23.BottomAttach = ((uint)(8));
+			w23.LeftAttach = ((uint)(1));
+			w23.RightAttach = ((uint)(2));
+			w23.XOptions = ((global::Gtk.AttachOptions)(4));
+			w23.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.streetLabel = new global::Gtk.Label ();
 			this.streetLabel.Name = "streetLabel";
 			this.streetLabel.Xalign = 0F;
 			this.streetLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Straße:");
 			this.table1.Add (this.streetLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w31 = ((global::Gtk.Table.TableChild)(this.table1 [this.streetLabel]));
 			w31.TopAttach = ((uint)(9));
 			w31.BottomAttach = ((uint)(10));
 			w31.XOptions = ((global::Gtk.AttachOptions)(4));
 			w31.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w24 = ((global::Gtk.Table.TableChild)(this.table1 [this.streetLabel]));
+			w24.TopAttach = ((uint)(9));
+			w24.BottomAttach = ((uint)(10));
+			w24.XOptions = ((global::Gtk.AttachOptions)(4));
+			w24.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.streetTextBox = new global::Gtk.Entry ();
 			this.streetTextBox.CanFocus = true;
@@ -363,6 +470,7 @@ namespace CustomerManager
 			this.streetTextBox.IsEditable = true;
 			this.streetTextBox.InvisibleChar = '●';
 			this.table1.Add (this.streetTextBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w32 = ((global::Gtk.Table.TableChild)(this.table1 [this.streetTextBox]));
 			w32.TopAttach = ((uint)(9));
 			w32.BottomAttach = ((uint)(10));
@@ -370,17 +478,34 @@ namespace CustomerManager
 			w32.RightAttach = ((uint)(2));
 			w32.XOptions = ((global::Gtk.AttachOptions)(4));
 			w32.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w25 = ((global::Gtk.Table.TableChild)(this.table1 [this.streetTextBox]));
+			w25.TopAttach = ((uint)(9));
+			w25.BottomAttach = ((uint)(10));
+			w25.LeftAttach = ((uint)(1));
+			w25.RightAttach = ((uint)(2));
+			w25.XOptions = ((global::Gtk.AttachOptions)(4));
+			w25.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.telephoneLabel = new global::Gtk.Label ();
 			this.telephoneLabel.Name = "telephoneLabel";
 			this.telephoneLabel.Xalign = 0F;
 			this.telephoneLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Telefon: ");
 			this.table1.Add (this.telephoneLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w33 = ((global::Gtk.Table.TableChild)(this.table1 [this.telephoneLabel]));
 			w33.TopAttach = ((uint)(5));
 			w33.BottomAttach = ((uint)(6));
 			w33.XOptions = ((global::Gtk.AttachOptions)(4));
 			w33.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w26 = ((global::Gtk.Table.TableChild)(this.table1 [this.telephoneLabel]));
+			w26.TopAttach = ((uint)(5));
+			w26.BottomAttach = ((uint)(6));
+			w26.XOptions = ((global::Gtk.AttachOptions)(4));
+			w26.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.typCB = global::Gtk.ComboBox.NewText ();
 			this.typCB.AppendText (global::Mono.Unix.Catalog.GetString ("Privat"));
@@ -388,6 +513,7 @@ namespace CustomerManager
 			this.typCB.AppendText (global::Mono.Unix.Catalog.GetString ("Unternehmen"));
 			this.typCB.Name = "typCB";
 			this.table1.Add (this.typCB);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w34 = ((global::Gtk.Table.TableChild)(this.table1 [this.typCB]));
 			w34.TopAttach = ((uint)(3));
 			w34.BottomAttach = ((uint)(4));
@@ -395,28 +521,53 @@ namespace CustomerManager
 			w34.RightAttach = ((uint)(2));
 			w34.XOptions = ((global::Gtk.AttachOptions)(4));
 			w34.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w27 = ((global::Gtk.Table.TableChild)(this.table1 [this.typCB]));
+			w27.TopAttach = ((uint)(3));
+			w27.BottomAttach = ((uint)(4));
+			w27.LeftAttach = ((uint)(1));
+			w27.RightAttach = ((uint)(2));
+			w27.XOptions = ((global::Gtk.AttachOptions)(4));
+			w27.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.typLabel = new global::Gtk.Label ();
 			this.typLabel.Name = "typLabel";
 			this.typLabel.Xalign = 0F;
 			this.typLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Typ: ");
 			this.table1.Add (this.typLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w35 = ((global::Gtk.Table.TableChild)(this.table1 [this.typLabel]));
 			w35.TopAttach = ((uint)(3));
 			w35.BottomAttach = ((uint)(4));
 			w35.XOptions = ((global::Gtk.AttachOptions)(4));
 			w35.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w28 = ((global::Gtk.Table.TableChild)(this.table1 [this.typLabel]));
+			w28.TopAttach = ((uint)(3));
+			w28.BottomAttach = ((uint)(4));
+			w28.XOptions = ((global::Gtk.AttachOptions)(4));
+			w28.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.villageLabel = new global::Gtk.Label ();
 			this.villageLabel.Name = "villageLabel";
 			this.villageLabel.Xalign = 0F;
 			this.villageLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Ort:");
 			this.table1.Add (this.villageLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w36 = ((global::Gtk.Table.TableChild)(this.table1 [this.villageLabel]));
 			w36.TopAttach = ((uint)(8));
 			w36.BottomAttach = ((uint)(9));
 			w36.XOptions = ((global::Gtk.AttachOptions)(4));
 			w36.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w29 = ((global::Gtk.Table.TableChild)(this.table1 [this.villageLabel]));
+			w29.TopAttach = ((uint)(8));
+			w29.BottomAttach = ((uint)(9));
+			w29.XOptions = ((global::Gtk.AttachOptions)(4));
+			w29.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.villageTextBox = new global::Gtk.Entry ();
 			this.villageTextBox.CanFocus = true;
@@ -424,6 +575,7 @@ namespace CustomerManager
 			this.villageTextBox.IsEditable = true;
 			this.villageTextBox.InvisibleChar = '●';
 			this.table1.Add (this.villageTextBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w37 = ((global::Gtk.Table.TableChild)(this.table1 [this.villageTextBox]));
 			w37.TopAttach = ((uint)(8));
 			w37.BottomAttach = ((uint)(9));
@@ -431,17 +583,34 @@ namespace CustomerManager
 			w37.RightAttach = ((uint)(2));
 			w37.XOptions = ((global::Gtk.AttachOptions)(4));
 			w37.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w30 = ((global::Gtk.Table.TableChild)(this.table1 [this.villageTextBox]));
+			w30.TopAttach = ((uint)(8));
+			w30.BottomAttach = ((uint)(9));
+			w30.LeftAttach = ((uint)(1));
+			w30.RightAttach = ((uint)(2));
+			w30.XOptions = ((global::Gtk.AttachOptions)(4));
+			w30.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.vnameLabel = new global::Gtk.Label ();
 			this.vnameLabel.Name = "vnameLabel";
 			this.vnameLabel.Xalign = 0F;
 			this.vnameLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Vorname: ");
 			this.table1.Add (this.vnameLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w38 = ((global::Gtk.Table.TableChild)(this.table1 [this.vnameLabel]));
 			w38.TopAttach = ((uint)(2));
 			w38.BottomAttach = ((uint)(3));
 			w38.XOptions = ((global::Gtk.AttachOptions)(4));
 			w38.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w31 = ((global::Gtk.Table.TableChild)(this.table1 [this.vnameLabel]));
+			w31.TopAttach = ((uint)(2));
+			w31.BottomAttach = ((uint)(3));
+			w31.XOptions = ((global::Gtk.AttachOptions)(4));
+			w31.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.vnameTextBox = new global::Gtk.Entry ();
 			this.vnameTextBox.CanFocus = true;
@@ -449,6 +618,7 @@ namespace CustomerManager
 			this.vnameTextBox.IsEditable = true;
 			this.vnameTextBox.InvisibleChar = '●';
 			this.table1.Add (this.vnameTextBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w39 = ((global::Gtk.Table.TableChild)(this.table1 [this.vnameTextBox]));
 			w39.TopAttach = ((uint)(2));
 			w39.BottomAttach = ((uint)(3));
@@ -456,12 +626,22 @@ namespace CustomerManager
 			w39.RightAttach = ((uint)(2));
 			w39.XOptions = ((global::Gtk.AttachOptions)(4));
 			w39.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w32 = ((global::Gtk.Table.TableChild)(this.table1 [this.vnameTextBox]));
+			w32.TopAttach = ((uint)(2));
+			w32.BottomAttach = ((uint)(3));
+			w32.LeftAttach = ((uint)(1));
+			w32.RightAttach = ((uint)(2));
+			w32.XOptions = ((global::Gtk.AttachOptions)(4));
+			w32.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child table1.Gtk.Table+TableChild
 			this.warningLabel = new global::Gtk.Label ();
 			this.warningLabel.Name = "warningLabel";
 			this.warningLabel.Xalign = 0F;
 			this.warningLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Bitte nur Zahlen eingeben!");
 			this.table1.Add (this.warningLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w40 = ((global::Gtk.Table.TableChild)(this.table1 [this.warningLabel]));
 			w40.TopAttach = ((uint)(7));
 			w40.BottomAttach = ((uint)(8));
@@ -475,29 +655,61 @@ namespace CustomerManager
 			w41.Expand = false;
 			w41.Fill = false;
 			w41.Padding = ((uint)(14));
+=======
+			global::Gtk.Table.TableChild w33 = ((global::Gtk.Table.TableChild)(this.table1 [this.warningLabel]));
+			w33.TopAttach = ((uint)(7));
+			w33.BottomAttach = ((uint)(8));
+			w33.LeftAttach = ((uint)(2));
+			w33.RightAttach = ((uint)(3));
+			w33.XOptions = ((global::Gtk.AttachOptions)(4));
+			w33.YOptions = ((global::Gtk.AttachOptions)(4));
+			this.vbox1.Add (this.table1);
+			global::Gtk.Box.BoxChild w34 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.table1]));
+			w34.Position = 3;
+			w34.Expand = false;
+			w34.Fill = false;
+			w34.Padding = ((uint)(14));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.fixed1 = new global::Gtk.Fixed ();
 			this.fixed1.Name = "fixed1";
 			this.fixed1.HasWindow = false;
 			this.vbox1.Add (this.fixed1);
+<<<<<<< HEAD
 			global::Gtk.Box.BoxChild w42 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.fixed1]));
 			w42.Position = 4;
+=======
+			global::Gtk.Box.BoxChild w35 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.fixed1]));
+			w35.Position = 4;
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.userdataLabel = new global::Gtk.Label ();
 			this.userdataLabel.Name = "userdataLabel";
 			this.userdataLabel.Xalign = 0F;
 			this.userdataLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Benutzerdaten");
 			this.vbox1.Add (this.userdataLabel);
+<<<<<<< HEAD
 			global::Gtk.Box.BoxChild w43 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.userdataLabel]));
 			w43.Position = 5;
 			w43.Expand = false;
 			w43.Fill = false;
+=======
+			global::Gtk.Box.BoxChild w36 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.userdataLabel]));
+			w36.Position = 5;
+			w36.Expand = false;
+			w36.Fill = false;
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.hseparator2 = new global::Gtk.HSeparator ();
 			this.hseparator2.Name = "hseparator2";
 			this.vbox1.Add (this.hseparator2);
+<<<<<<< HEAD
 			global::Gtk.Box.BoxChild w44 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hseparator2]));
 			w44.Position = 6;
+=======
+			global::Gtk.Box.BoxChild w37 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hseparator2]));
+			w37.Position = 6;
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.newUserTable = new global::Gtk.Table (((uint)(3)), ((uint)(3)), false);
 			this.newUserTable.Name = "newUserTable";
@@ -511,6 +723,7 @@ namespace CustomerManager
 			this.pwCTextBox.Visibility = false;
 			this.pwCTextBox.InvisibleChar = '●';
 			this.newUserTable.Add (this.pwCTextBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w45 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwCTextBox]));
 			w45.TopAttach = ((uint)(2));
 			w45.BottomAttach = ((uint)(3));
@@ -518,21 +731,39 @@ namespace CustomerManager
 			w45.RightAttach = ((uint)(2));
 			w45.XOptions = ((global::Gtk.AttachOptions)(4));
 			w45.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w38 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwCTextBox]));
+			w38.TopAttach = ((uint)(2));
+			w38.BottomAttach = ((uint)(3));
+			w38.LeftAttach = ((uint)(1));
+			w38.RightAttach = ((uint)(2));
+			w38.XOptions = ((global::Gtk.AttachOptions)(4));
+			w38.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child newUserTable.Gtk.Table+TableChild
 			this.pwdCLabel = new global::Gtk.Label ();
 			this.pwdCLabel.Name = "pwdCLabel";
 			this.pwdCLabel.Xalign = 0F;
 			this.pwdCLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Passwort bestätigen:");
 			this.newUserTable.Add (this.pwdCLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w46 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwdCLabel]));
 			w46.TopAttach = ((uint)(2));
 			w46.BottomAttach = ((uint)(3));
 			w46.XOptions = ((global::Gtk.AttachOptions)(4));
 			w46.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w39 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwdCLabel]));
+			w39.TopAttach = ((uint)(2));
+			w39.BottomAttach = ((uint)(3));
+			w39.XOptions = ((global::Gtk.AttachOptions)(4));
+			w39.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child newUserTable.Gtk.Table+TableChild
 			this.pwdCPictureBox = new global::Gtk.Image ();
 			this.pwdCPictureBox.Name = "pwdCPictureBox";
 			this.newUserTable.Add (this.pwdCPictureBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w47 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwdCPictureBox]));
 			w47.TopAttach = ((uint)(2));
 			w47.BottomAttach = ((uint)(3));
@@ -540,21 +771,38 @@ namespace CustomerManager
 			w47.RightAttach = ((uint)(3));
 			w47.XOptions = ((global::Gtk.AttachOptions)(4));
 			w47.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w40 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwdCPictureBox]));
+			w40.TopAttach = ((uint)(2));
+			w40.BottomAttach = ((uint)(3));
+			w40.LeftAttach = ((uint)(2));
+			w40.RightAttach = ((uint)(3));
+			w40.XOptions = ((global::Gtk.AttachOptions)(4));
+			w40.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child newUserTable.Gtk.Table+TableChild
 			this.pwdLabel = new global::Gtk.Label ();
 			this.pwdLabel.Name = "pwdLabel";
 			this.pwdLabel.Xalign = 0F;
 			this.pwdLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Passwort: ");
 			this.newUserTable.Add (this.pwdLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w48 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwdLabel]));
 			w48.TopAttach = ((uint)(1));
 			w48.BottomAttach = ((uint)(2));
 			w48.XOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w41 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwdLabel]));
+			w41.TopAttach = ((uint)(1));
+			w41.BottomAttach = ((uint)(2));
+			w41.XOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child newUserTable.Gtk.Table+TableChild
 			this.pwPictureBox = new global::Gtk.Image ();
 			this.pwPictureBox.Name = "pwPictureBox";
 			this.pwPictureBox.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-yes", global::Gtk.IconSize.Menu);
 			this.newUserTable.Add (this.pwPictureBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w49 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwPictureBox]));
 			w49.TopAttach = ((uint)(1));
 			w49.BottomAttach = ((uint)(2));
@@ -562,6 +810,15 @@ namespace CustomerManager
 			w49.RightAttach = ((uint)(3));
 			w49.XOptions = ((global::Gtk.AttachOptions)(4));
 			w49.YOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w42 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwPictureBox]));
+			w42.TopAttach = ((uint)(1));
+			w42.BottomAttach = ((uint)(2));
+			w42.LeftAttach = ((uint)(2));
+			w42.RightAttach = ((uint)(3));
+			w42.XOptions = ((global::Gtk.AttachOptions)(4));
+			w42.YOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child newUserTable.Gtk.Table+TableChild
 			this.pwTextBox = new global::Gtk.Entry ();
 			this.pwTextBox.CanFocus = true;
@@ -570,19 +827,32 @@ namespace CustomerManager
 			this.pwTextBox.Visibility = false;
 			this.pwTextBox.InvisibleChar = '●';
 			this.newUserTable.Add (this.pwTextBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w50 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwTextBox]));
 			w50.TopAttach = ((uint)(1));
 			w50.BottomAttach = ((uint)(2));
 			w50.LeftAttach = ((uint)(1));
 			w50.RightAttach = ((uint)(2));
+=======
+			global::Gtk.Table.TableChild w43 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.pwTextBox]));
+			w43.TopAttach = ((uint)(1));
+			w43.BottomAttach = ((uint)(2));
+			w43.LeftAttach = ((uint)(1));
+			w43.RightAttach = ((uint)(2));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child newUserTable.Gtk.Table+TableChild
 			this.unameLabel = new global::Gtk.Label ();
 			this.unameLabel.Name = "unameLabel";
 			this.unameLabel.Xalign = 0F;
 			this.unameLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Benutzername :");
 			this.newUserTable.Add (this.unameLabel);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w51 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.unameLabel]));
 			w51.XOptions = ((global::Gtk.AttachOptions)(4));
+=======
+			global::Gtk.Table.TableChild w44 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.unameLabel]));
+			w44.XOptions = ((global::Gtk.AttachOptions)(4));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child newUserTable.Gtk.Table+TableChild
 			this.usernameTextBox = new global::Gtk.Entry ();
 			this.usernameTextBox.CanFocus = true;
@@ -590,6 +860,7 @@ namespace CustomerManager
 			this.usernameTextBox.IsEditable = true;
 			this.usernameTextBox.InvisibleChar = '●';
 			this.newUserTable.Add (this.usernameTextBox);
+<<<<<<< HEAD
 			global::Gtk.Table.TableChild w52 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.usernameTextBox]));
 			w52.LeftAttach = ((uint)(1));
 			w52.RightAttach = ((uint)(2));
@@ -600,6 +871,18 @@ namespace CustomerManager
 			w53.Position = 7;
 			w53.Expand = false;
 			w53.Fill = false;
+=======
+			global::Gtk.Table.TableChild w45 = ((global::Gtk.Table.TableChild)(this.newUserTable [this.usernameTextBox]));
+			w45.LeftAttach = ((uint)(1));
+			w45.RightAttach = ((uint)(2));
+			w45.XOptions = ((global::Gtk.AttachOptions)(4));
+			w45.YOptions = ((global::Gtk.AttachOptions)(4));
+			this.vbox1.Add (this.newUserTable);
+			global::Gtk.Box.BoxChild w46 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.newUserTable]));
+			w46.Position = 7;
+			w46.Expand = false;
+			w46.Fill = false;
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			this.Add (this.vbox1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();

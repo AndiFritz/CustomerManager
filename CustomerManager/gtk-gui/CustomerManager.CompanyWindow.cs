@@ -39,7 +39,11 @@ namespace CustomerManager
 		private global::Gtk.Label pnameLabel;
 		private global::Gtk.Entry pnameTextBox;
 		private global::Gtk.Label telnumberLabel;
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -64,12 +68,21 @@ namespace CustomerManager
 			this.Title = global::Mono.Unix.Catalog.GetString ("neues Unernehmen");
 			this.Icon = global::Stetic.IconLoader.LoadIcon (this, "stock_new-bcard", global::Gtk.IconSize.Menu);
 			this.WindowPosition = ((global::Gtk.WindowPosition)(1));
+<<<<<<< HEAD
+=======
+			this.BorderWidth = ((uint)(9));
+			this.Resizable = false;
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			// Container child CustomerManager.CompanyWindow.Gtk.Container+ContainerChild
 			this.vbox1 = new global::Gtk.VBox ();
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
+<<<<<<< HEAD
 			this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'><toolitem name='applyAction' action='applyAction'/><toolitem name='closeAction' action='closeAction'/><separator/><toolitem name='clearAction' action='clearAction'/><toolitem name='dialogQuestionAction' action='dialogQuestionAction'/></toolbar></ui>");
+=======
+			this.UIManager.AddUiFromString (@"<ui><toolbar name='toolbar1'><toolitem name='applyAction' action='applyAction'/><toolitem name='closeAction' action='closeAction'/><separator/><toolitem name='clearAction' action='clearAction'/><toolitem name='dialogQuestionAction' action='dialogQuestionAction'/></toolbar></ui>");
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar1")));
 			this.toolbar1.Name = "toolbar1";
 			this.toolbar1.ShowArrow = false;
@@ -228,7 +241,11 @@ namespace CustomerManager
 			w14.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
 			this.typComboBox = global::Gtk.ComboBox.NewText ();
+<<<<<<< HEAD
 			this.typComboBox.AppendText (global::Mono.Unix.Catalog.GetString ("Unternehmen"));
+=======
+			this.typComboBox.AppendText (global::Mono.Unix.Catalog.GetString ("Unternehmen\r"));
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			this.typComboBox.AppendText (global::Mono.Unix.Catalog.GetString ("Firma"));
 			this.typComboBox.Name = "typComboBox";
 			this.typComboBox.Active = 0;
@@ -405,7 +422,11 @@ namespace CustomerManager
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 515;
+<<<<<<< HEAD
 			this.DefaultHeight = 584;
+=======
+			this.DefaultHeight = 591;
+>>>>>>> 2329f629f5782d2ace94a8ea164da797a1b5d2d7
 			this.Show ();
 			this.applyAction.Activated += new global::System.EventHandler (this.OnApplyActionActivated);
 			this.closeAction.Activated += new global::System.EventHandler (this.OnCloseActionActivated);

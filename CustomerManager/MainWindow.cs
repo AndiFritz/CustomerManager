@@ -1,6 +1,11 @@
 using System;
+using System.Collections.Generic;
 using Gtk;
+using System.Drawing; 
+using System.Drawing.Design;
 using CustomerManager;
+
+
 
 public partial class MainWindow: Gtk.Window
 {
@@ -16,13 +21,20 @@ public partial class MainWindow: Gtk.Window
 		a.RetVal = true;
 	}
 
-	protected void OnAddAction1Activated (object sender, EventArgs e)
+	protected void OnAddCustomerMBActivated (object sender, EventArgs e)
 	{
-//		MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "neuer Benutzer hinzufügen!");
-//		md.Run();
-//		md.Destroy();
-//		ProjectWindow projectWindow = new ProjectWindow();
-//		projectWindow.Show();
+		CustomerWindow cw = new CustomerWindow();
+		cw.ShowAll();
 	}
-
+	protected void OnAddCustomerTBActivated (object sender, EventArgs e)
+	{
+		CustomerWindow cw = new CustomerWindow();
+		cw.Show ();
+	}
+	protected void OnRemoveCustomerMBActivated (object sender, EventArgs e)
+	{
+		CustomerWindow cw = new CustomerWindow();
+		cw.Show ();
+	}
 }
+

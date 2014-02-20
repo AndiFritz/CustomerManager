@@ -17,7 +17,7 @@ namespace CustomerManager
 		private global::Gtk.Button exitButton;
 		private global::Gtk.VBox vbox7;
 		private global::Gtk.Image image3;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);

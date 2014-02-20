@@ -12,9 +12,9 @@ public partial class MainWindow
 	private global::Gtk.Action KundenAction;
 	private global::Gtk.Action EinstellungenAction;
 	private global::Gtk.Action HilfeAction;
-	private global::Gtk.Action addAction;
+	private global::Gtk.Action addCustomerMB;
 	private global::Gtk.Action justifyCenterAction;
-	private global::Gtk.Action addAction1;
+	private global::Gtk.Action addCustomerTB;
 	private global::Gtk.Action openAction;
 	private global::Gtk.Action NeuerLieferantAction;
 	private global::Gtk.Action LiferantenAction;
@@ -22,7 +22,7 @@ public partial class MainWindow
 	private global::Gtk.Action justifyCenterAction1;
 	private global::Gtk.Action openAction1;
 	private global::Gtk.Action saveAction;
-	private global::Gtk.Action removeAction;
+	private global::Gtk.Action removeCustomerMB;
 	private global::Gtk.VBox vbox3;
 	private global::Gtk.MenuBar menubar1;
 	private global::Gtk.HBox hbox1;
@@ -30,7 +30,7 @@ public partial class MainWindow
 	private global::Gtk.Fixed fixed1;
 	private global::Gtk.Fixed fixed2;
 	private global::Gtk.ScrolledWindow GtkScrolledWindow;
-	private global::Gtk.TextView textview1;
+	private global::Gtk.NodeView nodeview1;
 	
 	protected virtual void Build ()
 	{
@@ -62,15 +62,15 @@ public partial class MainWindow
 		this.HilfeAction = new global::Gtk.Action ("HilfeAction", global::Mono.Unix.Catalog.GetString ("Hilfe"), null, null);
 		this.HilfeAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hilfe");
 		w1.Add (this.HilfeAction, null);
-		this.addAction = new global::Gtk.Action ("addAction", global::Mono.Unix.Catalog.GetString ("Neu"), null, "gtk-add");
-		this.addAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Neu");
-		w1.Add (this.addAction, null);
+		this.addCustomerMB = new global::Gtk.Action ("addCustomerMB", global::Mono.Unix.Catalog.GetString ("Neu"), null, "gtk-add");
+		this.addCustomerMB.ShortLabel = global::Mono.Unix.Catalog.GetString ("Neu");
+		w1.Add (this.addCustomerMB, null);
 		this.justifyCenterAction = new global::Gtk.Action ("justifyCenterAction", global::Mono.Unix.Catalog.GetString ("Anzeigen"), null, "gtk-justify-center");
 		this.justifyCenterAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Anzeigen");
 		w1.Add (this.justifyCenterAction, null);
-		this.addAction1 = new global::Gtk.Action ("addAction1", global::Mono.Unix.Catalog.GetString ("Hinzufügen"), null, "gtk-add");
-		this.addAction1.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hinzufügen");
-		w1.Add (this.addAction1, null);
+		this.addCustomerTB = new global::Gtk.Action ("addCustomerTB", global::Mono.Unix.Catalog.GetString ("Hinzufügen"), null, "gtk-add");
+		this.addCustomerTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hinzufügen");
+		w1.Add (this.addCustomerTB, null);
 		this.openAction = new global::Gtk.Action ("openAction", global::Mono.Unix.Catalog.GetString ("Projekt öffnen"), null, "gtk-open");
 		this.openAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Projekt öffnen");
 		w1.Add (this.openAction, null);
@@ -92,20 +92,20 @@ public partial class MainWindow
 		this.saveAction = new global::Gtk.Action ("saveAction", global::Mono.Unix.Catalog.GetString ("_Speichern"), null, "gtk-save");
 		this.saveAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Speichern");
 		w1.Add (this.saveAction, null);
-		this.removeAction = new global::Gtk.Action ("removeAction", global::Mono.Unix.Catalog.GetString ("löschen"), null, "gtk-remove");
-		this.removeAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("löschen");
-		w1.Add (this.removeAction, null);
+		this.removeCustomerMB = new global::Gtk.Action ("removeCustomerMB", global::Mono.Unix.Catalog.GetString ("löschen"), null, "gtk-remove");
+		this.removeCustomerMB.ShortLabel = global::Mono.Unix.Catalog.GetString ("löschen");
+		w1.Add (this.removeCustomerMB, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
-		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+		this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.vbox3 = new global::Gtk.VBox ();
 		this.vbox3.Name = "vbox3";
 		this.vbox3.Spacing = 6;
 		// Container child vbox3.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='DateiAction2' action='DateiAction2'><menuitem name='openAction1' action='openAction1'/><menuitem name='saveAction' action='saveAction'/></menu><menu name='KundenAction' action='KundenAction'><menuitem name='addAction' action='addAction'/><menuitem name='removeAction' action='removeAction'/><menuitem name='justifyCenterAction' action='justifyCenterAction'/></menu><menu name='LiferantenAction' action='LiferantenAction'><menuitem name='AnlegenAction' action='AnlegenAction'/><menuitem name='justifyCenterAction1' action='justifyCenterAction1'/></menu><menu name='EinstellungenAction' action='EinstellungenAction'/><menu name='HilfeAction' action='HilfeAction'/></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='DateiAction2' action='DateiAction2'><menuitem name='openAction1' action='openAction1'/><menuitem name='saveAction' action='saveAction'/></menu><menu name='KundenAction' action='KundenAction'><menuitem name='addCustomerMB' action='addCustomerMB'/><menuitem name='removeCustomerMB' action='removeCustomerMB'/><menuitem name='justifyCenterAction' action='justifyCenterAction'/></menu><menu name='LiferantenAction' action='LiferantenAction'><menuitem name='AnlegenAction' action='AnlegenAction'/><menuitem name='justifyCenterAction1' action='justifyCenterAction1'/></menu><menu name='EinstellungenAction' action='EinstellungenAction'/><menu name='HilfeAction' action='HilfeAction'/></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox3.Add (this.menubar1);
@@ -118,7 +118,7 @@ public partial class MainWindow
 		this.hbox1.Name = "hbox1";
 		this.hbox1.Spacing = 6;
 		// Container child hbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'><toolitem name='addAction1' action='addAction1'/><toolitem name='openAction' action='openAction'/><toolitem name='NeuerLieferantAction' action='NeuerLieferantAction'/></toolbar></ui>");
+		this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'><toolitem name='addCustomerTB' action='addCustomerTB'/><toolitem name='openAction' action='openAction'/><toolitem name='NeuerLieferantAction' action='NeuerLieferantAction'/></toolbar></ui>");
 		this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar1")));
 		this.toolbar1.Name = "toolbar1";
 		this.toolbar1.ShowArrow = false;
@@ -149,10 +149,10 @@ public partial class MainWindow
 		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-		this.textview1 = new global::Gtk.TextView ();
-		this.textview1.CanFocus = true;
-		this.textview1.Name = "textview1";
-		this.GtkScrolledWindow.Add (this.textview1);
+		this.nodeview1 = new global::Gtk.NodeView ();
+		this.nodeview1.CanFocus = true;
+		this.nodeview1.Name = "nodeview1";
+		this.GtkScrolledWindow.Add (this.nodeview1);
 		this.vbox3.Add (this.GtkScrolledWindow);
 		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.GtkScrolledWindow]));
 		w8.Position = 2;
@@ -164,6 +164,8 @@ public partial class MainWindow
 		this.DefaultHeight = 344;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
-		this.addAction1.Activated += new global::System.EventHandler (this.OnAddAction1Activated);
+		this.addCustomerMB.Activated += new global::System.EventHandler (this.OnAddCustomerMBActivated);
+		this.addCustomerTB.Activated += new global::System.EventHandler (this.OnAddCustomerTBActivated);
+		this.removeCustomerMB.Activated += new global::System.EventHandler (this.OnRemoveCustomerMBActivated);
 	}
 }
