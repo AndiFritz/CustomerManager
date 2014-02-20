@@ -1,23 +1,34 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Connection.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SpecificWindow.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="CustomerWindow.cs" Line="65" Column="5" />
-      <File FileName="loginWindow.cs" Line="2" Column="11" />
-      <File FileName="security.cs" Line="19" Column="54" />
-=======
-      <File FileName="Connection.cs" Line="110" Column="16" />
-      <File FileName="CustomerWindow.cs" Line="1" Column="1" />
-      <File FileName="security.cs" Line="1" Column="1" />
->>>>>>> e62c9eb0045699cf7cf5b2c366cd9f4aa4d8ac18
+      <File FileName="loginWindow.cs" Line="28" Column="29" />
+      <File FileName="SQLiteConnection.cs" Line="196" Column="1" />
+      <File FileName="DBConnector.cs" Line="8" Column="60" />
+      <File FileName="Program.cs" Line="14" Column="43" />
+      <File FileName="CustomerWindow.cs" Line="173" Column="1" />
+      <File FileName="CompanyWindow.cs" Line="1" Column="1" />
+      <File FileName="SupplierWindow.cs" Line="1" Column="1" />
+      <File FileName="ProjectWindow.cs" Line="1" Column="1" />
+      <File FileName="ProjectsWindow.cs" Line="1" Column="1" />
+      <File FileName="SpecificWindow.cs" Line="15" Column="1" />
+      <File FileName="MainWindow.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="CustomerManager" expanded="True">
+            <Node name="SpecificWindow.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="C:\Users\Andreas\Documents\GitHub\CustomerManager\CustomerManager\Connection.cs" line="26" column="1" />
-      <Breakpoint file="C:\Users\Andreas\Documents\GitHub\CustomerManager\CustomerManager\Connection.cs" line="85" column="1" />
-      <Breakpoint file="C:\Users\Andreas\Documents\GitHub\CustomerManager\CustomerManager\Connection.cs" line="106" column="5" />
+      <Breakpoint file="C:\Users\Andreas\Documents\GitHub\CustomerManager\CustomerManager\Connection.cs" line="26" />
+      <Breakpoint file="C:\Users\Andreas\Documents\GitHub\CustomerManager\CustomerManager\Connection.cs" line="85" />
+      <Breakpoint file="C:\Users\Andreas\Documents\GitHub\CustomerManager\CustomerManager\Connection.cs" line="106" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

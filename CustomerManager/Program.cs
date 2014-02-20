@@ -5,10 +5,13 @@ namespace CustomerManager
 {
 	class MainClass
 	{
+		public static DBConnector connection; 
+
 		public static void Main (string[] args)
 		{
 			Application.Init ();
-			loginWindow win = new loginWindow ();
+			connection = new SQLiteConnection(); // heir muss die Klasse geaendert werden, wenn man eine andere Datenbank verwenden will 
+			SpecificWindow win = new SpecificWindow ();
 			win.Show ();
 			Application.Run ();
 		}
