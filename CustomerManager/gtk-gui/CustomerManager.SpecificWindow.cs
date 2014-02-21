@@ -14,6 +14,8 @@ namespace CustomerManager
 		private global::Gtk.Action RechnungAction;
 		private global::Gtk.Action HilfeAction;
 		private global::Gtk.Action dialogInfoAction1;
+		private global::Gtk.Action printPreviewAction;
+		private global::Gtk.Action printAction;
 		private global::Gtk.VBox vbox1;
 		private global::Gtk.MenuBar menubar2;
 		private global::Gtk.HBox hbox1;
@@ -116,6 +118,12 @@ namespace CustomerManager
 			this.dialogInfoAction1 = new global::Gtk.Action ("dialogInfoAction1", global::Mono.Unix.Catalog.GetString ("Information"), null, "gtk-dialog-info");
 			this.dialogInfoAction1.ShortLabel = global::Mono.Unix.Catalog.GetString ("Information");
 			w1.Add (this.dialogInfoAction1, null);
+			this.printPreviewAction = new global::Gtk.Action ("printPreviewAction", global::Mono.Unix.Catalog.GetString ("Anzeigen"), null, "gtk-print-preview");
+			this.printPreviewAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Anzeigen");
+			w1.Add (this.printPreviewAction, null);
+			this.printAction = new global::Gtk.Action ("printAction", global::Mono.Unix.Catalog.GetString ("_Drucken"), null, "gtk-print");
+			this.printAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Drucken");
+			w1.Add (this.printAction, null);
 			this.UIManager.InsertActionGroup (w1, 0);
 			this.AddAccelGroup (this.UIManager.AccelGroup);
 			this.Name = "CustomerManager.SpecificWindow";
@@ -127,7 +135,7 @@ namespace CustomerManager
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString ("<ui><menubar name='menubar2'><menu name='DateiAction' action='DateiAction'/><menu name='ProjekAction' action='ProjekAction'><menuitem name='dialogInfoAction1' action='dialogInfoAction1'/></menu><menu name='ZeitAction' action='ZeitAction'/><menu name='LieferantAction' action='LieferantAction'/><menu name='KundeAction' action='KundeAction'/><menu name='RechnungAction' action='RechnungAction'/><menu name='HilfeAction' action='HilfeAction'/></menubar></ui>");
+			this.UIManager.AddUiFromString ("<ui><menubar name='menubar2'><menu name='DateiAction' action='DateiAction'/><menu name='ProjekAction' action='ProjekAction'><menuitem name='dialogInfoAction1' action='dialogInfoAction1'/></menu><menu name='ZeitAction' action='ZeitAction'/><menu name='LieferantAction' action='LieferantAction'/><menu name='KundeAction' action='KundeAction'/><menu name='RechnungAction' action='RechnungAction'><menuitem name='printPreviewAction' action='printPreviewAction'/><menuitem name='printAction' action='printAction'/></menu><menu name='HilfeAction' action='HilfeAction'/></menubar></ui>");
 			this.menubar2 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar2")));
 			this.menubar2.Name = "menubar2";
 			this.vbox1.Add (this.menubar2);
@@ -173,6 +181,7 @@ namespace CustomerManager
 			// Container child vbox6.Gtk.Box+BoxChild
 			this.projectTitelLabel = new global::Gtk.Label ();
 			this.projectTitelLabel.WidthRequest = 487;
+			this.projectTitelLabel.HeightRequest = 52;
 			this.projectTitelLabel.Name = "projectTitelLabel";
 			this.projectTitelLabel.Xalign = 0F;
 			this.projectTitelLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("PROJEKTTITEL");
@@ -269,7 +278,6 @@ namespace CustomerManager
 			this.endtimeLabel.WidthRequest = 100;
 			this.endtimeLabel.Name = "endtimeLabel";
 			this.endtimeLabel.Xalign = 0F;
-			this.endtimeLabel.LabelProp = "";
 			this.table3.Add (this.endtimeLabel);
 			global::Gtk.Table.TableChild w20 = ((global::Gtk.Table.TableChild)(this.table3 [this.endtimeLabel]));
 			w20.TopAttach = ((uint)(1));
@@ -321,7 +329,6 @@ namespace CustomerManager
 			this.starttimeLabel.WidthRequest = 100;
 			this.starttimeLabel.Name = "starttimeLabel";
 			this.starttimeLabel.Xalign = 0F;
-			this.starttimeLabel.LabelProp = "";
 			this.table3.Add (this.starttimeLabel);
 			global::Gtk.Table.TableChild w31 = ((global::Gtk.Table.TableChild)(this.table3 [this.starttimeLabel]));
 			w31.LeftAttach = ((uint)(2));
@@ -864,7 +871,7 @@ namespace CustomerManager
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 1073;
-			this.DefaultHeight = 793;
+			this.DefaultHeight = 824;
 			this.Show ();
 		}
 	}

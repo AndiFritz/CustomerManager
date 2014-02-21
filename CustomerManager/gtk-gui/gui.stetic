@@ -3518,7 +3518,7 @@ Firma</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="CustomerManager.SpecificWindow" design-size="1073 793">
+  <widget class="Gtk.Window" id="CustomerManager.SpecificWindow" design-size="1073 824">
     <action-group name="Default">
       <action id="dialogInfoAction">
         <property name="Type">Action</property>
@@ -3568,6 +3568,18 @@ Firma</property>
         <property name="ShortLabel" translatable="yes">Information</property>
         <property name="StockId">gtk-dialog-info</property>
       </action>
+      <action id="printPreviewAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Anzeigen</property>
+        <property name="ShortLabel" translatable="yes">Anzeigen</property>
+        <property name="StockId">gtk-print-preview</property>
+      </action>
+      <action id="printAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">_Drucken</property>
+        <property name="ShortLabel" translatable="yes">_Drucken</property>
+        <property name="StockId">gtk-print</property>
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">Projektfenster</property>
@@ -3588,7 +3600,10 @@ Firma</property>
               <node type="Menu" action="ZeitAction" />
               <node type="Menu" action="LieferantAction" />
               <node type="Menu" action="KundeAction" />
-              <node type="Menu" action="RechnungAction" />
+              <node type="Menu" action="RechnungAction">
+                <node type="Menuitem" action="printPreviewAction" />
+                <node type="Menuitem" action="printAction" />
+              </node>
               <node type="Menu" action="HilfeAction" />
             </node>
           </widget>
@@ -3649,6 +3664,7 @@ Firma</property>
                       <widget class="Gtk.Label" id="projectTitelLabel">
                         <property name="MemberName" />
                         <property name="WidthRequest">487</property>
+                        <property name="HeightRequest">52</property>
                         <property name="Xalign">0</property>
                         <property name="LabelProp" translatable="yes">PROJEKTTITEL</property>
                       </widget>
@@ -3763,7 +3779,6 @@ Firma</property>
                                     <property name="MemberName" />
                                     <property name="WidthRequest">100</property>
                                     <property name="Xalign">0</property>
-                                    <property name="LabelProp" translatable="yes" />
                                   </widget>
                                   <packing>
                                     <property name="TopAttach">1</property>
@@ -3829,7 +3844,6 @@ Firma</property>
                                     <property name="MemberName" />
                                     <property name="WidthRequest">100</property>
                                     <property name="Xalign">0</property>
-                                    <property name="LabelProp" translatable="yes" />
                                   </widget>
                                   <packing>
                                     <property name="LeftAttach">2</property>
