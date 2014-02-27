@@ -16,6 +16,16 @@ namespace CustomerManager
 		private global::Gtk.Action dialogInfoAction1;
 		private global::Gtk.Action printPreviewAction;
 		private global::Gtk.Action printAction;
+		private global::Gtk.Action editAction1;
+		private global::Gtk.Action mediaStopAction;
+		private global::Gtk.Action homeAction;
+		private global::Gtk.Action addAction;
+		private global::Gtk.Action infoAction;
+		private global::Gtk.Action infoAction1;
+		private global::Gtk.Action editAction;
+		private global::Gtk.Action editAction2;
+		private global::Gtk.Action printAction1;
+		private global::Gtk.Action redoAction;
 		private global::Gtk.VBox vbox1;
 		private global::Gtk.MenuBar menubar2;
 		private global::Gtk.HBox hbox1;
@@ -59,7 +69,7 @@ namespace CustomerManager
 		private global::Gtk.Fixed fixed3;
 		private global::Gtk.Label sDateLabel;
 		private global::Gtk.Label startdateBarLabel;
-		private global::Gtk.Label startdateLebl;
+		private global::Gtk.Label startdateLabel;
 		private global::Gtk.HScale TimeHscale;
 		private global::Gtk.VSeparator vseparator1;
 		private global::Gtk.VBox vbox8;
@@ -124,18 +134,48 @@ namespace CustomerManager
 			this.printAction = new global::Gtk.Action ("printAction", global::Mono.Unix.Catalog.GetString ("_Drucken"), null, "gtk-print");
 			this.printAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Drucken");
 			w1.Add (this.printAction, null);
+			this.editAction1 = new global::Gtk.Action ("editAction1", global::Mono.Unix.Catalog.GetString ("bearbeiten"), null, "gtk-edit");
+			this.editAction1.ShortLabel = global::Mono.Unix.Catalog.GetString ("bearbeiten");
+			w1.Add (this.editAction1, null);
+			this.mediaStopAction = new global::Gtk.Action ("mediaStopAction", global::Mono.Unix.Catalog.GetString ("Stop"), null, "gtk-media-stop");
+			this.mediaStopAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Stop");
+			w1.Add (this.mediaStopAction, null);
+			this.homeAction = new global::Gtk.Action ("homeAction", global::Mono.Unix.Catalog.GetString ("Hauptfenster"), null, "gtk-home");
+			this.homeAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hauptfenster");
+			w1.Add (this.homeAction, null);
+			this.addAction = new global::Gtk.Action ("addAction", global::Mono.Unix.Catalog.GetString ("dem Projekt zuweisen"), null, "gtk-add");
+			this.addAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("dem Projekt zuweisen");
+			w1.Add (this.addAction, null);
+			this.infoAction = new global::Gtk.Action ("infoAction", global::Mono.Unix.Catalog.GetString ("Information"), null, "gtk-info");
+			this.infoAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Information");
+			w1.Add (this.infoAction, null);
+			this.infoAction1 = new global::Gtk.Action ("infoAction1", global::Mono.Unix.Catalog.GetString ("Übersicht"), null, "gtk-info");
+			this.infoAction1.ShortLabel = global::Mono.Unix.Catalog.GetString ("Übersicht");
+			w1.Add (this.infoAction1, null);
+			this.editAction = new global::Gtk.Action ("editAction", global::Mono.Unix.Catalog.GetString ("Bearbeiten"), null, "gtk-edit");
+			this.editAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Bearbeiten");
+			w1.Add (this.editAction, null);
+			this.editAction2 = new global::Gtk.Action ("editAction2", global::Mono.Unix.Catalog.GetString ("Bearbeiten"), null, "gtk-edit");
+			this.editAction2.ShortLabel = global::Mono.Unix.Catalog.GetString ("Bearbeiten");
+			w1.Add (this.editAction2, null);
+			this.printAction1 = new global::Gtk.Action ("printAction1", global::Mono.Unix.Catalog.GetString ("Drucken"), null, "gtk-print");
+			this.printAction1.ShortLabel = global::Mono.Unix.Catalog.GetString ("Drucken");
+			w1.Add (this.printAction1, null);
+			this.redoAction = new global::Gtk.Action ("redoAction", global::Mono.Unix.Catalog.GetString ("in Excel exportieren"), null, "gtk-redo");
+			this.redoAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("in Excel exportieren");
+			w1.Add (this.redoAction, null);
 			this.UIManager.InsertActionGroup (w1, 0);
 			this.AddAccelGroup (this.UIManager.AccelGroup);
 			this.Name = "CustomerManager.SpecificWindow";
 			this.Title = global::Mono.Unix.Catalog.GetString ("Projektfenster");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(1));
-			this.BorderWidth = ((uint)(20));
+			this.BorderWidth = ((uint)(9));
 			// Container child CustomerManager.SpecificWindow.Gtk.Container+ContainerChild
 			this.vbox1 = new global::Gtk.VBox ();
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString ("<ui><menubar name='menubar2'><menu name='DateiAction' action='DateiAction'/><menu name='ProjekAction' action='ProjekAction'><menuitem name='dialogInfoAction1' action='dialogInfoAction1'/></menu><menu name='ZeitAction' action='ZeitAction'/><menu name='LieferantAction' action='LieferantAction'/><menu name='KundeAction' action='KundeAction'/><menu name='RechnungAction' action='RechnungAction'><menuitem name='printPreviewAction' action='printPreviewAction'/><menuitem name='printAction' action='printAction'/></menu><menu name='HilfeAction' action='HilfeAction'/></menubar></ui>");
+			this.UIManager.AddUiFromString ("<ui><menubar name='menubar2'><menu name='DateiAction' action='DateiAction'><menuitem name='homeAction' action='homeAction'/></menu><menu name='ProjekAction' action='ProjekAction'><menuitem name='dialogInfoAction1' action='dialogInfoAction1'/><menuitem name='editAction1' action='editAction1'/><menuitem name='mediaStopAction' action='mediaStopAction'/></menu><menu name='ZeitAction' action='ZeitAction'><menuitem name='infoAction1' action='infoAction1'/><menuitem name='editAction' action='editAction'/><menuitem name='printAction1' action='printAction1'/><menuitem name='redoAction' action='redoAction'/></menu><menu name='LieferantAction' action='LieferantAction'><menuitem name='addAction' action='addAction'/></menu><menu name='KundeAction' action='KundeAction'><menuitem name='infoAction' action='infoAction'/><menuitem name='editAction2' action='editAction2'/></menu><menu name='RechnungAction' action='RechnungAction'><menuitem name='printPreviewAction' action='printPreviewAction'/><menuitem name='printAction' action='printAction'/></menu><menu name='HilfeAction' action='HilfeAction'/></menubar></ui>");
 			this.menubar2 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar2")));
 			this.menubar2.Name = "menubar2";
 			this.vbox1.Add (this.menubar2);
@@ -148,7 +188,7 @@ namespace CustomerManager
 			this.hbox1.Name = "hbox1";
 			this.hbox1.Spacing = 6;
 			// Container child hbox1.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'><toolitem name='dialogInfoAction1' action='dialogInfoAction1'/></toolbar></ui>");
+			this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar1'><toolitem name='homeAction' action='homeAction'/><separator/><toolitem name='dialogInfoAction1' action='dialogInfoAction1'/><toolitem name='printPreviewAction' action='printPreviewAction'/><separator/></toolbar></ui>");
 			this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar1")));
 			this.toolbar1.Name = "toolbar1";
 			this.toolbar1.ShowArrow = false;
@@ -445,7 +485,7 @@ namespace CustomerManager
 			this.terminLabel = new global::Gtk.Label ();
 			this.terminLabel.Name = "terminLabel";
 			this.terminLabel.Xalign = 0F;
-			this.terminLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Terminübersicht:");
+			this.terminLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("Terminübersicht");
 			this.vbox13.Add (this.terminLabel);
 			global::Gtk.Box.BoxChild w45 = ((global::Gtk.Box.BoxChild)(this.vbox13 [this.terminLabel]));
 			w45.Position = 1;
@@ -563,12 +603,12 @@ namespace CustomerManager
 			w54.XOptions = ((global::Gtk.AttachOptions)(4));
 			w54.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table4.Gtk.Table+TableChild
-			this.startdateLebl = new global::Gtk.Label ();
-			this.startdateLebl.Name = "startdateLebl";
-			this.startdateLebl.Xalign = 0F;
-			this.startdateLebl.LabelProp = global::Mono.Unix.Catalog.GetString ("STARTDATE");
-			this.table4.Add (this.startdateLebl);
-			global::Gtk.Table.TableChild w55 = ((global::Gtk.Table.TableChild)(this.table4 [this.startdateLebl]));
+			this.startdateLabel = new global::Gtk.Label ();
+			this.startdateLabel.Name = "startdateLebl";
+			this.startdateLabel.Xalign = 0F;
+			this.startdateLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("STARTDATE");
+			this.table4.Add (this.startdateLabel);
+			global::Gtk.Table.TableChild w55 = ((global::Gtk.Table.TableChild)(this.table4 [this.startdateLabel]));
 			w55.LeftAttach = ((uint)(1));
 			w55.RightAttach = ((uint)(2));
 			w55.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -871,7 +911,7 @@ namespace CustomerManager
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 1073;
-			this.DefaultHeight = 824;
+			this.DefaultHeight = 831;
 			this.Show ();
 		}
 	}

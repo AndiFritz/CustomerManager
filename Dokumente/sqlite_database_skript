@@ -1,7 +1,13 @@
 sqlite3 customerManager.sqlite3;
-create table tbl_projects(id integer PRIMARY KEY autoincrement, name varchar(20), fk_customers integer, fk_suppliers_projects integer, fk_time, startdate DATE, enddate DATE);
-create table tbl_customers(id integer PRIMARY KEY autoincrement, vname varchar(20), nname varchar(20), typ varchar(20), email varchar(30), telnumber varchar(20), mobilenumber varchar(20), plz integer, country varchar(20), hnr varchar(20), street varchar(20), registrationsdate DATE);
-create table tbl_users(id integer PRIMARY KEY autoincrement, vname varchar(20), nname varchar(20), username varchar(20), password varchar(60), email varchar(30), telnumber varchar(20), mobilenumber varchar(20), country varchar(20), registrationdate varchar(20));
-create table tbl_suppliers(id integer PRIMARY KEY autoincrement, name varchar(20), typ varchar(20), email varchar(20), telnumber varchar(20), mobilenumber varchar(20), country varchar(20), registrationdate varchar(20));
-create table tbl_time(fk_users integer, fk_projects integer, date DATE, starttime TIME, endtime TIME, PRIMARY KEY(fk_users, fk_projects));
+create table tbl_projects(id integer PRIMARY KEY autoincrement, name varchar(20), startdate DATE, enddate DATE, status integer);
+create table tbl_customers(id integer PRIMARY KEY autoincrement, nname varchar(20), vname varchar(20), fk_companies integer, email varchar(30), telnumber varchar(20), mobilenumber varchar(20), plz integer, country varchar(20), street varchar(20), hnr varchar(20), regidate DATE);
+create table tbl_users(id integer PRIMARY KEY autoincrement, gender varchar(20), nname varchar(20), vname varchar(20), uname varchar(20), password varchar(60), email varchar(30), telnumber varchar(20), mobilenumber varchar(20), plz integer, country varchar(20), street varchar(20), hnr varchar(20), regidate varchar(20), fk_companies integer, status integer);
+create table tbl_suppliers(id integer PRIMARY KEY autoincrement, name varchar(20), plz integer, country varchar(20), street varchar(20), hnr varchar(20), web varchar(30), pname varchar(20), email varchar(30), telnumber varchar(20), mobilenumber varchar(20), fk_suppliers_typ integer, regidate varchar(20));
+create table tbl_projects_users(fk_users integer, fk_projects integer, PRIMARY KEY(fk_users, fk_projects));
 create table tbl_suppliers_projects(fk_suppliers integer, fk_projects integer, PRIMARY KEY (fk_suppliers, fk_projects));
+create table tbl_times(fk_projects integer, date DATE, starttime TIME, endtime TIME, duration TIME, description varchar(100));
+create table tbl_typ(id integer PRIMARY KEY autoincrement, typ varchar(30));
+create table tbl_suppliers_typ(fk_suppliers integer, fk_typ integer, PRIMARY KEY(fk_suppliers, fk_typ));
+create table tbl_companies(id integer PRIMARY KEY autoincrement, fk_typcompany integer, name varchar(30), plz integer, country varchar(20), street varchar(20), hnr varchar(20), web varchar(30), pname varchar(20), email varchar(30), telnumber varchar(20), mobilenumber varchar(20), regidate DATE);
+create table tbl_typcompany(id integer PRIMARY KEY autoincrement, typ varchar(20));
+

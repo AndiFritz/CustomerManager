@@ -373,6 +373,42 @@ namespace CustomerManager
 				return null; 
 			}
 		}
+	
+		public override string readProjectDetails (short Pid, string Pname) //Auslesung Projektdetails
+		{
+			try {
+				
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				
+				sqlite_cmd.CommandText = "SELECT startdate, enddate, description, hourprice FROM tbl_projects WHERE (id ="+Pid+" AND name='"+Pname+"')";
+				
+				sqlite_conn.Open();
+				
+				datareader = sqlite_cmd.ExecuteReader ();
+
+				string readstartdate = ""; 
+				string readenddate = ""; 
+				string readDescript = ""; 
+				int readhourprice = 0; 
+				
+				while (datareader.Read())
+				{
+					readstartdate = datareader.GetDateTime(0); 
+					readenddate = datareader.GetDateTime(1);
+					readDescript = datareader.GetString(2);
+					readhourprice = datareader.GetInt16(3);
+				}
+				sqlite_conn.Close ();
+				return reastartdate, readenddate, readDescript; 
+			}  
+			catch (Exception ex) 
+			{
+				sqlite_conn.Close ();
+				return null; 
+			}
+			
+		}
+
 	}
 }
 
