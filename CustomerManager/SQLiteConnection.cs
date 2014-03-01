@@ -374,7 +374,7 @@ namespace CustomerManager
 			}
 		}
 	
-		public override string readProjectDetails (short Pid, string Pname) //Auslesung Projektdetails
+		public override System.Collections.Generic.List<string> readProjectDetails (short Pid, string Pname) //Auslesung Projektdetails
 		{
 			try {
 				
@@ -382,7 +382,7 @@ namespace CustomerManager
 				
 				sqlite_cmd.CommandText = "SELECT startdate, enddate, description, hourprice FROM tbl_projects WHERE (id ="+Pid+" AND name='"+Pname+"')";
 				
-				sqlite_conn.Open();
+
 				
 				datareader = sqlite_cmd.ExecuteReader ();
 
@@ -390,16 +390,24 @@ namespace CustomerManager
 				string readenddate = ""; 
 				string readDescript = ""; 
 				int readhourprice = 0; 
-				
+
+				List<string> projDetails = new List<string>();
+
 				while (datareader.Read())
 				{
-					readstartdate = datareader.GetDateTime(0); 
-					readenddate = datareader.GetDateTime(1);
+					readstartdate = datareader.GetString(0); 
+					readenddate = datareader.GetString(1);
 					readDescript = datareader.GetString(2);
 					readhourprice = datareader.GetInt16(3);
 				}
 				sqlite_conn.Close ();
-				return reastartdate, readenddate, readDescript; 
+
+				projDetails.Add(Convert.ToString (readstartdate));
+				projDetails.Add (Convert.ToString(readenddate));
+				projDetails.Add (readDescript);
+				projDetails.Add (Convert.ToString (readhourprice));
+
+				return projDetails;
 			}  
 			catch (Exception ex) 
 			{

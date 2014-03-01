@@ -604,7 +604,7 @@ namespace CustomerManager
 			w54.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table4.Gtk.Table+TableChild
 			this.startdateLabel = new global::Gtk.Label ();
-			this.startdateLabel.Name = "startdateLebl";
+			this.startdateLabel.Name = "startdateLabel";
 			this.startdateLabel.Xalign = 0F;
 			this.startdateLabel.LabelProp = global::Mono.Unix.Catalog.GetString ("STARTDATE");
 			this.table4.Add (this.startdateLabel);
