@@ -394,6 +394,7 @@
     </child>
   </widget>
   <widget class="Gtk.Window" id="CustomerManager.CustomerWindow" design-size="877 757">
+    <action-group name="Default" />
     <action-group name="Default">
       <action id="applyAction">
         <property name="Type">Action</property>
@@ -453,7 +454,6 @@
         <signal name="Activated" handler="OnDialogQuestionTBActivated" />
       </action>
     </action-group>
-    <action-group name="Default" />
     <property name="MemberName" />
     <property name="Title" translatable="yes">neuer Benutzer</property>
     <property name="Icon">stock:gtk-add Menu</property>
@@ -3518,7 +3518,7 @@ Firma</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="CustomerManager.SpecificWindow" design-size="1073 831">
+  <widget class="Gtk.Window" id="CustomerManager.SpecificWindow" design-size="1073 840">
     <action-group name="Default">
       <action id="dialogInfoAction">
         <property name="Type">Action</property>
@@ -3993,15 +3993,23 @@ Firma</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="Gtk.TextView" id="ProjectDescriptionTextView">
+                              <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow1">
                                 <property name="MemberName" />
-                                <property name="WidthRequest">300</property>
-                                <property name="HeightRequest">130</property>
-                                <property name="CanFocus">True</property>
-                                <property name="Editable">False</property>
-                                <property name="CursorVisible">False</property>
-                                <property name="AcceptsTab">False</property>
-                                <property name="Text" translatable="yes" />
+                                <property name="ShadowType">In</property>
+                                <child>
+                                  <widget class="Gtk.TextView" id="ProjectDescriptionTextView">
+                                    <property name="MemberName" />
+                                    <property name="WidthRequest">300</property>
+                                    <property name="HeightRequest">130</property>
+                                    <property name="CanFocus">True</property>
+                                    <property name="ShowScrollbars">True</property>
+                                    <property name="Editable">False</property>
+                                    <property name="CursorVisible">False</property>
+                                    <property name="AcceptsTab">False</property>
+                                    <property name="Text" translatable="yes" />
+                                    <property name="WrapMode">Word</property>
+                                  </widget>
+                                </child>
                               </widget>
                               <packing>
                                 <property name="Position">2</property>
@@ -4328,9 +4336,10 @@ Firma</property>
                             <property name="Upper">100</property>
                             <property name="PageIncrement">10</property>
                             <property name="StepIncrement">1</property>
+                            <property name="Value">74.3511450381679</property>
                             <property name="DrawValue">False</property>
-                            <property name="Digits">0</property>
-                            <property name="ValuePos">Top</property>
+                            <property name="Digits">-1</property>
+                            <property name="ValuePos">Bottom</property>
                           </widget>
                           <packing>
                             <property name="Position">2</property>

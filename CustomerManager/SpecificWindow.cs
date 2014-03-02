@@ -36,7 +36,7 @@ namespace CustomerManager
 			#endregion
 
 			#region Projektdetails - Auslesung
-			List<String> projDetail = MainClass.connection.readProjectDetails (1, "TESTProjekt");
+			List<String> projDetail = MainClass.connection.readProjectDetails (1, "TESTProjekt"); // PARAMETER neu einfügen!
 
 			int i= 1; 
 
@@ -62,6 +62,23 @@ namespace CustomerManager
 				}
 				i++;
 			}
+			#endregion
+
+			#region Bar - Schieber
+
+			Int64 timeNow = Convert.ToInt64(DateTime.Now.Ticks); //aktuelle Zeit in eine Zahl konvertieren
+
+			DateTime starttime = Convert.ToDateTime(startdateBarLabel.Text); // Datum von Label in DateTime konvertieren
+			Int64 timeStart = Convert.ToInt64 (starttime.Ticks); // startzeit in eine Zahl konvertieren
+
+			DateTime endtime = Convert.ToDateTime(enddateBarLabel.Text); // Datum von Endlabel in DateTime konvertieren
+			Int64 timeEnd = Convert.ToInt64(endtime.Ticks); // eindzeit in eine Zahl konvertieren
+
+			TimeHscale.Sensitive = false;
+			TimeHscale.Adjustment.Lower = timeStart;
+			TimeHscale.Adjustment.Upper = timeEnd;
+			TimeHscale.Value = timeNow;
+
 			#endregion
 		}
 	}
