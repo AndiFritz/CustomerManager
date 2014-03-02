@@ -11,6 +11,9 @@ namespace CustomerManager
 		public abstract List<string> readCompany(String typ); //für ComboBox in Firmenregistrierung; CompanyWindow und CustomerWindow
 
 		public abstract List<string> readProjectDetails(Int16 Pid, String Pname); //Auslesung ProjectBeschreibung für Specific Window
-	}
+		public abstract Int64 readSumHours(Int16 projID); // Gesamtstunden für Geldbetrag auslesen
+		public abstract bool addStartTime(Int16 projID, String date, String startTime, String description, Int16 userID); // Starzeit in Tabelle tbl_times einfügen
+		public abstract bool addEndTime(Int16 projID, String date, String endTime, String description, Int16 userID); // Endzeit eintragen in tbl_times
+	}	
 }
 

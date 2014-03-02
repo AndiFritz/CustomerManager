@@ -394,7 +394,6 @@
     </child>
   </widget>
   <widget class="Gtk.Window" id="CustomerManager.CustomerWindow" design-size="877 757">
-    <action-group name="Default" />
     <action-group name="Default">
       <action id="applyAction">
         <property name="Type">Action</property>
@@ -454,6 +453,7 @@
         <signal name="Activated" handler="OnDialogQuestionTBActivated" />
       </action>
     </action-group>
+    <action-group name="Default" />
     <property name="MemberName" />
     <property name="Title" translatable="yes">neuer Benutzer</property>
     <property name="Icon">stock:gtk-add Menu</property>
@@ -3562,19 +3562,19 @@ Firma</property>
         <property name="Label" translatable="yes">Hilfe</property>
         <property name="ShortLabel" translatable="yes">Hilfe</property>
       </action>
-      <action id="dialogInfoAction1">
+      <action id="projectInfoButton">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Information</property>
         <property name="ShortLabel" translatable="yes">Information</property>
         <property name="StockId">gtk-dialog-info</property>
       </action>
-      <action id="printPreviewAction">
+      <action id="viewBillButton">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Anzeigen</property>
         <property name="ShortLabel" translatable="yes">Anzeigen</property>
         <property name="StockId">gtk-print-preview</property>
       </action>
-      <action id="printAction">
+      <action id="printBillButton">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">_Drucken</property>
         <property name="ShortLabel" translatable="yes">_Drucken</property>
@@ -3592,53 +3592,72 @@ Firma</property>
         <property name="ShortLabel" translatable="yes">Stop</property>
         <property name="StockId">gtk-media-stop</property>
       </action>
-      <action id="homeAction">
+      <action id="homeButton">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Hauptfenster</property>
         <property name="ShortLabel" translatable="yes">Hauptfenster</property>
         <property name="StockId">gtk-home</property>
       </action>
-      <action id="addAction">
+      <action id="addsupplierButton">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">dem Projekt zuweisen</property>
         <property name="ShortLabel" translatable="yes">dem Projekt zuweisen</property>
         <property name="StockId">gtk-add</property>
       </action>
-      <action id="infoAction">
+      <action id="customerInfoviewButton">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Information</property>
         <property name="ShortLabel" translatable="yes">Information</property>
         <property name="StockId">gtk-info</property>
       </action>
-      <action id="infoAction1">
+      <action id="timeInfoButton">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Übersicht</property>
         <property name="ShortLabel" translatable="yes">Übersicht</property>
         <property name="StockId">gtk-info</property>
       </action>
-      <action id="editAction">
+      <action id="timeEditButton">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Bearbeiten</property>
         <property name="ShortLabel" translatable="yes">Bearbeiten</property>
         <property name="StockId">gtk-edit</property>
       </action>
-      <action id="editAction2">
+      <action id="customerEditButton">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Bearbeiten</property>
         <property name="ShortLabel" translatable="yes">Bearbeiten</property>
         <property name="StockId">gtk-edit</property>
       </action>
-      <action id="printAction1">
+      <action id="timePrintButton">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Drucken</property>
         <property name="ShortLabel" translatable="yes">Drucken</property>
         <property name="StockId">gtk-print</property>
       </action>
-      <action id="redoAction">
+      <action id="timeExportButton">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">in Excel exportieren</property>
         <property name="ShortLabel" translatable="yes">in Excel exportieren</property>
         <property name="StockId">gtk-redo</property>
+      </action>
+      <action id="hourpriceButton">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Stundensatz</property>
+        <property name="ShortLabel" translatable="yes">Stundensatz</property>
+        <property name="StockId">gtk-preferences</property>
+        <property name="Tooltip" translatable="yes">Stundensatz bearbeiten</property>
+      </action>
+      <action id="propertiesAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">bearbeiten</property>
+        <property name="ShortLabel" translatable="yes">bearbeiten</property>
+        <property name="StockId">gtk-properties</property>
+      </action>
+      <action id="findAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">anzeigen</property>
+        <property name="ShortLabel" translatable="yes">anzeigen</property>
+        <property name="StockId">gtk-find</property>
       </action>
     </action-group>
     <property name="MemberName" />
@@ -3654,29 +3673,30 @@ Firma</property>
             <property name="MemberName" />
             <node name="__gtksharp_112_Stetic_Editor_ActionMenuBar" type="Menubar">
               <node type="Menu" action="DateiAction">
-                <node type="Menuitem" action="homeAction" />
+                <node type="Menuitem" action="homeButton" />
               </node>
               <node type="Menu" action="ProjekAction">
-                <node type="Menuitem" action="dialogInfoAction1" />
+                <node type="Menuitem" action="projectInfoButton" />
                 <node type="Menuitem" action="editAction1" />
                 <node type="Menuitem" action="mediaStopAction" />
               </node>
               <node type="Menu" action="ZeitAction">
-                <node type="Menuitem" action="infoAction1" />
-                <node type="Menuitem" action="editAction" />
-                <node type="Menuitem" action="printAction1" />
-                <node type="Menuitem" action="redoAction" />
+                <node type="Menuitem" action="timeInfoButton" />
+                <node type="Menuitem" action="timeEditButton" />
+                <node type="Menuitem" action="timePrintButton" />
+                <node type="Menuitem" action="timeExportButton" />
               </node>
               <node type="Menu" action="LieferantAction">
-                <node type="Menuitem" action="addAction" />
+                <node type="Menuitem" action="addsupplierButton" />
               </node>
               <node type="Menu" action="KundeAction">
-                <node type="Menuitem" action="infoAction" />
-                <node type="Menuitem" action="editAction2" />
+                <node type="Menuitem" action="customerInfoviewButton" />
+                <node type="Menuitem" action="customerEditButton" />
               </node>
               <node type="Menu" action="RechnungAction">
-                <node type="Menuitem" action="printPreviewAction" />
-                <node type="Menuitem" action="printAction" />
+                <node type="Menuitem" action="viewBillButton" />
+                <node type="Menuitem" action="printBillButton" />
+                <node type="Menuitem" action="hourpriceButton" />
               </node>
               <node type="Menu" action="HilfeAction" />
             </node>
@@ -3697,11 +3717,12 @@ Firma</property>
                 <property name="MemberName" />
                 <property name="ShowArrow">False</property>
                 <node name="__gtksharp_71_Stetic_Editor_ActionToolbar" type="Toolbar">
-                  <node type="Toolitem" action="homeAction" />
+                  <node type="Toolitem" action="homeButton" />
                   <node type="Separator" />
-                  <node type="Toolitem" action="dialogInfoAction1" />
-                  <node type="Toolitem" action="printPreviewAction" />
+                  <node type="Toolitem" action="projectInfoButton" />
+                  <node type="Toolitem" action="viewBillButton" />
                   <node type="Separator" />
+                  <node type="Toolitem" action="hourpriceButton" />
                 </node>
               </widget>
               <packing>
@@ -3814,6 +3835,7 @@ Firma</property>
                                     <property name="Icon">stock:stock_media-stop Menu</property>
                                     <property name="Label" translatable="yes">Ende</property>
                                     <property name="UseUnderline">True</property>
+                                    <signal name="Clicked" handler="OnEndButtonClicked" />
                                   </widget>
                                   <packing>
                                     <property name="TopAttach">1</property>
@@ -3883,6 +3905,7 @@ Firma</property>
                                     <property name="Icon">stock:stock_media-play Menu</property>
                                     <property name="Label" translatable="yes">Start</property>
                                     <property name="UseUnderline">True</property>
+                                    <signal name="Clicked" handler="OnStartButtonClicked" />
                                   </widget>
                                   <packing>
                                     <property name="AutoSize">True</property>
@@ -4057,11 +4080,12 @@ Firma</property>
                       </packing>
                     </child>
                     <child>
-                      <widget class="Gtk.TextView" id="textview2">
+                      <widget class="Gtk.Entry" id="workDescriptTextBox">
                         <property name="MemberName" />
-                        <property name="HeightRequest">98</property>
                         <property name="CanFocus">True</property>
-                        <property name="Text" translatable="yes" />
+                        <property name="IsEditable">True</property>
+                        <property name="MaxLength">100</property>
+                        <property name="InvisibleChar">●</property>
                       </widget>
                       <packing>
                         <property name="Position">1</property>
@@ -4336,7 +4360,6 @@ Firma</property>
                             <property name="Upper">100</property>
                             <property name="PageIncrement">10</property>
                             <property name="StepIncrement">1</property>
-                            <property name="Value">74.3511450381679</property>
                             <property name="DrawValue">False</property>
                             <property name="Digits">-1</property>
                             <property name="ValuePos">Bottom</property>

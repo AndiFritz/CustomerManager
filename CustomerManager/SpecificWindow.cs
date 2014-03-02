@@ -10,13 +10,18 @@ namespace CustomerManager
 {
 	public partial class SpecificWindow : Gtk.Window
 	{
-		public SpecificWindow (/*int id, int name*/) : //Parameter werden für die Projektdetail - Auslesung benötigt
+		public SpecificWindow (/*int id, int name, int UserID */) : //Parameter werden für die Projektdetail - Auslesung benötigt
 				base(Gtk.WindowType.Toplevel)
 		{
 			this.Build ();
 
+//			projectTitelLabel.Text = name; --> Projekttitel ändern
+
+
 			#region Labelstyle
-			projectTitelLabel.Pattern = "______________________________";
+
+
+			projectTitelLabel.Pattern = "________________________________________________________________________________"; //Unterstreichung - Projekttitel
 			Gdk.Color bluecolor = new Gdk.Color (255, 100, 50);
 			projectTitelLabel.ModifyFg (Gtk.StateType.Normal, bluecolor);
 			projectTitelLabel.ModifyFont (Pango.FontDescription.FromString ("Calibri 20"));
@@ -74,12 +79,58 @@ namespace CustomerManager
 			DateTime endtime = Convert.ToDateTime(enddateBarLabel.Text); // Datum von Endlabel in DateTime konvertieren
 			Int64 timeEnd = Convert.ToInt64(endtime.Ticks); // eindzeit in eine Zahl konvertieren
 
-			TimeHscale.Sensitive = false;
-			TimeHscale.Adjustment.Lower = timeStart;
-			TimeHscale.Adjustment.Upper = timeEnd;
-			TimeHscale.Value = timeNow;
+			TimeHscale.Sensitive = false; // Keine Verschiebung möglich
+			TimeHscale.Adjustment.Lower = timeStart; // Startwert
+			TimeHscale.Adjustment.Upper = timeEnd; // Endwert
+			TimeHscale.Value = timeNow; // akutelle Zeit zuweisen
 
 			#endregion
+		
+		
+			#region Berechnung der Geldbeträge - Stundenbeträge
+
+//			Int64 gesDuration = MainClass.connection.readSumHours(1); // ProjektID übergeben statt 1 !!!!!!!!!!!
+
+
+
+
+
+			#endregion
+		
+		}
+
+		protected void OnStartButtonClicked (object sender, EventArgs e) // Start - Button gedrückt
+		{
+			DateTime now = DateTime.Now; 
+			string currentDate = now.ToShortDateString ();
+			string currentTime = now.ToShortTimeString ();
+			string description = Convert.ToString (workDescriptTextBox.Text);
+
+			bool addStartTime = MainClass.connection.addStartTime (1, currentDate, currentTime, description, 1);
+
+			if (addStartTime = true) {
+				starttimeLabel.Text = currentTime;
+			}
+
+		}
+
+
+		protected void OnEndButtonClicked (object sender, EventArgs e)
+		{
+			DateTime now = DateTime.Now; 
+			string currentTime = now.ToShortTimeString ();
+
+			string workdescription = Convert.ToString (workDescriptTextBox.Text); 
+
+			if (workdescription == "") {
+				MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Warning, ButtonsType.OkCancel, "Es wurde keine Beschreibung für die Arbeit eingetragen! Bitte tragen Sie etwas ein, wenn es auf der Rechnung aufgelistet sein sollte!                        Wenn Sie KEINE BESCHREIBUNG eintragen wollen, drücken SIE Cancel");
+				md.Run();
+				md.Destroy();
+
+			}
+
+
+			bool addEndTime; 
 		}
 	}
 }

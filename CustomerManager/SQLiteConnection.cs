@@ -382,8 +382,6 @@ namespace CustomerManager
 				
 				sqlite_cmd.CommandText = "SELECT startdate, enddate, description, hourprice FROM tbl_projects WHERE (id ="+Pid+" AND name='"+Pname+"')";
 				
-
-				
 				datareader = sqlite_cmd.ExecuteReader ();
 
 				string readstartdate = ""; 
@@ -417,6 +415,64 @@ namespace CustomerManager
 			
 		}
 
+		public override Int64 readSumHours (short projID)
+		{
+			try {
+				
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				
+				sqlite_cmd.CommandText = "SELECT duration FROM tbl_times WHERE fk_projects = "+projID+"";
+				
+				datareader = sqlite_cmd.ExecuteReader ();
+				
+				Int64 readDuration = 0;
+				Int64 gesDuration = 0;
+				
+				while (datareader.Read())
+				{
+					readDuration = datareader.GetInt64(0); 
+					gesDuration += readDuration;
+				}
+				sqlite_conn.Close ();
+				
+				return gesDuration;
+			}  
+			catch (Exception ex) 
+			{
+				sqlite_conn.Close ();
+				return 0; 
+			}
+		}
+
+		public override bool addStartTime (short projID, string date, string startTime, string description, short userID)
+		{
+			try {
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				sqlite_cmd.CommandText = "INSERT into tbl_times(fk_projects, date, starttime, description, fk_user) VALUES ('"+projID+"', '"+date+"', '"+startTime+"', '"+description+"', "+userID+")";
+				sqlite_conn.Open ();
+				sqlite_cmd.ExecuteNonQuery ();
+				sqlite_conn.Close ();
+				return true; 
+			} catch (Exception ex) {
+				sqlite_conn.Close ();
+				return false; 
+			}
+		}
+
+		public override bool addEndTime (short projID, string date, string endTime, string description, short userID)
+		{
+			try {
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				sqlite_cmd.CommandText = "UPDATE tbl_times(endtime, description) SET ('"+endTime+"', '"+description+"') WHERE (projID = "+projID+" AND date = '"+date+"' AND fk_user = "+userID+")";
+				sqlite_conn.Open ();
+				sqlite_cmd.ExecuteNonQuery ();
+				sqlite_conn.Close ();
+				return true; 
+			} catch (Exception ex) {
+				sqlite_conn.Close ();
+				return false; 
+			}
+		}
 	}
 }
 
