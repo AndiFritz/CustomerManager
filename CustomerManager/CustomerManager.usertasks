@@ -1,0 +1,6 @@
+<ListOfTask>
+  <Task file="" description="Endzeit einfügen" priority="High" />
+  <Task file="" description="ListView in GTK" />
+  <Task file="" description="Drucken mit GTK " />
+  <Task file="" description="Formular füllen" />
+</ListOfTask>

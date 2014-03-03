@@ -10,6 +10,12 @@ namespace CustomerManager
 {
 	public partial class SpecificWindow : Gtk.Window
 	{
+
+		string startTime = ""; // für die Identifizierung, bei welchem Datensatz die Endzeit eingetragen werden soll
+
+
+
+
 		public SpecificWindow (/*int id, int name, int UserID */) : //Parameter werden für die Projektdetail - Auslesung benötigt
 				base(Gtk.WindowType.Toplevel)
 		{
@@ -19,8 +25,6 @@ namespace CustomerManager
 
 
 			#region Labelstyle
-
-
 			projectTitelLabel.Pattern = "________________________________________________________________________________"; //Unterstreichung - Projekttitel
 			Gdk.Color bluecolor = new Gdk.Color (255, 100, 50);
 			projectTitelLabel.ModifyFg (Gtk.StateType.Normal, bluecolor);
@@ -109,28 +113,53 @@ namespace CustomerManager
 			bool addStartTime = MainClass.connection.addStartTime (1, currentDate, currentTime, description, 1);
 
 			if (addStartTime = true) {
+				startTime = currentTime;
 				starttimeLabel.Text = currentTime;
 			}
-
 		}
 
 
 		protected void OnEndButtonClicked (object sender, EventArgs e)
 		{
 			DateTime now = DateTime.Now; 
+			string currentDate = now.ToShortDateString();
 			string currentTime = now.ToShortTimeString ();
 
 			string workdescription = Convert.ToString (workDescriptTextBox.Text); 
 
+			DateTime startTimeBE = Convert.ToDateTime(startTime);
+
+			TimeSpan workDuration = now - startTimeBE; 
+
+			int duration = workDuration.Minutes; // Differenz in Stunden 
+
 			if (workdescription == "") {
-				MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Warning, ButtonsType.OkCancel, "Es wurde keine Beschreibung für die Arbeit eingetragen! Bitte tragen Sie etwas ein, wenn es auf der Rechnung aufgelistet sein sollte!                        Wenn Sie KEINE BESCHREIBUNG eintragen wollen, drücken SIE Cancel");
-				md.Run();
-				md.Destroy();
+				MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Warning, ButtonsType.OkCancel, "Es wurde keine Beschreibung für die Arbeit eingetragen! Bitte tragen Sie etwas ein, wenn es auf der Rechnung aufgelistet sein sollte! Wenn Sie EINE BESCHREIBUNG eintragen wollen, drücken Sie Cancel");
+				ResponseType response = (ResponseType) md.Run ();
 
+
+				if(response == ResponseType.Cancel)
+				{
+					md.Destroy ();
+					return;
+				}
+
+			} else {
+
+				bool addEndTime = MainClass.connection.addEndTime(1, currentDate, startTime, currentTime, duration, workdescription, 1);
+
+				if(addEndTime == true)
+				{
+					endtimeLabel.Text = currentTime;
+					MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Arbeit beendet! Viel Spaß beim Entspannen!");
+					md.Run ();
+					md.Destroy ();
+
+					starttimeLabel.Text = "";  // Startzeit in Startzeitlabel entfernen
+					endtimeLabel.Text = "";  // Endzeit in Endzeitlabel entfernen
+					workDescriptTextBox.Text = "";  // Tätigkeits-beschreibung entfernen
+				}
 			}
-
-
-			bool addEndTime; 
 		}
 	}
 }

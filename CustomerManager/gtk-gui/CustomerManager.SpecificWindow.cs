@@ -931,8 +931,6 @@ namespace CustomerManager
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 1077;
-			this.DefaultHeight = 824;
 			this.DefaultWidth = 1073;
 			this.DefaultHeight = 840;
 			this.Show ();
