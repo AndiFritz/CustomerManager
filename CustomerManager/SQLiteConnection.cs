@@ -342,6 +342,11 @@ namespace CustomerManager
 
 		#endregion
 
+		#region Customer
+
+
+
+		#endregion
 		public override System.Collections.Generic.List<string> readCompany (string typ)
 		{
 			int fk_typcompany = getFKTypcompany (typ); //ID von CompanyTyp aus tbl_typcompany bekommen

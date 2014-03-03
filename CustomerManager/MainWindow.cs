@@ -16,13 +16,24 @@ public partial class MainWindow: Gtk.Window
 		a.RetVal = true;
 	}
 
-	protected void OnAddAction1Activated (object sender, EventArgs e)
+	//Button "neuer Kunde"
+	protected void OnCustomerActivated (object sender, EventArgs e)
 	{
-//		MessageDialog md = new MessageDialog(null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "neuer Benutzer hinzufügen!");
-//		md.Run();
-//		md.Destroy();
-//		ProjectWindow projectWindow = new ProjectWindow();
-//		projectWindow.Show();
+		CustomerWindow newCW = new CustomerWindow();
+		newCW.Show();
+
+	}	
+
+	//Button "neuer Liferant"
+	protected void OnAddDeliveryActivated (object sender, EventArgs e)
+	{
+		SupplierWindow newSW = new SupplierWindow();
+		newSW.Show();
+
 	}
+
+
+
+
 
 }

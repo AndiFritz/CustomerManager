@@ -12,13 +12,13 @@ public partial class MainWindow
 	private global::Gtk.Action KundenAction;
 	private global::Gtk.Action EinstellungenAction;
 	private global::Gtk.Action HilfeAction;
-	private global::Gtk.Action addAction;
+	private global::Gtk.Action customer;
 	private global::Gtk.Action justifyCenterAction;
 	private global::Gtk.Action addAction1;
 	private global::Gtk.Action openAction;
 	private global::Gtk.Action NeuerLieferantAction;
 	private global::Gtk.Action LiferantenAction;
-	private global::Gtk.Action AnlegenAction;
+	private global::Gtk.Action addDelivery;
 	private global::Gtk.Action justifyCenterAction1;
 	private global::Gtk.Action openAction1;
 	private global::Gtk.Action saveAction;
@@ -62,9 +62,9 @@ public partial class MainWindow
 		this.HilfeAction = new global::Gtk.Action ("HilfeAction", global::Mono.Unix.Catalog.GetString ("Hilfe"), null, null);
 		this.HilfeAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hilfe");
 		w1.Add (this.HilfeAction, null);
-		this.addAction = new global::Gtk.Action ("addAction", global::Mono.Unix.Catalog.GetString ("Neu"), null, "gtk-add");
-		this.addAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Neu");
-		w1.Add (this.addAction, null);
+		this.customer = new global::Gtk.Action ("customer", global::Mono.Unix.Catalog.GetString ("Neu"), null, "gtk-add");
+		this.customer.ShortLabel = global::Mono.Unix.Catalog.GetString ("Neu");
+		w1.Add (this.customer, null);
 		this.justifyCenterAction = new global::Gtk.Action ("justifyCenterAction", global::Mono.Unix.Catalog.GetString ("Anzeigen"), null, "gtk-justify-center");
 		this.justifyCenterAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Anzeigen");
 		w1.Add (this.justifyCenterAction, null);
@@ -80,9 +80,9 @@ public partial class MainWindow
 		this.LiferantenAction = new global::Gtk.Action ("LiferantenAction", global::Mono.Unix.Catalog.GetString ("Liferanten"), null, null);
 		this.LiferantenAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Liferanten");
 		w1.Add (this.LiferantenAction, null);
-		this.AnlegenAction = new global::Gtk.Action ("AnlegenAction", global::Mono.Unix.Catalog.GetString ("Anlegen"), null, "Lieferant");
-		this.AnlegenAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Anlegen");
-		w1.Add (this.AnlegenAction, null);
+		this.addDelivery = new global::Gtk.Action ("addDelivery", global::Mono.Unix.Catalog.GetString ("Anlegen"), null, "Lieferant");
+		this.addDelivery.ShortLabel = global::Mono.Unix.Catalog.GetString ("Anlegen");
+		w1.Add (this.addDelivery, null);
 		this.justifyCenterAction1 = new global::Gtk.Action ("justifyCenterAction1", global::Mono.Unix.Catalog.GetString ("_Zentrieren"), null, "gtk-justify-center");
 		this.justifyCenterAction1.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Zentrieren");
 		w1.Add (this.justifyCenterAction1, null);
@@ -105,7 +105,7 @@ public partial class MainWindow
 		this.vbox3.Name = "vbox3";
 		this.vbox3.Spacing = 6;
 		// Container child vbox3.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='DateiAction2' action='DateiAction2'><menuitem name='openAction1' action='openAction1'/><menuitem name='saveAction' action='saveAction'/></menu><menu name='KundenAction' action='KundenAction'><menuitem name='addAction' action='addAction'/><menuitem name='removeAction' action='removeAction'/><menuitem name='justifyCenterAction' action='justifyCenterAction'/></menu><menu name='LiferantenAction' action='LiferantenAction'><menuitem name='AnlegenAction' action='AnlegenAction'/><menuitem name='justifyCenterAction1' action='justifyCenterAction1'/></menu><menu name='EinstellungenAction' action='EinstellungenAction'/><menu name='HilfeAction' action='HilfeAction'/></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='DateiAction2' action='DateiAction2'><menuitem name='openAction1' action='openAction1'/><menuitem name='saveAction' action='saveAction'/></menu><menu name='KundenAction' action='KundenAction'><menuitem name='customer' action='customer'/><menuitem name='removeAction' action='removeAction'/><menuitem name='justifyCenterAction' action='justifyCenterAction'/></menu><menu name='LiferantenAction' action='LiferantenAction'><menuitem name='addDelivery' action='addDelivery'/><menuitem name='justifyCenterAction1' action='justifyCenterAction1'/></menu><menu name='EinstellungenAction' action='EinstellungenAction'/><menu name='HilfeAction' action='HilfeAction'/></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox3.Add (this.menubar1);
@@ -164,6 +164,7 @@ public partial class MainWindow
 		this.DefaultHeight = 344;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
-		this.addAction1.Activated += new global::System.EventHandler (this.OnAddAction1Activated);
+		this.customer.Activated += new global::System.EventHandler (this.OnCustomerActivated);
+		this.addDelivery.Activated += new global::System.EventHandler (this.OnAddDeliveryActivated);
 	}
 }

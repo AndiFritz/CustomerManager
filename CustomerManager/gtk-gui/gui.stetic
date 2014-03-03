@@ -6,9 +6,9 @@
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../HollyLibrary.dll" />
-    <widget-library name="../bin/Debug/CustomerManager.exe" internal="true" />
     <widget-library name="Mono.TextEditor, Version=1.0.0.0, Culture=neutral" />
     <widget-library name="MonoDevelop.CSharpBinding, Version=2.6.0.0, Culture=neutral" />
+    <widget-library name="../bin/Debug/CustomerManager.exe" internal="true" />
   </import>
   <icon-factory>
     <icon-set id="Lieferant">
@@ -61,11 +61,12 @@
         <property name="Label" translatable="yes">Hilfe</property>
         <property name="ShortLabel" translatable="yes">Hilfe</property>
       </action>
-      <action id="addAction">
+      <action id="customer">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Neu</property>
         <property name="ShortLabel" translatable="yes">Neu</property>
         <property name="StockId">gtk-add</property>
+        <signal name="Activated" handler="OnCustomerActivated" />
       </action>
       <action id="justifyCenterAction">
         <property name="Type">Action</property>
@@ -97,11 +98,12 @@
         <property name="Label" translatable="yes">Liferanten</property>
         <property name="ShortLabel" translatable="yes">Liferanten</property>
       </action>
-      <action id="AnlegenAction">
+      <action id="addDelivery">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Anlegen</property>
         <property name="ShortLabel" translatable="yes">Anlegen</property>
         <property name="StockId">Lieferant</property>
+        <signal name="Activated" handler="OnAddDeliveryActivated" />
       </action>
       <action id="justifyCenterAction1">
         <property name="Type">Action</property>
@@ -145,12 +147,12 @@
                 <node type="Menuitem" action="saveAction" />
               </node>
               <node type="Menu" action="KundenAction">
-                <node type="Menuitem" action="addAction" />
+                <node type="Menuitem" action="customer" />
                 <node type="Menuitem" action="removeAction" />
                 <node type="Menuitem" action="justifyCenterAction" />
               </node>
               <node type="Menu" action="LiferantenAction">
-                <node type="Menuitem" action="AnlegenAction" />
+                <node type="Menuitem" action="addDelivery" />
                 <node type="Menuitem" action="justifyCenterAction1" />
               </node>
               <node type="Menu" action="EinstellungenAction" />
@@ -394,6 +396,7 @@
     </child>
   </widget>
   <widget class="Gtk.Window" id="CustomerManager.CustomerWindow" design-size="877 757">
+    <action-group name="Default" />
     <action-group name="Default">
       <action id="applyAction">
         <property name="Type">Action</property>
@@ -453,7 +456,6 @@
         <signal name="Activated" handler="OnDialogQuestionTBActivated" />
       </action>
     </action-group>
-    <action-group name="Default" />
     <property name="MemberName" />
     <property name="Title" translatable="yes">neuer Benutzer</property>
     <property name="Icon">stock:gtk-add Menu</property>
@@ -3518,7 +3520,7 @@ Firma</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="CustomerManager.SpecificWindow" design-size="1073 824">
+  <widget class="Gtk.Window" id="CustomerManager.SpecificWindow" design-size="1077 824">
     <action-group name="Default">
       <action id="dialogInfoAction">
         <property name="Type">Action</property>
@@ -3592,7 +3594,7 @@ Firma</property>
         <child>
           <widget class="Gtk.MenuBar" id="menubar2">
             <property name="MemberName" />
-            <node name="__gtksharp_112_Stetic_Editor_ActionMenuBar" type="Menubar">
+            <node name="menubar2" type="Menubar">
               <node type="Menu" action="DateiAction" />
               <node type="Menu" action="ProjekAction">
                 <node type="Menuitem" action="dialogInfoAction1" />
@@ -3622,7 +3624,7 @@ Firma</property>
               <widget class="Gtk.Toolbar" id="toolbar1">
                 <property name="MemberName" />
                 <property name="ShowArrow">False</property>
-                <node name="__gtksharp_71_Stetic_Editor_ActionToolbar" type="Toolbar">
+                <node name="toolbar1" type="Toolbar">
                   <node type="Toolitem" action="dialogInfoAction1" />
                 </node>
               </widget>
