@@ -931,13 +931,10 @@ namespace CustomerManager
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-<<<<<<< HEAD
 			this.DefaultWidth = 1077;
 			this.DefaultHeight = 824;
-=======
 			this.DefaultWidth = 1073;
 			this.DefaultHeight = 840;
->>>>>>> 1fe1e82d2733c617b4025946e7c5649ca245a12d
 			this.Show ();
 			this.startButton.Clicked += new global::System.EventHandler (this.OnStartButtonClicked);
 			this.endButton.Clicked += new global::System.EventHandler (this.OnEndButtonClicked);
