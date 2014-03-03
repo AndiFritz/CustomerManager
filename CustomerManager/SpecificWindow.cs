@@ -93,9 +93,11 @@ namespace CustomerManager
 		
 			#region Berechnung der Geldbeträge - Stundenbeträge
 
-//			Int64 gesDuration = MainClass.connection.readSumHours(1); // ProjektID übergeben statt 1 !!!!!!!!!!!
+			Int64 gesDurationMin = MainClass.connection.readSumHours(1); // ProjektID übergeben statt 1 !!!!!!!!!!!
 
+			Single Min = Convert.ToSingle(gesDurationMin);
 
+			decimal gesDurationHour = Convert.ToDecimal (Min / 60);
 
 
 
@@ -105,6 +107,13 @@ namespace CustomerManager
 
 		protected void OnStartButtonClicked (object sender, EventArgs e) // Start - Button gedrückt
 		{
+			if (starttimeLabel.Text != "") {
+				MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Bitte beenden Sie zuerst Ihr aktuelle Arbeit!");
+				md.Run ();
+				md.Destroy ();
+				return;
+			}
+
 			DateTime now = DateTime.Now; 
 			string currentDate = now.ToShortDateString ();
 			string currentTime = now.ToShortTimeString ();
@@ -133,8 +142,15 @@ namespace CustomerManager
 
 			int duration = workDuration.Minutes; // Differenz in Stunden 
 
+			Int64 hourprice = Convert.ToInt64(hourPriceLabel.Text);
+			Int64 minprice = hourprice / 60; 
+
+			Int32 price = Convert.ToInt32(minprice * duration);
+
+		
+
 			if (workdescription == "") {
-				MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Warning, ButtonsType.OkCancel, "Es wurde keine Beschreibung für die Arbeit eingetragen! Bitte tragen Sie etwas ein, wenn es auf der Rechnung aufgelistet sein sollte! Wenn Sie EINE BESCHREIBUNG eintragen wollen, drücken Sie Cancel");
+				MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Warning, ButtonsType.OkCancel, "Es wurde keine Beschreibung für die Arbeit eingetragen! Bitte tragen Sie etwas ein, wenn es auf der Rechnung aufgelistet sein sollte! Wenn Sie EINE BESCHREIBUNG eintragen wollen, drücken Sie Cancel.");
 				ResponseType response = (ResponseType) md.Run ();
 
 
@@ -144,20 +160,22 @@ namespace CustomerManager
 					return;
 				}
 
-			} else {
-
-				bool addEndTime = MainClass.connection.addEndTime(1, currentDate, startTime, currentTime, duration, workdescription, 1);
-
-				if(addEndTime == true)
+				if(response == ResponseType.Ok)
 				{
-					endtimeLabel.Text = currentTime;
-					MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Arbeit beendet! Viel Spaß beim Entspannen!");
-					md.Run ();
-					md.Destroy ();
 
-					starttimeLabel.Text = "";  // Startzeit in Startzeitlabel entfernen
-					endtimeLabel.Text = "";  // Endzeit in Endzeitlabel entfernen
-					workDescriptTextBox.Text = "";  // Tätigkeits-beschreibung entfernen
+					bool addEndTime = MainClass.connection.addEndTime(1, currentDate, startTime, currentTime, duration, workdescription, 1, price);
+
+					if(addEndTime == true)
+					{
+						endtimeLabel.Text = currentTime;
+						MessageDialog wd = new MessageDialog (this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Arbeit beendet! Viel Spaß beim Entspannen!");
+						wd.Run ();
+						wd.Destroy ();
+
+						starttimeLabel.Text = "";  // Startzeit in Startzeitlabel entfernen
+						endtimeLabel.Text = "";  // Endzeit in Endzeitlabel entfernen
+						workDescriptTextBox.Text = "";  // Tätigkeits-beschreibung entfernen
+					}
 				}
 			}
 		}

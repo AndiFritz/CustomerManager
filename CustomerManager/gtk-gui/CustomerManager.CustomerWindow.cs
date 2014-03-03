@@ -76,13 +76,8 @@ namespace CustomerManager
 			this.dialogQuestionAction = new global::Gtk.Action ("dialogQuestionAction", global::Mono.Unix.Catalog.GetString ("Hilfe"), global::Mono.Unix.Catalog.GetString ("Hilfe anzeigen"), "gtk-dialog-question");
 			this.dialogQuestionAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hilfe");
 			w1.Add (this.dialogQuestionAction, null);
-			this.applyAddTB = new global::Gtk.Action ("applyAddTB", global::Mono.Unix.Catalog.GetString ("bestätigen"), null, "gtk-apply");
-			this.applyAddTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("bestätigen");
-			w1.Add (this.applyAddTB, null);
-			w2.Add (this.dialogQuestionAction, null);
 			this.newCustomer = new global::Gtk.Action ("newCustomer", global::Mono.Unix.Catalog.GetString ("bestätigen"), null, "gtk-apply");
 			this.newCustomer.ShortLabel = global::Mono.Unix.Catalog.GetString ("bestätigen");
-			w2.Add (this.newCustomer, null);
 			this.closeTB = new global::Gtk.Action ("closeTB", global::Mono.Unix.Catalog.GetString ("abbrechen"), global::Mono.Unix.Catalog.GetString ("alles abbrechen und Fenster schließen"), "gtk-close");
 			this.closeTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("abbrechen");
 			w1.Add (this.closeTB, null);

@@ -446,8 +446,10 @@ namespace CustomerManager
 				
 				sqlite_cmd = sqlite_conn.CreateCommand ();
 				
-				sqlite_cmd.CommandText = "SELECT duration FROM tbl_times WHERE fk_projects = "+projID+"";
-				
+				sqlite_cmd.CommandText = "SELECT sum(duration) FROM tbl_times WHERE fk_projects = "+projID+"";
+
+				sqlite_conn.Open ();
+
 				datareader = sqlite_cmd.ExecuteReader ();
 				
 				Int64 readDuration = 0;
@@ -455,8 +457,7 @@ namespace CustomerManager
 				
 				while (datareader.Read())
 				{
-					readDuration = datareader.GetInt64(0); 
-					gesDuration += readDuration;
+					gesDuration = datareader.GetInt64(0); 
 				}
 				sqlite_conn.Close ();
 				
@@ -484,11 +485,11 @@ namespace CustomerManager
 			}
 		}
 
-		public override bool addEndTime (short projID, string date, string startTime, string endTime, int duration, string description, short userID)
+		public override bool addEndTime (short projID, string date, string startTime, string endTime, int duration, string description, short userID, int price)
 		{
 			try {
 				sqlite_cmd = sqlite_conn.CreateCommand ();
-				sqlite_cmd.CommandText = "UPDATE tbl_times SET endtime='"+endTime+"', description='"+description+", duration="+duration+" WHERE (fk_projects = "+projID+" AND date = '"+date+"' AND starttime='"+startTime+"' AND fk_user = "+userID+")";
+				sqlite_cmd.CommandText = "UPDATE tbl_times SET endtime='"+endTime+"', description='"+description+"', duration = "+duration+", price = "+price+" WHERE (fk_projects = "+projID+" AND date = '"+date+"' AND starttime='"+startTime+"' AND fk_user = "+userID+")";
 				sqlite_conn.Open ();
 				sqlite_cmd.ExecuteNonQuery ();
 				sqlite_conn.Close ();
