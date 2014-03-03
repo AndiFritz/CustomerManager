@@ -9,7 +9,7 @@ namespace CustomerManager
 		private global::Gtk.Action closeAction;
 		private global::Gtk.Action clearAction;
 		private global::Gtk.Action dialogQuestionAction;
-		private global::Gtk.Action applyAddTB;
+		private global::Gtk.Action newCustomer;
 		private global::Gtk.Action closeTB;
 		private global::Gtk.Action clearTB;
 		private global::Gtk.Action dialogQuestionTB;
@@ -78,9 +78,9 @@ namespace CustomerManager
 			this.dialogQuestionAction = new global::Gtk.Action ("dialogQuestionAction", global::Mono.Unix.Catalog.GetString ("Hilfe"), global::Mono.Unix.Catalog.GetString ("Hilfe anzeigen"), "gtk-dialog-question");
 			this.dialogQuestionAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Hilfe");
 			w2.Add (this.dialogQuestionAction, null);
-			this.applyAddTB = new global::Gtk.Action ("applyAddTB", global::Mono.Unix.Catalog.GetString ("bestätigen"), null, "gtk-apply");
-			this.applyAddTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("bestätigen");
-			w2.Add (this.applyAddTB, null);
+			this.newCustomer = new global::Gtk.Action ("newCustomer", global::Mono.Unix.Catalog.GetString ("bestätigen"), null, "gtk-apply");
+			this.newCustomer.ShortLabel = global::Mono.Unix.Catalog.GetString ("bestätigen");
+			w2.Add (this.newCustomer, null);
 			this.closeTB = new global::Gtk.Action ("closeTB", global::Mono.Unix.Catalog.GetString ("abbrechen"), global::Mono.Unix.Catalog.GetString ("alles abbrechen und Fenster schließen"), "gtk-close");
 			this.closeTB.ShortLabel = global::Mono.Unix.Catalog.GetString ("abbrechen");
 			w2.Add (this.closeTB, null);
@@ -102,7 +102,7 @@ namespace CustomerManager
 			this.vbox1.Name = "vbox1";
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
-			this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar2'><toolitem name='applyAddTB' action='applyAddTB'/><toolitem name='closeTB' action='closeTB'/><separator/><toolitem name='clearTB' action='clearTB'/><toolitem name='dialogQuestionTB' action='dialogQuestionTB'/></toolbar></ui>");
+			this.UIManager.AddUiFromString ("<ui><toolbar name='toolbar2'><toolitem name='newCustomer' action='newCustomer'/><toolitem name='closeTB' action='closeTB'/><separator/><toolitem name='clearTB' action='clearTB'/><toolitem name='dialogQuestionTB' action='dialogQuestionTB'/></toolbar></ui>");
 			this.toolbar2 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar2")));
 			this.toolbar2.Name = "toolbar2";
 			this.toolbar2.ShowArrow = false;
@@ -616,7 +616,7 @@ namespace CustomerManager
 			this.pwTextBox.Hide ();
 			this.unameLabel.Hide ();
 			this.Show ();
-			this.applyAddTB.Activated += new global::System.EventHandler (this.OnApplyAddTBActivated);
+			this.newCustomer.Activated += new global::System.EventHandler (this.OnApplyAddTBActivated);
 			this.closeTB.Activated += new global::System.EventHandler (this.OnCloseTBActivated);
 			this.clearTB.Activated += new global::System.EventHandler (this.OnClearTBActivated);
 			this.dialogQuestionTB.Activated += new global::System.EventHandler (this.OnDialogQuestionTBActivated);

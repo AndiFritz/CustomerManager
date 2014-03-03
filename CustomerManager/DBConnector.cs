@@ -12,8 +12,12 @@ namespace CustomerManager
 
 		public abstract List<string> readProjectDetails(Int16 Pid, String Pname); //Auslesung ProjectBeschreibung für Specific Window
 		public abstract Int64 readSumHours(Int16 projID); // Gesamtstunden für Geldbetrag auslesen
-		public abstract bool addStartTime(Int16 projID, String date, String startTime, String description, Int16 userID); // Starzeit in Tabelle tbl_times einfügen
-		public abstract bool addEndTime(Int16 projID, String date, String endTime, String description, Int16 userID); // Endzeit eintragen in tbl_times
+		public abstract bool addStartTime(short projID, string date, string startTime, string description, short userID); // Starzeit in Tabelle tbl_times einfügen
+		public abstract bool addEndTime (short projID, string date, string endTime, string description, short userID); // Endzeit eintragen in tbl_times
+
+		public abstract bool addCustomer(String gender, String vname, String nname, String email, String telnumber, String mobilenumber, Int32 plz, String country, String street, String hnr, string regidate, String cname);
+
+
 	}	
 }
 
