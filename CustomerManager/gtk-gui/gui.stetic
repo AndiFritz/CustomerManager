@@ -6,9 +6,9 @@
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../HollyLibrary.dll" />
-    <widget-library name="../bin/Debug/CustomerManager.exe" internal="true" />
     <widget-library name="Mono.TextEditor, Version=1.0.0.0, Culture=neutral" />
     <widget-library name="MonoDevelop.CSharpBinding, Version=2.6.0.0, Culture=neutral" />
+    <widget-library name="../bin/Debug/CustomerManager.exe" internal="true" />
   </import>
   <icon-factory>
     <icon-set id="Lieferant">
@@ -423,7 +423,7 @@
         <property name="StockId">gtk-dialog-question</property>
         <property name="Tooltip" translatable="yes">Hilfe anzeigen</property>
       </action>
-      <action id="applyAddTB">
+      <action id="newCustomer">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">bestätigen</property>
         <property name="ShortLabel" translatable="yes">bestätigen</property>
@@ -468,7 +468,7 @@
             <property name="MemberName" />
             <property name="ShowArrow">False</property>
             <node name="toolbar2" type="Toolbar">
-              <node type="Toolitem" action="applyAddTB" />
+              <node type="Toolitem" action="newCustomer" />
               <node type="Toolitem" action="closeTB" />
               <node type="Separator" />
               <node type="Toolitem" action="clearTB" />
@@ -3671,7 +3671,7 @@ Firma</property>
         <child>
           <widget class="Gtk.MenuBar" id="menubar2">
             <property name="MemberName" />
-            <node name="__gtksharp_112_Stetic_Editor_ActionMenuBar" type="Menubar">
+            <node name="menubar2" type="Menubar">
               <node type="Menu" action="DateiAction">
                 <node type="Menuitem" action="homeButton" />
               </node>
@@ -3716,7 +3716,7 @@ Firma</property>
               <widget class="Gtk.Toolbar" id="toolbar1">
                 <property name="MemberName" />
                 <property name="ShowArrow">False</property>
-                <node name="__gtksharp_71_Stetic_Editor_ActionToolbar" type="Toolbar">
+                <node name="toolbar1" type="Toolbar">
                   <node type="Toolitem" action="homeButton" />
                   <node type="Separator" />
                   <node type="Toolitem" action="projectInfoButton" />

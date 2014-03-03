@@ -58,45 +58,43 @@ namespace CustomerManager
 		{
 			if (pwTextBox.Visible == true && pwdCLabel.Visible == true) { // Wenn Passwort - TextBoxen angezeigt werden, dann wird ein neuer Bentzer erstellt
 
-				DateTime now = new DateTime();
+				DateTime now = new DateTime ();
 				DateTime regidate = now.Date;
 
 				bool ok = checkTextBoxValue ("user"); //prüft, ob alle Textboxen gefuellt sind 
-				bool pwdOK = checkPasswordEntry(); // prüft, ob Passwoerter richtig eingegeben wurden
+				bool pwdOK = checkPasswordEntry (); // prüft, ob Passwoerter richtig eingegeben wurden
 
-				if (ok == true) //alle Felder gefuellt
-				{
-					if(pwdOK == true) // Passwoerter stimmen ueberein
-					{
-						bool addOK = MainClass.connection.addUser (genderCB.ActiveText, vnameTextBox.Text, nnameTextBox.Text, usernameTextBox.Text, pwTextBox.Text, emailTextBox.Text, phoneTextBox.Text, mobileTextBox.Text, Convert.ToInt32(plzTextBox.Text), villageTextBox.Text, streetTextBox.Text, hnrTextBox.Text, regidate, 1, companyCB.ActiveText, typCB.ActiveText); 
+				if (ok == true) { //alle Felder gefuellt
+					if (pwdOK == true) { // Passwoerter stimmen ueberein
+						bool addOK = MainClass.connection.addUser (genderCB.ActiveText, vnameTextBox.Text, nnameTextBox.Text, usernameTextBox.Text, pwTextBox.Text, emailTextBox.Text, phoneTextBox.Text, mobileTextBox.Text, Convert.ToInt32 (plzTextBox.Text), villageTextBox.Text, streetTextBox.Text, hnrTextBox.Text, regidate, 1, companyCB.ActiveText, typCB.ActiveText); 
 
-						if(addOK == true) //kein Fehler bei der Datenbankconnection
-						{
+						if (addOK == true) { //kein Fehler bei der Datenbankconnection
 							this.Destroy (); //Fenster schließen
-							MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "User erfolgreich hinzugefügt!");
+							MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "User erfolgreich hinzugefügt!");
+							md.Run ();
+							md.Destroy ();
+						} else { // Fehler bei der Datenbankconnection
+							MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Beim Erstellen eines neuen Users ist ein Fehler aufgetreten!");
 							md.Run ();
 							md.Destroy ();
 						}
-						else // Fehler bei der Datenbankconnection
-						{
-							MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Beim Erstellen eines neuen Users ist ein Fehler aufgetreten!");
-							md.Run ();
-							md.Destroy ();
-						}
-					}
-					else
-					{
-						MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Passwörter stimmen nicht überein!");
+					} else {
+						MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Passwörter stimmen nicht überein!");
 						md.Run ();
 						md.Destroy ();
 					}
-				}
-				else
-				{
-					MessageDialog md = new MessageDialog(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Bitte füllen Sie alle Felder aus!");
+				} else {
+					MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, "Bitte füllen Sie alle Felder aus!");
 					md.Run ();
 					md.Destroy ();
 				}
+			} else 
+			{
+				DateTime now = DateTime.Now;
+				string regidate = now.ToShortDateString();
+				Int16 plz = Convert.ToInt16(plzTextBox.Text);
+				bool addOK = MainClass.connection.addCustomer(genderCB.ActiveText, villageTextBox.Text, nnameTextBox.Text, emailTextBox.Text, phoneTextBox.Text, mobileTextBox.Text, plz, villageTextBox.Text, streetTextBox.Text, hnrTextBox.Text, regidate, companyCB.ActiveText);
+
 			}
 		}
 

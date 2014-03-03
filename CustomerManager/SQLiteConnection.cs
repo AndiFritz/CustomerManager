@@ -290,7 +290,7 @@ namespace CustomerManager
 
 				sqlite_cmd.CommandText = "SELECT id FROM tbl_companies WHERE name='"+name+"'";
 
-				sqlite_conn.Open();
+
 
 				datareader = sqlite_cmd.ExecuteReader ();
 				
@@ -307,7 +307,7 @@ namespace CustomerManager
 			catch (Exception ex) 
 			{
 				sqlite_conn.Close ();
-				return 99999999; 
+				return 1; 
 			}
 		}
 
@@ -336,14 +336,34 @@ namespace CustomerManager
 			catch (Exception ex) 
 			{
 				sqlite_conn.Close ();
-				return 99999999; 
+				return 1; 
 			}
 		}
 
 		#endregion
 
 		#region Customer
+		public override bool addCustomer (string gender, string vname, string nname, string email, string telnumber, string mobilenumber, int plz, string country, string street, string hnr, string regidate, string cname)
+		{
+			int fk_companies = this.getFKcompany (cname);
 
+			try 
+			{
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				sqlite_cmd.CommandText = "INSERT INTO tbl_customers (nname, vname, fk_companies, email, telnumber, mobilenumber, plz, country, street, hnr, regidate, gender, status) VALUES ('"+nname+"', '"+vname+"','"+fk_companies+"','"+email+"','"+telnumber+"','"+mobilenumber+"','"+plz+"','"+country+"','"+street+"','"+hnr+"','"+regidate+"','"+gender+"','1')";
+				sqlite_conn.Open();
+				sqlite_cmd.ExecuteNonQuery();
+				sqlite_conn.Close();
+
+				return true;
+			} 
+
+			catch (Exception ex) 
+			{
+				sqlite_conn.Close ();
+				return false; 
+			}
+		}
 
 
 		#endregion
@@ -478,6 +498,7 @@ namespace CustomerManager
 				return false; 
 			}
 		}
+
 	}
 }
 

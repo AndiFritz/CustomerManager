@@ -1,23 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CustomerWindow.cs">
     <Files>
-      <File FileName="Program.cs" Line="16" Column="6" />
-      <File FileName="SQLiteConnection.cs" Line="347" Column="1" />
-      <File FileName="gtk-gui/MainWindow.cs" Line="168" Column="71" />
-      <File FileName="DBConnector.cs" Line="16" Column="97" />
-      <File FileName="ProjectsWindow.cs" Line="1" Column="1" />
-      <File FileName="loginWindow.cs" Line="44" Column="1" />
-      <File FileName="ProjectWindow.cs" Line="1" Column="1" />
-      <File FileName="security.cs" Line="1" Column="1" />
-      <File FileName="gtk-gui/CustomerManager.SpecificWindow.cs" Line="937" Column="29" />
-      <File FileName="SpecificWindow.cs" Line="1" Column="1" />
-      <File FileName="CustomerWindow.cs" Line="1" Column="1" />
-      <File FileName="MainWindow.cs" Line="1" Column="1" />
+      <File FileName="gtk-gui/MainWindow.cs" Line="168" Column="3" />
+      <File FileName="MainWindow.cs" Line="20" Column="36" />
+      <File FileName="SQLiteConnection.cs" Line="337" Column="5" />
+      <File FileName="DBConnector.cs" Line="18" Column="35" />
+      <File FileName="CustomerWindow.cs" Line="103" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/home/andreas/Dokumente/CustomerManager/CustomerManager/CustomerManager/SQLiteConnection.cs" line="346" />
+      <Breakpoint file="/home/andreas/Dokumente/CustomerManager/CustomerManager/CustomerManager/CustomerWindow.cs" line="93" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
