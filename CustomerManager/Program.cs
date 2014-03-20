@@ -11,7 +11,7 @@ namespace CustomerManager
 		{
 			Application.Init ();
 			connection = new SQLiteConnection(); // heir muss die Klasse geaendert werden, wenn man eine andere Datenbank verwenden will 
-			//MainWindow win = new MainWindow ();
+//			MainWindow win = new MainWindow ();
 
 			SpecificWindow win = new SpecificWindow (/*Pid, Pname*/);
 			win.Show ();

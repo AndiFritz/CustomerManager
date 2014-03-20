@@ -103,6 +103,76 @@ namespace CustomerManager
 
 			#endregion
 		
+
+			#region TreeView füllen
+			// Create a column for the date name
+			Gtk.TreeViewColumn dateColumn = new Gtk.TreeViewColumn ();
+			dateColumn.Title = "Datum";
+			
+			// Create the text cell that will display the date
+			Gtk.CellRendererText dateNameCell = new Gtk.CellRendererText ();
+			dateColumn.PackStart (dateNameCell, true); // Add the cell to the column
+			
+			// Create a column for the description 
+			Gtk.TreeViewColumn descriptColumn = new Gtk.TreeViewColumn ();
+			descriptColumn.Title = "Beschreibung";
+			
+			// Do the same for the descript column
+			Gtk.CellRendererText descriptTitleCell = new Gtk.CellRendererText ();
+			descriptColumn.PackStart (descriptTitleCell, true);
+
+			// Create a column for the description 
+			Gtk.TreeViewColumn durationColumn = new Gtk.TreeViewColumn ();
+			durationColumn.Title = "Dauer";
+			Gtk.CellRendererText durationTitleCell = new Gtk.CellRendererText ();
+			durationColumn.PackStart (durationTitleCell, true); 
+
+			Gtk.TreeViewColumn priceColumn = new Gtk.TreeViewColumn ();
+			priceColumn.Title = "Preis";
+			Gtk.CellRendererText priceTitleCell = new Gtk.CellRendererText ();
+			priceColumn.PackStart (priceTitleCell, true);
+
+			Gtk.TreeViewColumn userColumn = new Gtk.TreeViewColumn ();
+			userColumn.Title = "Bearbeiter";
+			Gtk.CellRendererText userTitleCell = new Gtk.CellRendererText ();
+			userColumn.PackStart (userTitleCell, true);
+
+			
+			// Add the columns to the TreeView
+			StempsTreeview.AppendColumn (dateColumn);
+			StempsTreeview.AppendColumn (descriptColumn);
+			StempsTreeview.AppendColumn (durationColumn);
+			StempsTreeview.AppendColumn (priceColumn);
+			StempsTreeview.AppendColumn (userColumn);
+			
+			// Tell the Cell Renderers which items in the model to display
+			dateColumn.AddAttribute (dateNameCell, "text", 0);
+			descriptColumn.AddAttribute (descriptTitleCell, "text", 1);
+			durationColumn.AddAttribute(durationTitleCell, "text", 2);
+			priceColumn.AddAttribute(priceTitleCell, "text", 3);
+			userColumn.AddAttribute(userTitleCell, "text", 4);
+			
+//			// Create a model that will hold two strings - Artist Name and Song Title
+//			Gtk.ListStore stempsListStore = new Gtk.ListStore (typeof (string), typeof (string), typeof (string), typeof (string), typeof (string));
+//			
+//			// Add some data to the store
+//			stempsListStore.AppendValues ("Datum", "Beschreibung", "Dauer", "Preis", "Bearbeiter");
+//
+//
+//			List<String> stempsDetail = MainClass.connection.readStemps (1); // PARAMETER neu einfügen!
+//			
+//			foreach (string s in stempsDetail) {
+//				stempsListStore.AppendValues (s, s, s, s);
+//
+//			}
+
+
+			
+			// Assign the model to the TreeView
+//			StempsTreeview.Model = stempsListStore;
+		
+
+			#endregion
 		}
 
 		protected void OnStartButtonClicked (object sender, EventArgs e) // Start - Button gedrückt
@@ -131,42 +201,40 @@ namespace CustomerManager
 		protected void OnEndButtonClicked (object sender, EventArgs e)
 		{
 			DateTime now = DateTime.Now; 
-			string currentDate = now.ToShortDateString();
+			string currentDate = now.ToShortDateString ();
 			string currentTime = now.ToShortTimeString ();
 
 			string workdescription = Convert.ToString (workDescriptTextBox.Text); 
 
-			DateTime startTimeBE = Convert.ToDateTime(startTime);
+			DateTime startTimeBE = Convert.ToDateTime (startTime);
 
 			TimeSpan workDuration = now - startTimeBE; 
 
 			int duration = workDuration.Minutes; // Differenz in Stunden 
 
-			Int64 hourprice = Convert.ToInt64(hourPriceLabel.Text);
+			Int64 hourprice = Convert.ToInt64 (hourPriceLabel.Text);
 			Int64 minprice = hourprice / 60; 
 
-			Int32 price = Convert.ToInt32(minprice * duration);
+			Int32 price = Convert.ToInt32 (minprice * duration);
 
 		
 
 			if (workdescription == "") {
 				MessageDialog md = new MessageDialog (this, DialogFlags.Modal, MessageType.Warning, ButtonsType.OkCancel, "Es wurde keine Beschreibung für die Arbeit eingetragen! Bitte tragen Sie etwas ein, wenn es auf der Rechnung aufgelistet sein sollte! Wenn Sie EINE BESCHREIBUNG eintragen wollen, drücken Sie Cancel.");
-				ResponseType response = (ResponseType) md.Run ();
+				ResponseType response = (ResponseType)md.Run ();
 
 
-				if(response == ResponseType.Cancel)
-				{
+				if (response == ResponseType.Cancel) {
 					md.Destroy ();
-					return;
+					return; 
 				}
 
-				if(response == ResponseType.Ok)
-				{
+				if (response == ResponseType.Ok) {
+					md.Destroy ();
 
-					bool addEndTime = MainClass.connection.addEndTime(1, currentDate, startTime, currentTime, duration, workdescription, 1, price);
+					bool addEndTime = MainClass.connection.addEndTime (1, currentDate, startTime, currentTime, duration, workdescription, 1, price);
 
-					if(addEndTime == true)
-					{
+					if (addEndTime == true) {
 						endtimeLabel.Text = currentTime;
 						MessageDialog wd = new MessageDialog (this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Arbeit beendet! Viel Spaß beim Entspannen!");
 						wd.Run ();
@@ -176,6 +244,19 @@ namespace CustomerManager
 						endtimeLabel.Text = "";  // Endzeit in Endzeitlabel entfernen
 						workDescriptTextBox.Text = "";  // Tätigkeits-beschreibung entfernen
 					}
+				}
+			} else {
+				bool addEndTime = MainClass.connection.addEndTime (1, currentDate, startTime, currentTime, duration, workdescription, 1, price);
+				
+				if (addEndTime == true) {
+					endtimeLabel.Text = currentTime;
+					MessageDialog wd = new MessageDialog (this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Arbeit beendet! Viel Spaß beim Entspannen!");
+					wd.Run ();
+					wd.Destroy ();
+					
+					starttimeLabel.Text = "";  // Startzeit in Startzeitlabel entfernen
+					endtimeLabel.Text = "";  // Endzeit in Endzeitlabel entfernen
+					workDescriptTextBox.Text = "";  // Tätigkeits-beschreibung entfernen
 				}
 			}
 		}

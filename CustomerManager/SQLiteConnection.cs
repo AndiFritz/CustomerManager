@@ -500,6 +500,11 @@ namespace CustomerManager
 			}
 		}
 
+		public override bool readStemps (short projID)
+		{
+			throw new System.NotImplementedException ();
+		}
+
 	}
 }
 

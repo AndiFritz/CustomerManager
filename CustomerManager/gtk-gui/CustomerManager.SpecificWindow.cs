@@ -80,7 +80,7 @@ namespace CustomerManager
 		private global::Gtk.Label TimesLabel;
 		private global::Gtk.HSeparator hseparator3;
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
-		private global::Gtk.TreeView treeview1;
+		private global::Gtk.TreeView StempsTreeview;
 		private global::Gtk.HSeparator hseparator8;
 		private global::Gtk.Table table5;
 		private global::Gtk.Label gesPriceLabel;
@@ -705,10 +705,12 @@ namespace CustomerManager
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
 			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-			this.treeview1 = new global::Gtk.TreeView ();
-			this.treeview1.CanFocus = true;
-			this.treeview1.Name = "treeview1";
-			this.GtkScrolledWindow.Add (this.treeview1);
+			this.StempsTreeview = new global::Gtk.TreeView ();
+			this.StempsTreeview.WidthRequest = 400;
+			this.StempsTreeview.CanFocus = true;
+			this.StempsTreeview.ExtensionEvents = ((global::Gdk.ExtensionMode)(1));
+			this.StempsTreeview.Name = "StempsTreeview";
+			this.GtkScrolledWindow.Add (this.StempsTreeview);
 			this.vbox8.Add (this.GtkScrolledWindow);
 			global::Gtk.Box.BoxChild w66 = ((global::Gtk.Box.BoxChild)(this.vbox8 [this.GtkScrolledWindow]));
 			w66.Position = 2;
@@ -931,11 +933,9 @@ namespace CustomerManager
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 1073;
+			this.DefaultWidth = 1121;
 			this.DefaultHeight = 840;
 			this.Show ();
-			this.startButton.Clicked += new global::System.EventHandler (this.OnStartButtonClicked);
-			this.endButton.Clicked += new global::System.EventHandler (this.OnEndButtonClicked);
 		}
 	}
 }
