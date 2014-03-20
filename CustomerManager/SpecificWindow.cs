@@ -151,7 +151,10 @@ namespace CustomerManager
 			durationColumn.AddAttribute(durationTitleCell, "text", 2);
 			priceColumn.AddAttribute(priceTitleCell, "text", 3);
 			userColumn.AddAttribute(userTitleCell, "text", 4);
-			
+
+
+
+			//Test
 //			// Create a model that will hold two strings - Artist Name and Song Title
 //			Gtk.ListStore stempsListStore = new Gtk.ListStore (typeof (string), typeof (string), typeof (string), typeof (string), typeof (string));
 //			
