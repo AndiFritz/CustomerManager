@@ -500,9 +500,79 @@ namespace CustomerManager
 			}
 		}
 
-		public override bool readStemps (short projID)
+		public override List<String[]> readStemps (short projID)
 		{
-			throw new System.NotImplementedException ();
+			List<String[]> returnVal = new List<string[]>();
+
+			string readName = readUname (projID);
+
+			try {
+				
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				
+//				sqlite_cmd.CommandText = "SELECT date, description, duration, price FROM tbl_times WHERE fk_projects = "+projID+"";
+				sqlite_cmd.CommandText = "SELECT * FROM tbl_times WHERE fk_projects = "+projID+"";
+
+				sqlite_conn.Open ();
+				
+				datareader = sqlite_cmd.ExecuteReader ();
+
+				while (datareader.Read())
+				{
+					string[] tempArr = new string[5];
+
+					tempArr[0] = datareader.GetString(1); 
+					tempArr[1] = datareader.GetString(5);
+					int readDur = datareader.GetInt16(4);
+					tempArr[2] = Convert.ToString (readDur);
+					int readPrice = datareader.GetInt32 (7);
+					tempArr[3] = Convert.ToString (readPrice);
+					tempArr[4] = readName;
+
+					returnVal.Add (tempArr);
+				}
+				sqlite_conn.Close ();
+
+				
+				return returnVal;
+			}  
+			catch (Exception ex) 
+			{
+				sqlite_conn.Close ();
+				return returnVal; 
+			}
+
+			return returnVal;
+		}
+
+		private string readUname(int userid)
+		{
+			string readName = "";
+
+			try {
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				
+				sqlite_cmd.CommandText = "SELECT nname FROM tbl_users WHERE id ='"+userid+"'";
+				
+				sqlite_conn.Open();
+				
+				datareader = sqlite_cmd.ExecuteReader ();
+				
+				readName = ""; // ausgelesene ID von Typ von Company
+				
+				while (datareader.Read())
+				{
+					readName = datareader.GetString(0);
+				}
+				datareader.Close ();
+				sqlite_conn.Close ();
+				return readName; 
+			} 
+			catch (Exception ex) 
+			{
+				sqlite_conn.Close ();
+				return readName; 
+			}
 		}
 
 	}

@@ -16,7 +16,7 @@ namespace CustomerManager
 		public abstract bool addEndTime(Int16 projID, String date, String startTime, String endTime, Int32 duration, String description, Int16 userID, Int32 price); // Endzeit eintragen in tbl_times
 
 		public abstract bool addCustomer(String gender, String vname, String nname, String email, String telnumber, String mobilenumber, Int32 plz, String country, String street, String hnr, string regidate, String cname);
-		public abstract bool readStemps(Int16 projID);
+		public abstract List<String[]> readStemps(Int16 projID);
 	}	
 }
 

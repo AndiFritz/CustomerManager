@@ -154,25 +154,24 @@ namespace CustomerManager
 
 
 
-			//Test
-//			// Create a model that will hold two strings - Artist Name and Song Title
-//			Gtk.ListStore stempsListStore = new Gtk.ListStore (typeof (string), typeof (string), typeof (string), typeof (string), typeof (string));
-//			
-//			// Add some data to the store
-//			stempsListStore.AppendValues ("Datum", "Beschreibung", "Dauer", "Preis", "Bearbeiter");
-//
-//
-//			List<String> stempsDetail = MainClass.connection.readStemps (1); // PARAMETER neu einfügen!
-//			
-//			foreach (string s in stempsDetail) {
-//				stempsListStore.AppendValues (s, s, s, s);
-//
-//			}
+
+			// Create a model that will hold two strings - Artist Name and Song Title
+			Gtk.ListStore stempsListStore = new Gtk.ListStore (typeof (string), typeof (string), typeof (string), typeof (string), typeof (string));
+			
+			// Add some data to the store
+			stempsListStore.AppendValues ("Datum", "Beschreibung", "Dauer", "Preis", "Bearbeiter");
+
+
+			List<String[]> stempsDetail = MainClass.connection.readStemps(1); // PARAMETER neu einfügen!
+			
+			foreach (string[] s in stempsDetail) {
+				stempsListStore.AppendValues (s[0], s[1], s[2], s[3], s[4]);
+			}
 
 
 			
 			// Assign the model to the TreeView
-//			StempsTreeview.Model = stempsListStore;
+			StempsTreeview.Model = stempsListStore;
 		
 
 			#endregion
@@ -194,7 +193,7 @@ namespace CustomerManager
 
 			bool addStartTime = MainClass.connection.addStartTime (1, currentDate, currentTime, description, 1);
 
-			if (addStartTime = true) {
+			if (addStartTime == true) {
 				startTime = currentTime;
 				starttimeLabel.Text = currentTime;
 			}
