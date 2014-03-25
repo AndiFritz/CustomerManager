@@ -17,6 +17,10 @@ namespace CustomerManager
 
 		public abstract bool addCustomer(String gender, String vname, String nname, String email, String telnumber, String mobilenumber, Int32 plz, String country, String street, String hnr, string regidate, String cname);
 		public abstract bool readStemps(Int16 projID);
-	}	
-}
 
+		//Supplier
+		public abstract bool addSupplier(String name, String street, String hnr, Int32 plz, String land, String web, String typ, String pname, String email, String telephone, String mobile, String regidate);
+		public abstract List<string> readTyp(); // für ComboBox im Supplier Window
+		public abstract bool addSupTyp (String typ);
+	}
+}

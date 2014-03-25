@@ -17,23 +17,17 @@ public partial class MainWindow: Gtk.Window
 	}
 
 	//Button "neuer Kunde"
-	protected void OnCustomerActivated (object sender, EventArgs e)
+	protected void OnAddCustomerActivated (object sender, EventArgs e)
 	{
 		CustomerWindow newCW = new CustomerWindow();
 		newCW.Show();
-
-	}	
+	}
 
 	//Button "neuer Liferant"
-	protected void OnAddDeliveryActivated (object sender, EventArgs e)
+	protected void OnAddSupplierActivated (object sender, EventArgs e)
 	{
 		SupplierWindow newSW = new SupplierWindow();
 		newSW.Show();
-
 	}
-
-
-
-
 
 }

@@ -290,8 +290,6 @@ namespace CustomerManager
 
 				sqlite_cmd.CommandText = "SELECT id FROM tbl_companies WHERE name='"+name+"'";
 
-
-
 				datareader = sqlite_cmd.ExecuteReader ();
 				
 				int readID = 99999999; // ausgelesene ID von Typ von Company
@@ -367,6 +365,139 @@ namespace CustomerManager
 
 
 		#endregion
+		 
+		#region Supplier
+
+		public override List<string> readTyp ()
+		{
+			try 
+			{
+				sqlite_cmd = sqlite_conn.CreateCommand ();				
+				sqlite_cmd.CommandText = "SELECT typ FROM tbl_typ";
+				datareader = sqlite_cmd.ExecuteReader ();
+
+				string readname = ""; // ausgelesene ID von Typ von Company
+				List<string> typs = new List<string>();
+				
+				while (datareader.Read())
+				{
+					readname = datareader.GetString(0);
+					typs.Add (readname);
+				}
+				sqlite_conn.Close ();
+				return typs; 
+			} 
+			catch (Exception ex)
+			{
+				sqlite_conn.Close ();
+				return null; 
+			}
+		}
+
+		private int getFKtyp(string typ)
+		{
+			try {
+				sqlite_cmd = sqlite_conn.CreateCommand ();				
+				sqlite_cmd.CommandText = "SELECT id FROM tbl_typ WHERE typ ='"+typ+"'";
+				sqlite_conn.Open();
+				
+				datareader = sqlite_cmd.ExecuteReader ();
+				
+				int readID = 0;
+				
+				while (datareader.Read())
+				{
+					readID = datareader.GetInt16(0);
+				}
+				
+				sqlite_conn.Close ();
+				return readID; 
+			} 
+			catch (Exception ex) 
+			{
+				sqlite_conn.Close ();
+				return 0; 
+			}
+		}
+
+		private int getFKsupplier (string supplier)
+		{
+			try {
+				sqlite_cmd = sqlite_conn.CreateCommand ();				
+				sqlite_cmd.CommandText = "SELECT id FROM tbl_suppliers WHERE name ='"+supplier+"'";
+				sqlite_conn.Open();
+				
+				datareader = sqlite_cmd.ExecuteReader ();
+				
+				int readID = 0;
+				
+				while (datareader.Read())
+				{
+					readID = datareader.GetInt16(0);
+				}
+				
+				sqlite_conn.Close ();
+				return readID; 
+			} 
+			catch (Exception ex) 
+			{
+				sqlite_conn.Close ();
+				return 0; 
+			}
+		}
+
+		public override bool addSupplier(String name, String street, String hnr, Int32 plz, String land, String web, String typ, String pname, String email, String telephone, String mobile, String regidate)
+		{
+
+
+			try 
+			{
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				sqlite_cmd.CommandText = "INSERT INTO tbl_suppliers (name, plz, country, street, hnr, web, pname, email, telnumber, mobilenumber, regidate) VALUES ('"+name+"', '"+plz+"','"+land+"','"+street+"','"+hnr+"','"+web+"','"+pname+"','"+email+"','"+telephone+"','"+mobile+"','"+regidate+"')";
+				sqlite_conn.Open(); 
+				sqlite_cmd.ExecuteNonQuery();
+				sqlite_conn.Close();
+
+				int fksupplier = getFKsupplier(name);
+				int fktyp = getFKtyp(typ);
+
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				sqlite_cmd.CommandText = "INSERT INTO tbl_suppliers_typ (fk_suppliers, fk_typ) VALUES ('"+fksupplier+"','"+fktyp+"')";
+				sqlite_conn.Open ();
+				sqlite_cmd.ExecuteNonQuery();
+				sqlite_conn.Close();
+
+				return true;
+			} 
+			catch (Exception ex) 
+			{
+				sqlite_conn.Close ();
+				return false; 
+			}
+
+		}
+
+		public override bool addSupTyp (String typ)
+		{
+			try 
+			{
+				sqlite_cmd = sqlite_conn.CreateCommand ();
+				sqlite_cmd.CommandText = "INSERT INTO tbl_typ (typ) VALUES ('"+typ+"')";
+				sqlite_conn.Open(); 
+				sqlite_cmd.ExecuteNonQuery();
+				sqlite_conn.Close();
+				
+				return true;
+			} 
+			catch (Exception ex) 
+			{
+				sqlite_conn.Close ();
+				return false; 
+			}
+		}
+		#endregion
+
+
 		public override System.Collections.Generic.List<string> readCompany (string typ)
 		{
 			int fk_typcompany = getFKTypcompany (typ); //ID von CompanyTyp aus tbl_typcompany bekommen
@@ -445,7 +576,6 @@ namespace CustomerManager
 			try {
 				
 				sqlite_cmd = sqlite_conn.CreateCommand ();
-				
 				sqlite_cmd.CommandText = "SELECT sum(duration) FROM tbl_times WHERE fk_projects = "+projID+"";
 
 				sqlite_conn.Open ();

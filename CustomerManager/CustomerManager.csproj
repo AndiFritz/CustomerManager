@@ -94,6 +94,8 @@
     <Compile Include="gtk-gui\CustomerManager.CompanyWindow.cs" />
     <Compile Include="SpecificWindow.cs" />
     <Compile Include="gtk-gui\CustomerManager.SpecificWindow.cs" />
+    <Compile Include="SupplierTyp.cs" />
+    <Compile Include="gtk-gui\CustomerManager.SupplierTyp.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

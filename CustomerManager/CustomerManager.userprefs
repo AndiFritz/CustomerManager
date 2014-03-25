@@ -1,18 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SpecificWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SQLiteConnection.cs">
     <Files>
-      <File FileName="Program.cs" Line="16" Column="6" />
-      <File FileName="SQLiteConnection.cs" Line="501" Column="1" />
-      <File FileName="gtk-gui/MainWindow.cs" Line="168" Column="71" />
-      <File FileName="DBConnector.cs" Line="22" Column="1" />
-      <File FileName="ProjectsWindow.cs" Line="1" Column="1" />
-      <File FileName="loginWindow.cs" Line="28" Column="36" />
-      <File FileName="ProjectWindow.cs" Line="1" Column="1" />
-      <File FileName="SpecificWindow.cs" Line="157" Column="10" />
-      <File FileName="MainWindow.cs" Line="26" Column="2" />
-      <File FileName="gtk-gui/CustomerManager.CustomerWindow.cs" Line="78" Column="45" />
-      <File FileName="CustomerWindow.cs" Line="186" Column="2" />
+      <File FileName="SupplierWindow.cs" Line="72" Column="1" />
+      <File FileName="CustomerWindow.cs" Line="87" Column="141" />
+      <File FileName="MainWindow.cs" Line="32" Column="2" />
+      <File FileName="gtk-gui/MainWindow.cs" Line="169" Column="2" />
+      <File FileName="SQLiteConnection.cs" Line="366" Column="4" />
+      <File FileName="DBConnector.cs" Line="21" Column="140" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
