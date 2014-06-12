@@ -159,7 +159,7 @@ namespace CustomerManager
 			Gtk.ListStore stempsListStore = new Gtk.ListStore (typeof (string), typeof (string), typeof (string), typeof (string), typeof (string));
 			
 			// Add some data to the store
-			stempsListStore.AppendValues ("Datum", "Beschreibung", "Dauer", "Preis", "Bearbeiter");
+			stempsListStore.AppendValues ("22.06.2014", "Testprojekt", "3,5", "40", "Bischof");
 
 
 			List<String[]> stempsDetail = MainClass.connection.readStemps(1); // PARAMETER neu einfügen!

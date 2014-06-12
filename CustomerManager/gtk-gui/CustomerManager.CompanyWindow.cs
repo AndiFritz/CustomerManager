@@ -231,7 +231,7 @@ namespace CustomerManager
 			this.typComboBox.AppendText (global::Mono.Unix.Catalog.GetString ("Unternehmen"));
 			this.typComboBox.AppendText (global::Mono.Unix.Catalog.GetString ("Firma"));
 			this.typComboBox.Name = "typComboBox";
-			this.typComboBox.Active = 0;
+			this.typComboBox.Active = 1;
 			this.table1.Add (this.typComboBox);
 			global::Gtk.Table.TableChild w15 = ((global::Gtk.Table.TableChild)(this.table1 [this.typComboBox]));
 			w15.TopAttach = ((uint)(6));
